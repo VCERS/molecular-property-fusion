@@ -1,0 +1,54 @@
+schema_version: 1
+study_id: molecular_property_fusion_aqsoldb_transfer
+description: AqSolDB evaluation with user-supplied data and overlap-controlled partitions
+seeds: [1, 2, 3, 4, 5]
+datasets:
+  aqsoldb:
+    acquisition: user_supplied_from_AqSolDB
+    smiles_column: SMILES
+    target_column: Solubility
+    partition_column_template: split_seed_{seed}
+    partition_values: [train, validation, test]
+    units: LogS
+    max_atoms: 115
+    warmup_factor: 0.15
+models:
+  xgboost:
+    common:
+      {subsample: 0.8, colsample_bytree: 0.8, min_child_weight: 1.0,
+       reg_alpha: 0.0, reg_lambda: 1.0, max_bin: 256}
+    by_dataset:
+      aqsol_db: {max_depth: 4, learning_rate: 0.1, n_estimators: 300}
+      aqsol: {max_depth: 4, learning_rate: 0.1, n_estimators: 300}
+      aqsolubility: {max_depth: 4, learning_rate: 0.1, n_estimators: 300}
+      aqsoldb: {max_depth: 4, learning_rate: 0.1, n_estimators: 300}
+  catboost:
+    {iterations: 300, depth: 7, learning_rate: 0.05, l2_leaf_reg: 3.0,
+     loss_function: RMSE, verbose: false}
+  lightgbm:
+    {n_estimators: 300, num_leaves: 31, max_depth: -1, learning_rate: 0.05,
+     subsample: 0.8, colsample_bytree: 0.8, reg_lambda: 1.0, verbosity: -1}
+  extratrees:
+    {n_estimators: 500, max_features: sqrt, min_samples_leaf: 1,
+     bootstrap: false}
+  graph:
+    {family: CoMPT, hidden_width: 256, layers: 3, attention_heads: 4,
+     dropout: 0.0}
+  fusion:
+    {model: StandardScaler_then_Ridge, alpha: 10.0, fit_intercept: true}
+graph_training:
+  warmup_epochs: 30
+  max_epochs: 150
+  patience: 20
+  batch_size: 32
+  weight_decay: 0.0
+chemprop:
+  version: 2.3.1
+  source_commit: 9a0b47ad19ebf440c1557787e666d442728adaad
+  epochs: 50
+  batch_size: 64
+outputs:
+  persist_row_targets: false
+  persist_row_predictions: false
+  persist_row_errors: false
+  persist_prediction_hashes: true

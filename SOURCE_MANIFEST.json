@@ -1,0 +1,170 @@
+{
+  "export_commits": {
+    "aqsoldb_final": "fb2ec13c6d95b4062e7892f1716f747fd94e5c06",
+    "public_benchmark_frozen": "4a845d2ac20fd37c6efaa000c1035a4e185abf91"
+  },
+  "files": [
+    {
+      "destination_path": "src/molprop_fusion/__init__.py",
+      "destination_sha256": "2bc42a431d5f327b9a6c29926d18ef55f3c66351bfc69a6f4dee0b67a25274ce",
+      "source_commit": "4a845d2ac20fd37c6efaa000c1035a4e185abf91",
+      "source_path": "src/frozen_llm/__init__.py",
+      "source_sha256": "f8059530a44f65b56ee75d354ee5b77c029234bd55afdd855a6cdeae5043a608",
+      "transformation": "namespace and project description"
+    },
+    {
+      "destination_path": "src/molprop_fusion/accuracy_benchmark.py",
+      "destination_sha256": "771a64f597f8ad165c42c202cb376e211256ce0558bf6af8b61200daa41c2672",
+      "source_commit": "4a845d2ac20fd37c6efaa000c1035a4e185abf91",
+      "source_path": "src/frozen_llm/accuracy_benchmark.py",
+      "source_sha256": "771a64f597f8ad165c42c202cb376e211256ce0558bf6af8b61200daa41c2672",
+      "transformation": "byte-identical"
+    },
+    {
+      "destination_path": "src/molprop_fusion/compt_graph.py",
+      "destination_sha256": "64ba71c607732b36d797977a48335da3852b0a9b8896f0ab14d4024c5eed24f2",
+      "source_commit": "4a845d2ac20fd37c6efaa000c1035a4e185abf91",
+      "source_path": "src/frozen_llm/compt_graph.py",
+      "source_sha256": "92742f9ce9a95c4e11912addcdaaa5bf05d112720e65e5f949a6c710c6d3b7bc",
+      "transformation": "Ruff formatting and removal of unrelated checkpoint comparator loading"
+    },
+    {
+      "destination_path": "src/molprop_fusion/fusion.py",
+      "destination_sha256": "75e16e9f2c85c35bacf4bdc1ea7591f8799e72bb7add8c9b1bec100de248ba3e",
+      "source_commit": "4a845d2ac20fd37c6efaa000c1035a4e185abf91",
+      "source_path": "src/frozen_llm/graph_expert_pilot.py",
+      "source_sha256": "c80349af0b76907c1dbb10ca64f8d8ac4bf19ee7c5d97387fd3f5a157694cb16",
+      "transformation": "retained grouped OOF, hashes, and Ridge fusion; removed unrelated study gates"
+    },
+    {
+      "destination_path": "src/molprop_fusion/io.py",
+      "destination_sha256": "d0f4803c9583cadc7acb2396fd98445ecd0445cce3fac79f0da4938a9cf59f5e",
+      "source_commit": "4a845d2ac20fd37c6efaa000c1035a4e185abf91",
+      "source_path": "src/frozen_llm/io.py",
+      "source_sha256": "d0f4803c9583cadc7acb2396fd98445ecd0445cce3fac79f0da4938a9cf59f5e",
+      "transformation": "byte-identical"
+    },
+    {
+      "destination_path": "src/molprop_fusion/features.py",
+      "destination_sha256": "15e06264b7e712a22917055ca689a6c3fe6ba684cc5a8150298c3427b49028be",
+      "source_commit": "4a845d2ac20fd37c6efaa000c1035a4e185abf91",
+      "source_path": "src/frozen_llm/stage_c1.py",
+      "source_sha256": "8c8811d7881d473a747f658a898608e2828fa5e823f50b35f9b510acf96e1991",
+      "transformation": "retained fit-only Z3D imputation and added public feature orchestration"
+    },
+    {
+      "destination_path": "src/molprop_fusion/features.py",
+      "destination_sha256": "15e06264b7e712a22917055ca689a6c3fe6ba684cc5a8150298c3427b49028be",
+      "source_commit": "4a845d2ac20fd37c6efaa000c1035a4e185abf91",
+      "source_path": "scripts/run_new_chemistry_information_stage_c1.py",
+      "source_sha256": "9659fd4d5fa048f47865d362f003c17d81de00a0d60f4bdd24fd244544c27a74",
+      "transformation": "retained Morgan and RDKit descriptor construction"
+    },
+    {
+      "destination_path": "src/molprop_fusion/z3d.py",
+      "destination_sha256": "fd91f95753be3340c41e0685060fdba9701f3a5b613f75771a4ec19afd878dbc",
+      "source_commit": "4a845d2ac20fd37c6efaa000c1035a4e185abf91",
+      "source_path": "src/frozen_llm/z3d.py",
+      "source_sha256": "fd91f95753be3340c41e0685060fdba9701f3a5b613f75771a4ec19afd878dbc",
+      "transformation": "byte-identical"
+    },
+    {
+      "destination_path": "src/molprop_fusion/benchmark.py",
+      "destination_sha256": "77628520b06a1dd88a0861800c83af228ab24250133c44f0aaf3ad0d68064b3d",
+      "source_commit": "4a845d2ac20fd37c6efaa000c1035a4e185abf91",
+      "source_path": "scripts/run_graph_fusion_public_accuracy_benchmark_v0.py",
+      "source_sha256": "fcd4f360e41034e6a99597d2a2cfc0c5f1f8d821c02c4452149fccb239f3df80",
+      "transformation": "public CSV interface, package namespace, generated Lane K memberships, and aggregate-only output"
+    },
+    {
+      "destination_path": "src/molprop_fusion/benchmark.py",
+      "destination_sha256": "77628520b06a1dd88a0861800c83af228ab24250133c44f0aaf3ad0d68064b3d",
+      "source_commit": "4a845d2ac20fd37c6efaa000c1035a4e185abf91",
+      "source_path": "scripts/run_new_chemistry_accuracy_benchmark_e0.py",
+      "source_sha256": "5f19ca4ac35c0a135ee8dfe45745d7fc6d72a3ed36c15626dbb25fc475c60f07",
+      "transformation": "retained four-family fit and grouped OOF numerical path"
+    },
+    {
+      "destination_path": "src/molprop_fusion/chemprop_baseline.py",
+      "destination_sha256": "596e6b4e0677f9ed3eef3116a47b9204d880003046ede579e012da83e2664992",
+      "source_commit": "4a845d2ac20fd37c6efaa000c1035a4e185abf91",
+      "source_path": "scripts/run_graph_fusion_tier_a_chemprop_v0.py",
+      "source_sha256": "5ba505cfa8d4a19750afb444b36337eaad6e5ef7f3cf0c69c592a99d88f1e453",
+      "transformation": "public CSV interface with test labels withheld during Chemprop fitting"
+    },
+    {
+      "destination_path": "src/molprop_fusion/summarize.py",
+      "destination_sha256": "16bdd8e1b95df65889162a15dbb19edf0567597b830af3f1ece290baee5f3fd6",
+      "source_commit": "4a845d2ac20fd37c6efaa000c1035a4e185abf91",
+      "source_path": "scripts/summarize_graph_fusion_public_accuracy_benchmark_v0.py",
+      "source_sha256": "3742e74bcb125a086496ba60436cfbcfcf22d2d9af46a623a1f3fefbcad96dfd",
+      "transformation": "focused aggregate-only public summarizer"
+    },
+    {
+      "destination_path": "src/molprop_fusion/transfer.py",
+      "destination_sha256": "14a913fe8e80b058b870b5524e753f4441d32985c223832b3316861489dff27a",
+      "source_commit": "fb2ec13c6d95b4062e7892f1716f747fd94e5c06",
+      "source_path": "scripts/run_graph_fusion_aqsol_prospective_execution_v0.py",
+      "source_sha256": "73e61fc28e8fa0b44d457c7bde7c1c2729535e4ce0bb45610af8a1e38a5f30ca",
+      "transformation": "user-supplied AqSolDB interface; removed private storage and operational controls"
+    },
+    {
+      "destination_path": "configs/public_benchmarks.yaml",
+      "destination_sha256": "699d7ffe1e70f2a63e251e13f6b93829ac8862257dc4a8aaca45b5cb6c638c10",
+      "source_commit": "4a845d2ac20fd37c6efaa000c1035a4e185abf91",
+      "source_path": "configs/graph_fusion_public_accuracy_benchmark_v0.yaml",
+      "source_sha256": "81368ec72456539dfb7664c52aca5b23e188ed2925a1687847a289fdb58c55f8",
+      "transformation": "removed private paths and study-control metadata"
+    },
+    {
+      "destination_path": "configs/public_benchmarks.yaml",
+      "destination_sha256": "699d7ffe1e70f2a63e251e13f6b93829ac8862257dc4a8aaca45b5cb6c638c10",
+      "source_commit": "4a845d2ac20fd37c6efaa000c1035a4e185abf91",
+      "source_path": "configs/new_chemistry_accuracy_benchmark_e0_v0.yaml",
+      "source_sha256": "4ac098cf0d8ef5de072475937eaecde7ffe717e42b6b98968d90561a2962e2a9",
+      "transformation": "retained selected tree hyperparameters"
+    },
+    {
+      "destination_path": "configs/aqsoldb_transfer.yaml",
+      "destination_sha256": "e97d0b145f72780db6c69066734c47af3f8053b7baa17e2ce51e03e8772ec38f",
+      "source_commit": "fb2ec13c6d95b4062e7892f1716f747fd94e5c06",
+      "source_path": "configs/graph_fusion_aqsol_prospective_execution_v0.yaml",
+      "source_sha256": "42247501ee6b22f89d5e41a60617a6151ddf92439a81c897df310c9fa6a6fc3d",
+      "transformation": "retained method settings; removed private paths, row metadata, and operational records"
+    },
+    {
+      "destination_path": "results/public_benchmarks.json",
+      "destination_sha256": "da988c0659877865392421b6d3c6a281fc46e79efadbbde14cf0ed98869706bb",
+      "source_commit": "fb2ec13c6d95b4062e7892f1716f747fd94e5c06",
+      "source_path": "data/provenance/graph_fusion_public_accuracy_benchmark_v0/outcome/result.json",
+      "source_sha256": "59a81c1cfc965759284ab74836b7c7c1a954d5247f1d90d15f9d3b46efee4b90",
+      "transformation": "sanitized dataset-level aggregates only"
+    },
+    {
+      "destination_path": "results/aqsoldb_transfer.json",
+      "destination_sha256": "da28f09dda38b659f75073404ec2602de2f0903ebf2ab2cbab12868b491f4f6d",
+      "source_commit": "fb2ec13c6d95b4062e7892f1716f747fd94e5c06",
+      "source_path": "data/provenance/graph_fusion_aqsol_prospective_execution_v0/outcome/aggregate_result.json",
+      "source_sha256": "b028e0018891e41c59785bef0413f8ad1b16b7537462d5ef558dbf9903ec188f",
+      "transformation": "sanitized aggregate metrics only"
+    }
+  ],
+  "schema_version": 1,
+  "source_repository": "https://github.com/meshandmore/frozen-llm.git",
+  "third_party": [
+    {
+      "destination_path": "licenses/CoMPT-LICENSE",
+      "license_sha256": "81aa5d4c8fdabc8aaa8f136079d5c5b7b745d5563139d75461d0dab27a7ab6be",
+      "repository": "https://github.com/jcchan23/CoMPT.git",
+      "revision": "50bb4a83fc4ac843ee92bf56421cec0ba631a90f",
+      "spdx_license": "MIT"
+    },
+    {
+      "distribution": "chemprop==2.3.1",
+      "repository": "https://github.com/chemprop/chemprop",
+      "revision": "9a0b47ad19ebf440c1557787e666d442728adaad",
+      "spdx_license": "MIT",
+      "vendored": false
+    }
+  ]
+}

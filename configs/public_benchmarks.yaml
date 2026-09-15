@@ -1,0 +1,93 @@
+schema_version: 1
+study_id: molecular_property_fusion_public_benchmarks
+description: Public ESOL, FreeSolv, and Lipophilicity evaluation
+seeds: [13, 29, 47, 71, 97, 131, 173, 211, 257, 307]
+split:
+  name: lane_K
+  first: {test_size: 0.2, random_state: case_seed}
+  second: {test_size: 0.5, random_state: 42}
+  validation_used_by_local_fusion: false
+datasets:
+  esol:
+    url: https://deepchemdata.s3-us-west-1.amazonaws.com/datasets/delaney-processed.csv
+    filename: delaney-processed.csv
+    sha256: 8c06a76f0c6487d29ab0f903e6a7a7139f189ab3c1178f159c8be8964602f189
+    rows: 1128
+    smiles_column: smiles
+    target_column: measured log solubility in mols per litre
+    units: log_mol_per_litre
+    max_atoms: 100
+    warmup_factor: 0.10
+  freesolv:
+    url: https://deepchemdata.s3-us-west-1.amazonaws.com/datasets/SAMPL.csv
+    filename: SAMPL.csv
+    sha256: ab5895d914ee87cb563bd7b9611e869527bba45bec6b014d34dc495a0f9dcb72
+    rows: 642
+    smiles_column: smiles
+    target_column: expt
+    units: kcal_per_mol
+    max_atoms: 100
+    warmup_factor: 0.15
+  lipophilicity:
+    url: https://deepchemdata.s3-us-west-1.amazonaws.com/datasets/Lipophilicity.csv
+    filename: Lipophilicity.csv
+    sha256: aed41590cb30609d51d8e08ad3ff06495a76e80e211358801f596b10da69bacd
+    rows: 4200
+    smiles_column: smiles
+    target_column: exp
+    units: logD_pH_7_4
+    max_atoms: 115
+    warmup_factor: 0.15
+features:
+  chemistry:
+    morgan_radius: 2
+    morgan_bits: 2048
+    include_chirality: false
+    rdkit_descriptors: 217
+  z3d:
+    values: 317
+    masks: 317
+    imputation: fit_only_median_zero_if_all_missing
+models:
+  xgboost:
+    common:
+      subsample: 0.8
+      colsample_bytree: 0.8
+      min_child_weight: 1.0
+      reg_alpha: 0.0
+      reg_lambda: 1.0
+      max_bin: 256
+    by_dataset:
+      esol: {max_depth: 4, learning_rate: 0.1, n_estimators: 300}
+      freesolv: {max_depth: 4, learning_rate: 0.03, n_estimators: 500}
+      lipophilicity: {max_depth: 6, learning_rate: 0.1, n_estimators: 300}
+  catboost:
+    {iterations: 300, depth: 7, learning_rate: 0.05, l2_leaf_reg: 3.0,
+     loss_function: RMSE, verbose: false}
+  lightgbm:
+    {n_estimators: 300, num_leaves: 31, max_depth: -1, learning_rate: 0.05,
+     subsample: 0.8, colsample_bytree: 0.8, reg_lambda: 1.0, verbosity: -1}
+  extratrees:
+    {n_estimators: 500, max_features: sqrt, min_samples_leaf: 1,
+     bootstrap: false}
+  graph:
+    {family: CoMPT, hidden_width: 256, layers: 3, attention_heads: 4,
+     dropout: 0.0}
+  fusion:
+    {model: StandardScaler_then_Ridge, alpha: 10.0, fit_intercept: true}
+graph_training:
+  warmup_epochs: 30
+  max_epochs: 150
+  patience: 20
+  batch_size: 32
+  weight_decay: 0.0
+chemprop:
+  version: 2.3.1
+  source_commit: 9a0b47ad19ebf440c1557787e666d442728adaad
+  epochs: 50
+  batch_size: 64
+outputs:
+  persist_row_targets: false
+  persist_row_predictions: false
+  persist_row_errors: false
+  persist_prediction_hashes: true

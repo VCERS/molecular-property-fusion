@@ -1,0 +1,75 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "molecular-property-fusion"
+version = "0.1.0"
+description = "Prediction-level fusion of classical molecular descriptors and a graph regressor"
+readme = "README.md"
+requires-python = ">=3.11,<3.12"
+license = "MIT"
+authors = [
+  {name = "Fei Yu"},
+  {name = "Jie Liu"},
+  {name = "GuanHua Chen"},
+  {name = "Ziyang Hu"},
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Programming Language :: Python :: 3.11",
+  "Topic :: Scientific/Engineering :: Chemistry",
+]
+dependencies = [
+  "numpy>=1.26,<2",
+  "PyYAML>=6,<7",
+  "scikit-learn==1.9.0",
+]
+
+[project.optional-dependencies]
+reproduce = [
+  "catboost==1.2.10",
+  "chemprop==2.3.1",
+  "lightgbm==4.7.0",
+  "rdkit==2026.3.4",
+  "torch==2.13.0",
+  "xgboost==3.2.0",
+]
+test = [
+  "build>=1.2,<2",
+  "pytest>=8,<9",
+  "ruff>=0.13,<1",
+]
+
+[project.scripts]
+molprop-fusion = "molprop_fusion.cli:main"
+
+[project.urls]
+Repository = "https://github.com/VCERS/molecular-property-fusion"
+Issues = "https://github.com/VCERS/molecular-property-fusion/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.data-files]
+"share/molecular-property-fusion" = [
+  "THIRD_PARTY_NOTICES.md",
+  "CITATION.cff",
+  "SOURCE_MANIFEST.json",
+]
+"share/molecular-property-fusion/configs" = ["configs/*.yaml"]
+"share/molecular-property-fusion/docs" = ["docs/*.md"]
+"share/molecular-property-fusion/licenses" = ["licenses/CoMPT-LICENSE"]
+"share/molecular-property-fusion/results" = ["results/*.json"]
+
+[tool.pytest.ini_options]
+addopts = "-ra"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+ignore = ["E501"]

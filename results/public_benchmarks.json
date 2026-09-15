@@ -1,0 +1,34 @@
+{
+  "aggregate_only": true,
+  "case_count": 30,
+  "datasets": {
+    "esol": {
+      "G": {"count": 10, "mean_rmse": 0.5780425148777455, "sample_sd_rmse": 0.08046828857168159},
+      "T": {"count": 10, "mean_rmse": 0.5829009064537882, "sample_sd_rmse": 0.07139745312423226},
+      "T_plus_G": {"count": 10, "mean_rmse": 0.5500314327669269, "sample_sd_rmse": 0.071332112445083},
+      "Chemprop": {"count": 10, "mean_rmse": 0.6665308635672968, "sample_sd_rmse": 0.1051590330000072},
+      "paired_T_plus_G_minus_T": {"improved_seed_count": 10, "mean_rmse_delta": -0.03286947368686136, "sample_sd_rmse_delta": 0.015483466261431341}
+    },
+    "freesolv": {
+      "G": {"count": 10, "mean_rmse": 1.002729698152721, "sample_sd_rmse": 0.34301994768766714},
+      "T": {"count": 10, "mean_rmse": 0.9772201781983321, "sample_sd_rmse": 0.6393314200376237},
+      "T_plus_G": {"count": 10, "mean_rmse": 0.9068076217936516, "sample_sd_rmse": 0.5828664054135944},
+      "Chemprop": {"count": 10, "mean_rmse": 1.4035825817984573, "sample_sd_rmse": 0.1727465501117526},
+      "paired_T_plus_G_minus_T": {"improved_seed_count": 9, "mean_rmse_delta": -0.0704125564046805, "sample_sd_rmse_delta": 0.07628814171358003}
+    },
+    "lipophilicity": {
+      "G": {"count": 10, "mean_rmse": 0.5898387650064326, "sample_sd_rmse": 0.026820148500299287},
+      "T": {"count": 10, "mean_rmse": 0.5720203277919857, "sample_sd_rmse": 0.022324496719091633},
+      "T_plus_G": {"count": 10, "mean_rmse": 0.5410181974423933, "sample_sd_rmse": 0.022011932186328974},
+      "Chemprop": {"count": 10, "mean_rmse": 0.5751969984229186, "sample_sd_rmse": 0.026096478885860325},
+      "paired_T_plus_G_minus_T": {"improved_seed_count": 10, "mean_rmse_delta": -0.031002130349592493, "sample_sd_rmse_delta": 0.008065355177422972}
+    }
+  },
+  "metric": "RMSE",
+  "row_level_values_included": false,
+  "schema_version": 1,
+  "seeds": [13, 29, 47, 71, 97, 131, 173, 211, 257, 307],
+  "source_result_commit": "fb2ec13c6d95b4062e7892f1716f747fd94e5c06",
+  "source_result_sha256": "59a81c1cfc965759284ab74836b7c7c1a954d5247f1d90d15f9d3b46efee4b90",
+  "split": "lane_K"
+}

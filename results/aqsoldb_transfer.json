@@ -1,0 +1,48 @@
+{
+  "aggregate_only": true,
+  "classification": "prospective_transfer_supported",
+  "complete_seed_count": 5,
+  "contrasts": {
+    "T_plus_G_minus_Chemprop": {
+      "mae": {"mean": -0.01997936932509925, "sample_sd": 0.01929743338809981},
+      "rmse": {"mean": -0.06405632097642022, "sample_sd": 0.022400921906460574}
+    },
+    "T_plus_G_minus_T": {
+      "mae": {"mean": -0.03967458414973122, "sample_sd": 0.015171447314677702},
+      "rmse": {"mean": -0.04197919920645998, "sample_sd": 0.01065306897294988}
+    }
+  },
+  "fit_counts": {"all_fits": 115, "chemprop": 5, "compt": 20, "meta": 10, "tabular_base": 80},
+  "methods": {
+    "Chemprop": {
+      "mae": {"mean": 0.7814174215529034, "sample_sd": 0.01094444344862573},
+      "rmse": {"mean": 1.1034330495013562, "sample_sd": 0.023151064624133917}
+    },
+    "G": {
+      "mae": {"mean": 0.8330177792389428, "sample_sd": 0.05302608041407694},
+      "rmse": {"mean": 1.1233355319953835, "sample_sd": 0.05163075316105966}
+    },
+    "T": {
+      "mae": {"mean": 0.8011126363775354, "sample_sd": 0.015142831479453627},
+      "rmse": {"mean": 1.081355927731396, "sample_sd": 0.016857765191385685}
+    },
+    "T_plus_G": {
+      "mae": {"mean": 0.7614380522278041, "sample_sd": 0.021976153195442542},
+      "rmse": {"mean": 1.039376728524936, "sample_sd": 0.018590430608592407}
+    }
+  },
+  "primary_mae_summary": {
+    "leave_most_favorable_seed_out_mean": -0.035494156368262086,
+    "mean": -0.03967458414973122,
+    "negative_seed_count": 5,
+    "sample_sd": 0.015171447314677702,
+    "student_t_95_interval": [-0.05851242408101173, -0.020836744218450706]
+  },
+  "public_aqsoldb_sota_comparison": "not_defined",
+  "row_level_values_included": false,
+  "schema_version": 1,
+  "seeds": [1, 2, 3, 4, 5],
+  "source_result_commit": "fb2ec13c6d95b4062e7892f1716f747fd94e5c06",
+  "source_result_sha256": "b028e0018891e41c59785bef0413f8ad1b16b7537462d5ef558dbf9903ec188f",
+  "units": "LogS"
+}
