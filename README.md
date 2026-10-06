@@ -7,12 +7,66 @@ regressor uses atom-bond graphs. Ridge regression is fitted to grouped
 out-of-fold predictions from the tree models alone (`T`) or from the tree and
 graph models together (`T_plus_G`).
 
-The public workflows cover ESOL, FreeSolv, Lipophilicity, and a user-supplied
-AqSolDB transfer evaluation. Datasets, row-level partitions, targets,
-predictions, residuals, checkpoints, and model artifacts are not distributed.
-Only compact aggregate results needed for verification are tracked.
+Train a reusable model on your own labeled SMILES, then predict new molecules
+from an unlabeled CSV. Models are fitted per continuous property. The complete
+method (`full`) combines four trees and CoMPT; explicit `tabular` mode uses the
+four trees for CPU work. Chemprop is optional and is not needed for either mode.
 
-## Install
+## Quick start
+
+Use Python 3.11. From this checkout, install one dependency group:
+
+```bash
+python -m pip install '.[tabular]'
+# Or the complete method:
+python -m pip install '.[full]'
+
+molprop-fusion train --data train.csv --smiles-column smiles --target-column logS \
+  --mode full --device cpu --output models/solubility
+molprop-fusion predict --model models/solubility --data candidates.csv \
+  --smiles-column smiles --output predictions.csv
+```
+
+Training needs a finite numeric target column. Prediction needs only SMILES and
+preserves input columns and row order, including duplicates. Add
+`--invalid-policy report` to keep invalid rows with blank predictions and an error.
+Full CPU training can be slow; use `--mode tabular` when CoMPT is not wanted.
+macOS tree libraries may require `brew install libomp`.
+
+```python
+from molprop_fusion import MolecularPropertyFusionRegressor, load_model
+
+model = MolecularPropertyFusionRegressor(mode="full", device="cpu", random_state=42)
+model.fit(train_smiles, train_targets)
+prediction = model.predict(["CCO", "c1ccccc1"])
+model.save("models/property")
+restored = load_model("models/property")  # CPU by default; trusted bundles only
+prediction = restored.predict(["CCO"])
+```
+
+Run the small synthetic tutorial:
+
+```bash
+python examples/tutorial.py --mode tabular --output outputs/tutorial-tabular
+python examples/tutorial.py --mode full --output outputs/tutorial-full
+```
+
+The tutorial uses reduced software-validation fits and invented labels; it does
+not demonstrate benchmark accuracy. See the [user guide](docs/user-guide.md) for
+CSV input, geometry statuses, fixed graph atom capacity, saving/loading,
+installation compatibility, defaults, and compute cost, and the
+[API reference](docs/api.md) for method arguments.
+
+## Paper reproduction
+
+The existing workflows cover ESOL, FreeSolv, Lipophilicity, and a user-supplied
+AqSolDB transfer evaluation. These workflows retain their historical feature seed
+policy and aggregate-only outputs. Datasets, historical partitions, targets,
+predictions, residuals, checkpoints, and models are not distributed; only compact
+aggregate results are tracked. The custom-user commands above write the user's
+own model and row predictions normally. See [reproducibility](docs/reproducibility.md).
+
+### Reproduction installation
 
 Python 3.11 is required. A lightweight installation supports configuration and
 aggregate verification:
@@ -28,7 +82,7 @@ The frozen scientific dependency set is available as an extra:
 python -m pip install -e ".[reproduce]"
 ```
 
-These exact versions match the validated H100 environment. GPU availability,
+These exact versions match the recorded scientific validation environment. GPU availability,
 CUDA wheels, and platform-specific packages may require selecting the
 appropriate package index for the host.
 
@@ -90,7 +144,8 @@ workflow, expected cost, and aggregate verification.
 
 [`SOURCE_MANIFEST.json`](SOURCE_MANIFEST.json) records the exact private
 source commits, original paths, source hashes, public destinations, and
-transformation notes. The new repository contains no private Git history.
+transformation notes. Toolkit v0 supplements this mapping while preserving the
+original source records. The export contains no private Git history.
 
 Original repository code is released under the MIT License. The graph
 implementation follows MIT-licensed CoMPT and retains its notice in

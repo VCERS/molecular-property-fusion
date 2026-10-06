@@ -293,7 +293,9 @@ def render_dossier(
     return "\n".join(lines)
 
 
-def generate_z3d(identity: LabelFreeIdentity, task: Mapping[str, str]) -> dict[str, Any]:
+def generate_z3d(
+    identity: LabelFreeIdentity, task: Mapping[str, str], *, seed: int | None = None
+) -> dict[str, Any]:
     rdkit = _rdkit()
     started_wall = time.perf_counter()
     started_cpu = time.process_time()
@@ -301,7 +303,7 @@ def generate_z3d(identity: LabelFreeIdentity, task: Mapping[str, str]) -> dict[s
     exception = None
     retry_used = False
     values = np.full(len(RAW_COLUMNS), np.nan, dtype=np.float64)
-    seed = source_seed(identity.dataset, identity.stable_group_id)
+    seed = source_seed(identity.dataset, identity.stable_group_id) if seed is None else seed
     conformer_count = 0
     try:
         mol = rdkit["Chem"].MolFromSmiles(identity.canonical_smiles, sanitize=True)

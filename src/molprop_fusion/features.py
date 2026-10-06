@@ -45,8 +45,10 @@ def impute_raw_z(
 def canonicalize_smiles(smiles: str) -> str:
     from rdkit import Chem
 
+    if not isinstance(smiles, str) or not smiles.strip():
+        raise ValueError(f"invalid SMILES: {smiles!r}; supply a nonempty string")
     molecule = Chem.MolFromSmiles(smiles)
-    if molecule is None:
+    if molecule is None or molecule.GetNumAtoms() == 0:
         raise ValueError(f"invalid SMILES: {smiles!r}")
     return str(Chem.MolToSmiles(molecule, canonical=True))
 

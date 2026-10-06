@@ -9,8 +9,31 @@ from pathlib import Path
 
 def _parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="molprop-fusion")
-    parser.add_argument("--version", action="version", version="%(prog)s 0.1.0")
+    parser.add_argument("--version", action="version", version="%(prog)s 0.2.0")
     subparsers = parser.add_subparsers(dest="command", required=True)
+
+    train = subparsers.add_parser("train", help="fit a reusable model from a labeled CSV")
+    train.add_argument("--data", type=Path, required=True)
+    train.add_argument("--smiles-column", default="smiles")
+    train.add_argument("--target-column", required=True)
+    train.add_argument("--output", type=Path, required=True)
+    train.add_argument("--mode", choices=["full", "tabular"], default="full")
+    train.add_argument("--device", default="auto")
+    train.add_argument("--random-state", type=int, default=42)
+    train.add_argument("--feature-seed", type=int, default=42)
+    train.add_argument("--n-jobs", type=int, default=1)
+    train.add_argument("--max-atoms", type=int, default=100)
+    train.add_argument(
+        "--validation-only", action="store_true", help="tiny software check; not an accuracy preset"
+    )
+
+    predict = subparsers.add_parser("predict", help="predict an unlabeled CSV in row order")
+    predict.add_argument("--model", type=Path, required=True)
+    predict.add_argument("--data", type=Path, required=True)
+    predict.add_argument("--smiles-column", default="smiles")
+    predict.add_argument("--output", type=Path, required=True)
+    predict.add_argument("--device", default="cpu")
+    predict.add_argument("--invalid-policy", choices=["raise", "report"], default="raise")
 
     prepare = subparsers.add_parser("prepare", help="build public molecular features")
     prepare.add_argument("--config", type=Path, default=Path("configs/public_benchmarks.yaml"))
@@ -66,7 +89,14 @@ def _parser() -> argparse.ArgumentParser:
 
 def main(argv: list[str] | None = None) -> None:
     args = _parser().parse_args(argv)
-    if args.command == "prepare":
+    if args.command in ("train", "predict"):
+        from molprop_fusion.user_csv import run_predict, run_train
+
+        try:
+            result = run_train(args) if args.command == "train" else run_predict(args)
+        except (ValueError, RuntimeError, OSError, KeyError) as error:
+            _parser().error(str(error))
+    elif args.command == "prepare":
         from molprop_fusion.benchmark import load_dataset, prepare_features, write_feature_cache
         from molprop_fusion.config import load_config
 

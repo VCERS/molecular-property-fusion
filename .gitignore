@@ -17,3 +17,5 @@ data/
 dist/
 outputs/
 wandb/
+
+models/

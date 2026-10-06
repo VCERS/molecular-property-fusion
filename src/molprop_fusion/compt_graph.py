@@ -297,11 +297,48 @@ def _device(name: str) -> torch.device:
 
 
 @dataclass
+class GraphPredictor:
+    """Selected CoMPT weights, normalization, and immutable native capacity."""
+
+    model: CoMPTRegressor
+    model_options: dict[str, Any]
+    target_mean: float
+    target_scale: float
+    batch_size: int
+
+    def predict(self, smiles: Sequence[str], *, device: str = "cpu") -> np.ndarray:
+        if not len(smiles):
+            return np.empty(0, dtype=np.float64)
+        destination = _device(device)
+        self.model.to(destination).eval()
+        predictions = []
+        with torch.no_grad():
+            for begin in range(0, len(smiles), self.batch_size):
+                rows = [
+                    featurize_smiles(s, self.model_options["max_atoms"])
+                    for s in smiles[begin : begin + self.batch_size]
+                ]
+                node, edge, distance = (
+                    torch.from_numpy(np.stack([row[i] for row in rows])).to(destination)
+                    for i in range(3)
+                )
+                mask = node.abs().sum(dim=-1) != 0
+                predictions.append(self.model(node, mask, distance, edge).cpu().numpy())
+        result = (
+            np.concatenate(predictions).astype(np.float64) * self.target_scale + self.target_mean
+        )
+        if not np.isfinite(result).all():
+            raise ValueError("non-finite graph prediction")
+        return result
+
+
+@dataclass
 class GraphFitResult:
     predictions: np.ndarray
     best_epoch: int
     wall_seconds: float
     peak_accelerator_bytes: int | None
+    predictor: GraphPredictor
 
 
 def fit_graph_regressor(
@@ -410,7 +447,12 @@ def fit_graph_regressor(
             mask = node.abs().sum(dim=-1) != 0
             predictions.append(model(node, mask, distance, edge).cpu().numpy())
     peak = torch.cuda.max_memory_allocated(device) if device.type == "cuda" else None
-    output = np.concatenate(predictions).astype(np.float64) * scale + mean
+    output = (
+        np.concatenate(predictions).astype(np.float64) * scale + mean
+        if predictions
+        else np.empty(0, dtype=np.float64)
+    )
     if not np.isfinite(output).all():
         raise ValueError("non-finite graph prediction")
-    return GraphFitResult(output, best_epoch, time.perf_counter() - start, peak)
+    predictor = GraphPredictor(model, dict(model_options), mean, scale, batch_size)
+    return GraphFitResult(output, best_epoch, time.perf_counter() - start, peak, predictor)

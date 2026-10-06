@@ -6,11 +6,12 @@
   "files": [
     {
       "destination_path": "src/molprop_fusion/__init__.py",
-      "destination_sha256": "2bc42a431d5f327b9a6c29926d18ef55f3c66351bfc69a6f4dee0b67a25274ce",
+      "destination_sha256": "e4b1de57806f9bfede0b6dd01c9ed3a041d18f37d29de65e07cbc701bf0f6e6f",
+      "public_baseline_destination_sha256": "2bc42a431d5f327b9a6c29926d18ef55f3c66351bfc69a6f4dee0b67a25274ce",
       "source_commit": "4a845d2ac20fd37c6efaa000c1035a4e185abf91",
       "source_path": "src/frozen_llm/__init__.py",
       "source_sha256": "f8059530a44f65b56ee75d354ee5b77c029234bd55afdd855a6cdeae5043a608",
-      "transformation": "namespace and project description"
+      "transformation": "namespace and project description; toolkit v0 reusable inference changes from public baseline 4a2d86e8978f202187d7e6b4438c6aa2b999779f"
     },
     {
       "destination_path": "src/molprop_fusion/accuracy_benchmark.py",
@@ -22,19 +23,21 @@
     },
     {
       "destination_path": "src/molprop_fusion/compt_graph.py",
-      "destination_sha256": "64ba71c607732b36d797977a48335da3852b0a9b8896f0ab14d4024c5eed24f2",
+      "destination_sha256": "2de318391e32858ba60345e495ab2fadfd00aefb6254ce67182457965191e35d",
+      "public_baseline_destination_sha256": "64ba71c607732b36d797977a48335da3852b0a9b8896f0ab14d4024c5eed24f2",
       "source_commit": "4a845d2ac20fd37c6efaa000c1035a4e185abf91",
       "source_path": "src/frozen_llm/compt_graph.py",
       "source_sha256": "92742f9ce9a95c4e11912addcdaaa5bf05d112720e65e5f949a6c710c6d3b7bc",
-      "transformation": "Ruff formatting and removal of unrelated checkpoint comparator loading"
+      "transformation": "Ruff formatting and removal of unrelated checkpoint comparator loading; toolkit v0 reusable inference changes from public baseline 4a2d86e8978f202187d7e6b4438c6aa2b999779f"
     },
     {
       "destination_path": "src/molprop_fusion/fusion.py",
-      "destination_sha256": "75e16e9f2c85c35bacf4bdc1ea7591f8799e72bb7add8c9b1bec100de248ba3e",
+      "destination_sha256": "1299399775e3f430a1c26f3fed00879a3995232c3ab428384f39dcf2877242a7",
+      "public_baseline_destination_sha256": "75e16e9f2c85c35bacf4bdc1ea7591f8799e72bb7add8c9b1bec100de248ba3e",
       "source_commit": "4a845d2ac20fd37c6efaa000c1035a4e185abf91",
       "source_path": "src/frozen_llm/graph_expert_pilot.py",
       "source_sha256": "c80349af0b76907c1dbb10ca64f8d8ac4bf19ee7c5d97387fd3f5a157694cb16",
-      "transformation": "retained grouped OOF, hashes, and Ridge fusion; removed unrelated study gates"
+      "transformation": "retained grouped OOF, hashes, and Ridge fusion; removed unrelated study gates; toolkit v0 reusable inference changes from public baseline 4a2d86e8978f202187d7e6b4438c6aa2b999779f"
     },
     {
       "destination_path": "src/molprop_fusion/io.py",
@@ -46,27 +49,30 @@
     },
     {
       "destination_path": "src/molprop_fusion/features.py",
-      "destination_sha256": "15e06264b7e712a22917055ca689a6c3fe6ba684cc5a8150298c3427b49028be",
+      "destination_sha256": "83b0a86e2aa4150e7e6634cde74e1c8a2eedaf8199340f28b26fdefbc0f63886",
+      "public_baseline_destination_sha256": "15e06264b7e712a22917055ca689a6c3fe6ba684cc5a8150298c3427b49028be",
       "source_commit": "4a845d2ac20fd37c6efaa000c1035a4e185abf91",
       "source_path": "src/frozen_llm/stage_c1.py",
       "source_sha256": "8c8811d7881d473a747f658a898608e2828fa5e823f50b35f9b510acf96e1991",
-      "transformation": "retained fit-only Z3D imputation and added public feature orchestration"
+      "transformation": "retained fit-only Z3D imputation and added public feature orchestration; toolkit v0 reusable inference changes from public baseline 4a2d86e8978f202187d7e6b4438c6aa2b999779f"
     },
     {
       "destination_path": "src/molprop_fusion/features.py",
-      "destination_sha256": "15e06264b7e712a22917055ca689a6c3fe6ba684cc5a8150298c3427b49028be",
+      "destination_sha256": "83b0a86e2aa4150e7e6634cde74e1c8a2eedaf8199340f28b26fdefbc0f63886",
+      "public_baseline_destination_sha256": "15e06264b7e712a22917055ca689a6c3fe6ba684cc5a8150298c3427b49028be",
       "source_commit": "4a845d2ac20fd37c6efaa000c1035a4e185abf91",
       "source_path": "scripts/run_new_chemistry_information_stage_c1.py",
       "source_sha256": "9659fd4d5fa048f47865d362f003c17d81de00a0d60f4bdd24fd244544c27a74",
-      "transformation": "retained Morgan and RDKit descriptor construction"
+      "transformation": "retained Morgan and RDKit descriptor construction; toolkit v0 reusable inference changes from public baseline 4a2d86e8978f202187d7e6b4438c6aa2b999779f"
     },
     {
       "destination_path": "src/molprop_fusion/z3d.py",
-      "destination_sha256": "fd91f95753be3340c41e0685060fdba9701f3a5b613f75771a4ec19afd878dbc",
+      "destination_sha256": "3e6ab5447ef2a8dbf9f37c009ac2e660711c3a40698c73162bce2121c26a777b",
+      "public_baseline_destination_sha256": "fd91f95753be3340c41e0685060fdba9701f3a5b613f75771a4ec19afd878dbc",
       "source_commit": "4a845d2ac20fd37c6efaa000c1035a4e185abf91",
       "source_path": "src/frozen_llm/z3d.py",
       "source_sha256": "fd91f95753be3340c41e0685060fdba9701f3a5b613f75771a4ec19afd878dbc",
-      "transformation": "byte-identical"
+      "transformation": "byte-identical; toolkit v0 reusable inference changes from public baseline 4a2d86e8978f202187d7e6b4438c6aa2b999779f"
     },
     {
       "destination_path": "src/molprop_fusion/benchmark.py",
@@ -166,5 +172,9 @@
       "spdx_license": "MIT",
       "vendored": false
     }
-  ]
+  ],
+  "toolkit_v0": {
+    "note": "New user API, CLI, documentation and tests developed from this public baseline; exported at file level without private Git history.",
+    "public_baseline": "4a2d86e8978f202187d7e6b4438c6aa2b999779f"
+  }
 }

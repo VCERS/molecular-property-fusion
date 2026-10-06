@@ -67,23 +67,33 @@ def validate_grouped_folds(
         raise ValueError("held folds are not a complete disjoint partition")
 
 
-def fit_meta(
-    oof: np.ndarray, train_target: np.ndarray, evaluation_columns: np.ndarray
-) -> tuple[np.ndarray, dict[str, Any]]:
+def fit_meta_model(oof: np.ndarray, train_target: np.ndarray) -> Any:
+    """Fit the reusable StandardScaler/Ridge combiner."""
     from sklearn.linear_model import Ridge
     from sklearn.pipeline import make_pipeline
     from sklearn.preprocessing import StandardScaler
 
-    if oof.ndim != 2 or evaluation_columns.ndim != 2:
-        raise ValueError("meta inputs must be matrices")
-    if oof.shape[1] != evaluation_columns.shape[1] or oof.shape[1] not in (4, 5):
+    if oof.ndim != 2 or oof.shape[1] not in (4, 5):
         raise ValueError("meta learner accepts four tree columns and optional graph prediction")
     if len(train_target) != len(oof):
         raise ValueError("meta train length mismatch")
-    if not np.isfinite(oof).all() or not np.isfinite(evaluation_columns).all():
+    if not np.isfinite(oof).all() or not np.isfinite(train_target).all():
         raise ValueError("non-finite meta input")
     model = make_pipeline(StandardScaler(), Ridge(alpha=META_ALPHA, fit_intercept=True))
     model.fit(oof, train_target)
+    return model
+
+
+def fit_meta(
+    oof: np.ndarray, train_target: np.ndarray, evaluation_columns: np.ndarray
+) -> tuple[np.ndarray, dict[str, Any]]:
+    if oof.ndim != 2 or evaluation_columns.ndim != 2:
+        raise ValueError("meta inputs must be matrices")
+    if oof.shape[1] != evaluation_columns.shape[1]:
+        raise ValueError("meta evaluation column mismatch")
+    if not np.isfinite(evaluation_columns).all():
+        raise ValueError("non-finite meta input")
+    model = fit_meta_model(oof, train_target)
     prediction = np.asarray(model.predict(evaluation_columns), dtype=np.float64)
     scaler, ridge = model.steps[0][1], model.steps[1][1]
     return prediction, {
