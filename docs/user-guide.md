@@ -60,8 +60,8 @@ Training prints feature/fitting progress; `--n-jobs` controls tree parallelism.
 
 The default invalid policy is strict: an invalid molecule stops the command before
 writing output. `--invalid-policy report` instead writes blank predictions and
-an actionable error for invalid SMILES or oversized graphs, while retaining
-successful rows in their original positions. Model/dependency failures still stop
+an actionable error for invalid SMILES, unsupported no-heavy-atom inputs, or
+oversized graphs, while retaining successful rows in their original positions. Model/dependency failures still stop
 execution; this policy does not hide a broken installation.
 
 ## Geometry and molecules
@@ -74,9 +74,16 @@ weighting. The new API hashes canonical molecular identity, `feature_seed`, and
 row number and prediction batch. Equivalent canonical structures share features.
 The paper commands continue to use their historical dataset/source-row seed.
 
+User training and prediction require at least one real non-hydrogen atom
+(atomic number greater than 1). Hydrogen-only structures such as `[H][H]` and
+dummy-only structures such as `*` are unsupported and rejected with a row-specific
+error before descriptor evaluation. Ordinary one-heavy-atom molecules and
+multi-fragment structures are accepted. Reporting CSV prediction retains
+unsupported rows with blank predictions and an error.
+
 `geometry_status=ok` can still have missing pharmacophore distances. Absent
 pharmacophores are normal missingness, not invalid SMILES. `multiple_fragments`,
-`radical_unsupported`, `no_heavy_atom`, `embed_failed`,
+`radical_unsupported`, `embed_failed`,
 `nonfinite_required_descriptor`, and `exception` indicate missing geometry;
 training medians and missingness indicators let valid molecules remain usable.
 The API can return diagnostics with `predict(smiles, return_status=True)`.

@@ -17,9 +17,8 @@ four trees for CPU work. Chemprop is optional and is not needed for either mode.
 Use Python 3.11. From this checkout, install one dependency group:
 
 ```bash
-python -m pip install '.[tabular]'
-# Or the complete method:
 python -m pip install '.[full]'
+# For four-tree CPU fitting instead, install '.[tabular]' and train with --mode tabular.
 
 molprop-fusion train --data train.csv --smiles-column smiles --target-column logS \
   --mode full --device cpu --output models/solubility
@@ -32,6 +31,8 @@ preserves input columns and row order, including duplicates. Add
 `--invalid-policy report` to keep invalid rows with blank predictions and an error.
 Full CPU training can be slow; use `--mode tabular` when CoMPT is not wanted.
 macOS tree libraries may require `brew install libomp`.
+
+The Python example also requires the `[full]` installation:
 
 ```python
 from molprop_fusion import MolecularPropertyFusionRegressor, load_model

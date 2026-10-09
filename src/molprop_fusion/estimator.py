@@ -49,11 +49,25 @@ def _smiles_list(smiles: Sequence[str]) -> list[str]:
         raise ValueError("supply a sequence of SMILES") from error
 
 
+def canonicalize_user_smiles(smiles: str) -> str:
+    """Validate custom inputs without changing historical paper canonicalization."""
+    from rdkit import Chem
+
+    canonical = canonicalize_smiles(smiles)
+    if not any(atom.GetAtomicNum() > 1 for atom in Chem.MolFromSmiles(canonical).GetAtoms()):
+        raise ValueError(
+            f"unsupported molecule {smiles!r}: no usable heavy atom; "
+            "supply a structure containing at least one real non-hydrogen atom "
+            "(atomic number greater than 1)"
+        )
+    return canonical
+
+
 def _canonical(smiles: Sequence[str]) -> list[str]:
     result = []
     for index, value in enumerate(smiles):
         try:
-            result.append(canonicalize_smiles(value))
+            result.append(canonicalize_user_smiles(value))
         except ValueError as error:
             raise ValueError(f"row {index + 1}: {error}") from error
     return result
@@ -463,6 +477,15 @@ class _LightGBMPredictor:
         return self.booster.predict(matrix, num_threads=self.n_jobs)
 
 
+def _require_bundle_files(directory: Path, names: Sequence[str]) -> None:
+    missing = [name for name in names if not (directory / name).is_file()]
+    if missing:
+        raise FileNotFoundError(
+            f"incomplete model bundle: missing {', '.join(missing)}; "
+            "restore or copy the complete bundle directory"
+        )
+
+
 def load_model(path: str | Path, *, device: str = "cpu") -> MolecularPropertyFusionRegressor:
     """Load a trusted bundle. ExtraTrees uses joblib (can execute arbitrary code)."""
     import joblib
@@ -470,6 +493,7 @@ def load_model(path: str | Path, *, device: str = "cpu") -> MolecularPropertyFus
     from molprop_fusion import __version__
 
     directory = Path(path)
+    _require_bundle_files(directory, ["model.json"])
     metadata = json.loads((directory / "model.json").read_text())
     if metadata["schema_version"] != BUNDLE_SCHEMA or metadata["package_version"] != __version__:
         raise ValueError("unsupported bundle/package version; use the training package version")
@@ -504,6 +528,16 @@ def load_model(path: str | Path, *, device: str = "cpu") -> MolecularPropertyFus
     }
     if any(schema.get(k) != v for k, v in expected.items()):
         raise ValueError("bundle feature configuration differs from this installation")
+    required = [
+        "xgboost.json",
+        "catboost.cbm",
+        "lightgbm.txt",
+        "extratrees.joblib",
+        "imputation.npy",
+    ]
+    if model.mode == "full":
+        required.append("compt.pt")
+    _require_bundle_files(directory, required)
     model.descriptor_names_ = schema["rdkit_descriptors"]
     model.imputer_ = MedianImputer()
     model.imputer_.medians = np.load(directory / "imputation.npy", allow_pickle=False)

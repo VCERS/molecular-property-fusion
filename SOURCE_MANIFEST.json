@@ -174,7 +174,7 @@
     }
   ],
   "toolkit_v0": {
-    "note": "New user API, CLI, documentation and tests developed from this public baseline; exported at file level without private Git history.",
+    "note": "New user API, CLI, documentation and tests developed from this public baseline; exported at file level without private Git history. Review fixes add user-only heavy-atom validation, mode-specific bundle-file checks, and matching quick-start installation guidance; historical source mappings are unchanged.",
     "public_baseline": "4a2d86e8978f202187d7e6b4438c6aa2b999779f"
   }
 }

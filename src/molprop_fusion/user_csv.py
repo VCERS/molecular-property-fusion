@@ -8,8 +8,11 @@ import tempfile
 from pathlib import Path
 from typing import Any
 
-from molprop_fusion.estimator import MolecularPropertyFusionRegressor, load_model
-from molprop_fusion.features import canonicalize_smiles
+from molprop_fusion.estimator import (
+    MolecularPropertyFusionRegressor,
+    canonicalize_user_smiles,
+    load_model,
+)
 
 
 def _read(path: Path, required: set[str]) -> tuple[list[str], list[dict[str, str]]]:
@@ -66,13 +69,13 @@ def run_predict(args: Any) -> dict[str, Any]:
     for index, row in enumerate(rows):
         row.update(dict.fromkeys(added, ""))
         try:
-            smiles = canonicalize_smiles(row[args.smiles_column])
+            smiles = canonicalize_user_smiles(row[args.smiles_column])
             model._capacity([smiles])
         except ValueError as error:
             if args.invalid_policy == "raise":
                 raise ValueError(f"CSV data row {index + 1}: {error}") from error
             row["prediction_status"] = "error"
-            row["prediction_error"] = str(error)
+            row["prediction_error"] = f"CSV data row {index + 1}: {error}"
             continue
         indices.append(index)
         canonical.append(smiles)

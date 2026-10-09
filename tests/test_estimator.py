@@ -288,3 +288,160 @@ def test_torch_hardware_wheel_suffix_does_not_prevent_cpu_loading(fitted, tmp_pa
     np.testing.assert_allclose(
         load_model(tmp_path / "model", device="cpu").predict(QUERY), model.predict(QUERY), atol=1e-6
     )
+
+
+@pytest.mark.parametrize("unsupported", ["[H][H]", "*"])
+def test_no_usable_heavy_atom_rejected_before_descriptors(fitted, monkeypatch, unsupported):
+    from molprop_fusion import estimator
+
+    model, _ = fitted
+
+    def descriptors_must_not_run(*args):
+        pytest.fail("unsupported inputs must be rejected before descriptor evaluation")
+
+    monkeypatch.setattr(estimator, "chemistry_matrix", descriptors_must_not_run)
+    with pytest.raises(ValueError, match="row 2: unsupported molecule.*no usable heavy atom"):
+        model.predict(["CCO", unsupported])
+    with pytest.raises(ValueError, match="row 2: unsupported molecule.*no usable heavy atom"):
+        MolecularPropertyFusionRegressor(mode=model.mode, device="cpu").fit(
+            ["CCO", unsupported, "CC", "CCC"], [1, 2, 3, 4]
+        )
+    # Historical canonicalization continues to accept these syntactically valid structures.
+    assert canonicalize_smiles(unsupported) == unsupported
+
+
+def test_supported_single_heavy_atom_and_missing_geometry(fitted):
+    model, _ = fitted
+    predictions, statuses = model.predict(["C", "[Na+]", "CC.[Na+]"], return_status=True)
+    assert np.isfinite(predictions).all()
+    assert statuses[2]["geometry_status"] == "multiple_fragments"
+    assert statuses[2]["geometry_missing_count"] == 317
+
+
+def test_csv_unsupported_rows_reporting_and_strict(fitted, tmp_path):
+    model, path = fitted
+    source = tmp_path / "query.csv"
+    source.write_text("id,smiles\ngood,CCO\nhydrogen,[H][H]\ndummy,*\nduplicate,OCC\n")
+    output = tmp_path / "prediction.csv"
+    command = [
+        sys.executable,
+        "-I",
+        "-m",
+        "molprop_fusion.cli",
+        "predict",
+        "--model",
+        str(path),
+        "--data",
+        str(source),
+        "--output",
+        str(output),
+    ]
+    strict = subprocess.run(command, capture_output=True, text=True)
+    assert strict.returncode == 2
+    assert "CSV data row 2: unsupported molecule" in strict.stderr
+    assert "no usable heavy atom" in strict.stderr and "Traceback" not in strict.stderr
+    assert not output.exists()
+    reported = subprocess.run(
+        [*command, "--invalid-policy", "report"], capture_output=True, text=True
+    )
+    assert reported.returncode == 0, reported.stderr
+    with output.open() as handle:
+        rows = list(csv.DictReader(handle))
+    assert [row["id"] for row in rows] == ["good", "hydrogen", "dummy", "duplicate"]
+    for index in (1, 2):
+        assert rows[index]["prediction"] == ""
+        assert rows[index]["prediction_status"] == "error"
+        assert f"CSV data row {index + 1}: unsupported molecule" in rows[index]["prediction_error"]
+        assert "no usable heavy atom" in rows[index]["prediction_error"]
+    assert rows[0]["prediction"] == rows[3]["prediction"]
+    np.testing.assert_allclose(float(rows[0]["prediction"]), model.predict(["CCO"])[0], atol=1e-6)
+    # Training CLI follows the same validation path.
+    source.write_text("smiles,target\nCCO,1\n*,2\nCC,3\nCCC,4\n")
+    trained = subprocess.run(
+        [
+            sys.executable,
+            "-I",
+            "-m",
+            "molprop_fusion.cli",
+            "train",
+            "--mode",
+            model.mode,
+            "--data",
+            str(source),
+            "--target-column",
+            "target",
+            "--output",
+            str(tmp_path / "train"),
+        ],
+        capture_output=True,
+        text=True,
+    )
+    assert trained.returncode == 2
+    assert "row 2: unsupported molecule" in trained.stderr and "Traceback" not in trained.stderr
+    assert not (tmp_path / "train").exists()
+
+
+@pytest.mark.parametrize(
+    "artifact",
+    [
+        "model.json",
+        "imputation.npy",
+        "xgboost.json",
+        "catboost.cbm",
+        "lightgbm.txt",
+        "extratrees.joblib",
+        "compt.pt",
+    ],
+)
+def test_missing_bundle_artifacts_are_actionable(fitted, tmp_path, artifact):
+    import shutil
+
+    model, path = fitted
+    if artifact == "compt.pt" and model.mode == "tabular":
+        assert not (path / artifact).exists()
+        assert not hasattr(load_model(path), "graph_")
+        return
+    broken = tmp_path / "broken"
+    shutil.copytree(path, broken)
+    (broken / artifact).unlink()
+    with pytest.raises(FileNotFoundError, match=f"{artifact}.*complete bundle"):
+        load_model(broken)
+    if artifact in ("model.json", "lightgbm.txt", "compt.pt"):
+        source = tmp_path / "query.csv"
+        source.write_text("smiles\nCCO\n")
+        output = tmp_path / "output.csv"
+        result = subprocess.run(
+            [
+                sys.executable,
+                "-I",
+                "-m",
+                "molprop_fusion.cli",
+                "predict",
+                "--model",
+                str(broken),
+                "--data",
+                str(source),
+                "--output",
+                str(output),
+            ],
+            capture_output=True,
+            text=True,
+        )
+        assert result.returncode == 2
+        assert artifact in result.stderr and "complete bundle" in result.stderr
+        assert "Traceback" not in result.stderr
+        assert not output.exists()
+
+
+def test_descriptor_errors_are_not_swallowed(fitted, monkeypatch):
+    from molprop_fusion import estimator
+
+    model, _ = fitted
+    model._feature_cache.clear()
+
+    def broken_descriptor(*args):
+        raise ZeroDivisionError("unexpected descriptor error")
+
+    monkeypatch.setattr(estimator, "chemistry_matrix", broken_descriptor)
+    with pytest.raises(ZeroDivisionError, match="unexpected descriptor error"):
+        model.predict(["CCO"])
