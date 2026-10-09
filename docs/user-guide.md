@@ -26,8 +26,15 @@ scikit-learn 1.9.1, RDKit 2026.3.6 (217 descriptors), XGBoost 3.2.0, CatBoost 1.
 LightGBM 4.7.0, joblib 1.6.0, and PyTorch 2.14.1. These software-validation versions
 are separate from the frozen scientific `[reproduce]` environment. New RDKit
 registries must still contain exactly 217 ordered descriptors; use the tested
-RDKit version if a future registry changes. Other operating
-systems and CUDA/MPS inference have not been validated for the new API.
+RDKit version if a future registry changes.
+
+Linux x86_64 CPU and CUDA use were also validated on NVIDIA H100 with Python
+3.11.15, scikit-learn 1.9.0, RDKit 2026.3.4, PyTorch 2.13.0, and joblib 1.5.3
+(the tree-library and NumPy versions listed above). This used an isolated wheel
+installation, real small full-method fits, and fresh-process CPU loading of a
+GPU-trained bundle with CUDA devices hidden. The same real H100-trained bundle
+also loaded and predicted on a CPU-only macOS ARM64 host with matching dependency
+release versions. MPS and Windows remain unvalidated.
 
 ## Your CSV
 
@@ -112,7 +119,9 @@ For v0, loading requires the exact package and recorded dependency release versi
 (PyTorch CPU/CUDA wheel suffixes may differ),
 and matching ordered RDKit/Z3D schema. Read `model.json` to recreate the training
 environment. Cross-version migration is not supported. CPU loading avoids a
-hardware requirement; GPU-trained-to-CPU bundles remain untested in this release.
+GPU hardware requirement and was tested with a real H100-trained bundle. The
+CUDA/CPU numerical checks use `rtol=1e-5, atol=1e-5`; exact equality across device
+backends is not expected. Duplicate query rows still receive identical outputs.
 
 ## Method and cost
 
@@ -142,8 +151,16 @@ width 16, one layer, one epoch. They are software checks, not scientific presets
 ```bash
 python examples/tutorial.py --mode tabular --output outputs/tutorial-tabular
 python examples/tutorial.py --mode full --output outputs/tutorial-full
+# On a CUDA host: training on GPU, loading/prediction on CPU
+python examples/tutorial.py --mode full --device cuda --output outputs/tutorial-cuda
 ```
 
 Both commands generate distributable synthetic CSVs, train with reduced settings,
 save, load in a new process, predict unlabeled molecules, and check row outputs.
 Choose a new output directory for each run. No benchmark accuracy is claimed.
+
+Run the optional hardware checks with `pytest tests/test_cuda.py`. They skip
+without CUDA. These checks include reduced full-method fits, a one-epoch native
+CoMPT architecture diagnostic (width 256, three layers, capacity 100), GPU/CPU
+prediction parity, batch/order/capacity checks, and loading in a new process with
+no visible GPU. They are software validation rather than accuracy studies.

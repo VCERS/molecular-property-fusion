@@ -46,6 +46,7 @@ def main() -> None:
         "--output", type=Path, required=True, help="new directory for tutorial artifacts"
     )
     parser.add_argument("--mode", choices=["tabular", "full"], default="tabular")
+    parser.add_argument("--device", choices=["cpu", "cuda", "auto"], default="cpu")
     args = parser.parse_args()
     args.output.mkdir(parents=True, exist_ok=False)
     # Distributable, synthetic labels: no real property or accuracy claim.
@@ -73,7 +74,7 @@ def main() -> None:
             "--mode",
             args.mode,
             "--device",
-            "cpu",
+            args.device,
             "--max-atoms",
             "16",
             "--validation-only",
