@@ -10,7 +10,6 @@ import numpy as np
 import pytest
 import yaml
 
-from molprop_fusion.expanded_data import assign_groups, replay, source_rows
 from molprop_fusion.expanded_runtime import Timer, attribute_cost
 from molprop_fusion.expanded_summary import summarize
 from molprop_fusion.expanded_verification import verify_expanded
@@ -18,6 +17,21 @@ from molprop_fusion.io import sha256_file
 
 ROOT = Path(__file__).resolve().parents[1]
 SMILES = ["C" * i for i in range(1, 21)] + ["CCO", "OCC", "CCN", "CCCl", "CCBr"]
+
+
+@pytest.fixture
+def expanded_data():
+    pytest.importorskip("rdkit")
+    from molprop_fusion import expanded_data
+
+    return expanded_data
+
+
+@pytest.fixture
+def torch():
+    torch = pytest.importorskip("torch")
+    torch.set_num_threads(1)
+    return torch
 
 
 @pytest.fixture
@@ -54,9 +68,9 @@ def fixture(tmp_path):
     return tmp_path, spec, partitions
 
 
-def test_partition_replay_preserves_order_exclusions_duplicates_and_seeds(fixture):
+def test_partition_replay_preserves_order_exclusions_duplicates_and_seeds(fixture, expanded_data):
     source, spec, partitions = fixture
-    prepared = replay(source, "bace", spec, partitions)
+    prepared = expanded_data.replay(source, "bace", spec, partitions)
     assert [r["source_index"] for r in prepared["rows"]] == list(range(1, 25))
     assert (
         prepared["rows"][19]["geometry_source_index"]
@@ -67,10 +81,10 @@ def test_partition_replay_preserves_order_exclusions_duplicates_and_seeds(fixtur
     assert prepared["memberships"]["1"]["bace:20"] == prepared["memberships"]["1"]["bace:21"]
     partitions.write_text(partitions.read_text() + "\n")
     with pytest.raises(ValueError, match="hash"):
-        replay(source, "bace", spec, partitions)
+        expanded_data.replay(source, "bace", spec, partitions)
 
 
-def test_species_adapter_does_not_renumber_source_rows(tmp_path):
+def test_species_adapter_does_not_renumber_source_rows(tmp_path, expanded_data):
     p = tmp_path / "species.tab"
     p.write_text("Drug\tY\tSpecies\nCC\t1\tMus musculus\nCCC\t2\tHomo sapiens\n")
     spec = {
@@ -81,13 +95,13 @@ def test_species_adapter_does_not_renumber_source_rows(tmp_path):
         "species": "Homo sapiens",
         "endpoints": {"Y": {}},
     }
-    assert list(source_rows(tmp_path, spec))[0][:3] == (1, "CCC", {"Y": 2.0})
+    assert list(expanded_data.source_rows(tmp_path, spec))[0][:3] == (1, "CCC", {"Y": 2.0})
     p.write_text(p.read_text() + "\n")
     with pytest.raises(RuntimeError, match="source hash"):
-        list(source_rows(tmp_path, spec))
+        list(expanded_data.source_rows(tmp_path, spec))
 
 
-def test_replay_rejects_nonfixed_test_and_parent_overlap(fixture):
+def test_replay_rejects_nonfixed_test_and_parent_overlap(fixture, expanded_data):
     source, spec, partitions = fixture
     text = partitions.read_text()
     partitions.write_text(
@@ -95,29 +109,34 @@ def test_replay_rejects_nonfixed_test_and_parent_overlap(fixture):
     )
     spec["partition_file_sha256"] = sha256_file(partitions)
     with pytest.raises(ValueError, match="fixed"):
-        replay(source, "bace", spec, partitions)
+        expanded_data.replay(source, "bace", spec, partitions)
     partitions.write_text(
         text.replace("21,20,train,train,train,train,train", "21,20,test,test,test,test,test")
     )
     spec["partition_file_sha256"] = sha256_file(partitions)
     with pytest.raises(ValueError, match="parent overlap"):
-        replay(source, "bace", spec, partitions)
+        expanded_data.replay(source, "bace", spec, partitions)
 
 
-def test_whole_group_assignment_preserves_empty_scaffold():
+def test_whole_group_assignment_preserves_empty_scaffold(expanded_data):
     groups = [""] * 4 + ["a"] * 2 + ["b"] * 3 + ["c"] * 2
-    selected = assign_groups(groups, 0.2, 20261009)
-    assert selected == assign_groups(groups, 0.2, 20261009)
+    selected = expanded_data.assign_groups(groups, 0.2, 20261009)
+    assert selected == expanded_data.assign_groups(groups, 0.2, 20261009)
     assert 0 < sum(g in selected for g in groups) < len(groups)
     assert len({g in selected for g in groups if g == ""}) == 1
 
 
-def test_metric_directions_and_nonoverlapping_costs():
+def test_metric_directions(expanded_data, torch):
     from molprop_fusion.expanded_benchmark import metrics
 
     assert (
         metrics(np.array([3.0, 2.0, 1.0]), np.array([1.0, 2.0, 3.0]), "spearman")["spearman"] == -1
     )
+    with pytest.raises(ValueError, match="vectors"):
+        metrics(np.array([np.nan]), np.array([1.0]), "mae")
+
+
+def test_nonoverlapping_costs():
     costs = attribute_cost(
         [
             {"method": "tree", "stage": "base_fit", "elapsed_seconds": 2},
@@ -127,8 +146,6 @@ def test_metric_directions_and_nonoverlapping_costs():
         ]
     )
     assert costs["T_plus_G_component_seconds"] == 6 and costs["Chemprop_component_seconds"] == 4
-    with pytest.raises(ValueError, match="vectors"):
-        metrics(np.array([np.nan]), np.array([1.0]), "mae")
 
 
 def test_expanded_aggregates_recompute_and_detect_mutation(tmp_path):
@@ -143,12 +160,15 @@ def test_expanded_aggregates_recompute_and_detect_mutation(tmp_path):
         verify_expanded(tmp_path)
 
 
-def test_historical_geometry_cache_and_real_tiny_case(fixture, monkeypatch):
+def test_historical_geometry_cache_and_real_tiny_case(fixture, monkeypatch, expanded_data, torch):
+    for dependency in ("xgboost", "catboost", "lightgbm"):
+        pytest.importorskip(dependency)
+
     from molprop_fusion import expanded_benchmark as eb
     from molprop_fusion.z3d import LabelFreeIdentity, generate_z3d
 
     source, spec, partitions = fixture
-    prepared = replay(source, "bace", spec, partitions)
+    prepared = expanded_data.replay(source, "bace", spec, partitions)
     config = yaml.safe_load((ROOT / "configs/expanded_benchmarks.yaml").read_text())
     config["resources"]["tree_workers"] = 1
     config["device"] = "cpu"
@@ -182,7 +202,7 @@ def test_historical_geometry_cache_and_real_tiny_case(fixture, monkeypatch):
     assert summary["case_count"] == 1
 
 
-def test_chemprop_adapter_withholds_test_labels_and_deletes_artifacts(tmp_path, monkeypatch):
+def test_chemprop_adapter_withholds_test_labels_and_deletes_artifacts(tmp_path, monkeypatch, torch):
     from molprop_fusion import expanded_chemprop as cp
 
     workdirs = []
@@ -213,7 +233,7 @@ def test_chemprop_adapter_withholds_test_labels_and_deletes_artifacts(tmp_path, 
     assert all(not p.exists() for p in workdirs)
 
 
-def test_graph_provider_and_timing_hooks_preserve_predictions():
+def test_graph_provider_and_timing_hooks_preserve_predictions(expanded_data, torch):
     from molprop_fusion.compt_graph import featurize_smiles, fit_graph_regressor
 
     smiles = ["C" * i for i in range(1, 13)]
@@ -264,7 +284,7 @@ def test_graph_provider_and_timing_hooks_preserve_predictions():
         "qm9",
     ],
 )
-def test_all_pinned_dataset_field_adapters(tmp_path, dataset):
+def test_all_pinned_dataset_field_adapters(tmp_path, dataset, expanded_data):
     spec = json.loads((ROOT / "configs/expanded_sources.json").read_text())["datasets"][dataset]
     path = tmp_path / spec["file"]
     fields = [spec["smiles_field"], *spec["endpoints"]]
@@ -281,13 +301,13 @@ def test_all_pinned_dataset_field_adapters(tmp_path, dataset):
             row["Species"] = spec["species"]
         writer.writerow(row)
     spec["sha256"] = sha256_file(path)
-    rows = list(source_rows(tmp_path, spec))
+    rows = list(expanded_data.source_rows(tmp_path, spec))
     assert len(rows) == 1 and rows[0][0:2] == (0, "CCO")
     assert set(rows[0][2]) == set(spec["endpoints"])
     assert all(np.isfinite(v) for v in rows[0][2].values())
 
 
-def test_expanded_prepare_cli_and_prepared_replay_boundary(fixture):
+def test_expanded_prepare_cli_and_prepared_replay_boundary(fixture, expanded_data, torch):
     import subprocess
     import sys
 
