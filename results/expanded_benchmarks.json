@@ -1,0 +1,4535 @@
+{
+  "T_plus_G_favorable_endpoint_means_primary": {
+    "Chemprop": 10,
+    "T": 7
+  },
+  "aggregate_only": true,
+  "case_count": 55,
+  "cases": [
+    {
+      "actual_case_elapsed_seconds": 607.1317845666781,
+      "complete": true,
+      "component_costs": {
+        "Chemprop_component_seconds": 33.96715868078172,
+        "T_component_seconds": 32.687452930025756,
+        "T_input_feature_seconds": 0,
+        "T_plus_G_component_seconds": 408.8962648352608,
+        "incremental_graph_feature_seconds": 0,
+        "incremental_graph_plus_fusion_seconds": 376.20881190523505,
+        "interpretation": "sum of nonoverlapping stage durations; actual workflow elapsed recorded separately; shared features charged once",
+        "shared_cache_io_seconds": 0,
+        "shared_feature_component_seconds": 0
+      },
+      "dataset": "ppbr_az",
+      "endpoint": "Y",
+      "feature_cache_state": "cold",
+      "fit_count": 23,
+      "methods": {
+        "Chemprop": {
+          "mae": 6.621700913043477,
+          "rmse": 10.15614936598871
+        },
+        "G": {
+          "mae": 4.956583341880698,
+          "rmse": 10.06107792114686
+        },
+        "T": {
+          "mae": 6.536403691189132,
+          "rmse": 10.74907319720509
+        },
+        "T_plus_G": {
+          "mae": 6.369756936166786,
+          "rmse": 10.605536155369924
+        }
+      },
+      "rows": {
+        "test": 115,
+        "train": 1146,
+        "validation": 164
+      },
+      "run": 1,
+      "test_identity_digest": "5bf590897b72626e152186fbc9732634fbac52b7e0f5249ae3da4a39da7ed516",
+      "transform": "identity",
+      "units": "percent_bound"
+    },
+    {
+      "actual_case_elapsed_seconds": 627.0039299223572,
+      "complete": true,
+      "component_costs": {
+        "Chemprop_component_seconds": 35.37412652838975,
+        "T_component_seconds": 33.370873648673296,
+        "T_input_feature_seconds": 0,
+        "T_plus_G_component_seconds": 427.49554695840925,
+        "incremental_graph_feature_seconds": 0,
+        "incremental_graph_plus_fusion_seconds": 394.12467330973595,
+        "interpretation": "sum of nonoverlapping stage durations; actual workflow elapsed recorded separately; shared features charged once",
+        "shared_cache_io_seconds": 0,
+        "shared_feature_component_seconds": 0
+      },
+      "dataset": "ppbr_az",
+      "endpoint": "Y",
+      "feature_cache_state": "cold",
+      "fit_count": 23,
+      "methods": {
+        "Chemprop": {
+          "mae": 6.271097182608695,
+          "rmse": 9.852410560451528
+        },
+        "G": {
+          "mae": 7.987204786522177,
+          "rmse": 12.356034495207352
+        },
+        "T": {
+          "mae": 6.238159197209831,
+          "rmse": 10.670212634416904
+        },
+        "T_plus_G": {
+          "mae": 6.447632128315242,
+          "rmse": 10.848794553688625
+        }
+      },
+      "rows": {
+        "test": 115,
+        "train": 1146,
+        "validation": 164
+      },
+      "run": 2,
+      "test_identity_digest": "5bf590897b72626e152186fbc9732634fbac52b7e0f5249ae3da4a39da7ed516",
+      "transform": "identity",
+      "units": "percent_bound"
+    },
+    {
+      "actual_case_elapsed_seconds": 613.742005078122,
+      "complete": true,
+      "component_costs": {
+        "Chemprop_component_seconds": 32.55456528067589,
+        "T_component_seconds": 35.139670860022306,
+        "T_input_feature_seconds": 0,
+        "T_plus_G_component_seconds": 417.5591544313356,
+        "incremental_graph_feature_seconds": 0,
+        "incremental_graph_plus_fusion_seconds": 382.4194835713133,
+        "interpretation": "sum of nonoverlapping stage durations; actual workflow elapsed recorded separately; shared features charged once",
+        "shared_cache_io_seconds": 0,
+        "shared_feature_component_seconds": 0
+      },
+      "dataset": "ppbr_az",
+      "endpoint": "Y",
+      "feature_cache_state": "cold",
+      "fit_count": 23,
+      "methods": {
+        "Chemprop": {
+          "mae": 6.316768478260869,
+          "rmse": 9.897063538051002
+        },
+        "G": {
+          "mae": 5.907051954766072,
+          "rmse": 10.858824670519672
+        },
+        "T": {
+          "mae": 6.169649907094304,
+          "rmse": 10.210294119181773
+        },
+        "T_plus_G": {
+          "mae": 6.089886146841289,
+          "rmse": 10.186449907751125
+        }
+      },
+      "rows": {
+        "test": 115,
+        "train": 1146,
+        "validation": 164
+      },
+      "run": 3,
+      "test_identity_digest": "5bf590897b72626e152186fbc9732634fbac52b7e0f5249ae3da4a39da7ed516",
+      "transform": "identity",
+      "units": "percent_bound"
+    },
+    {
+      "actual_case_elapsed_seconds": 596.28724620305,
+      "complete": true,
+      "component_costs": {
+        "Chemprop_component_seconds": 33.62315402831882,
+        "T_component_seconds": 34.21458389237523,
+        "T_input_feature_seconds": 0,
+        "T_plus_G_component_seconds": 400.6337717734277,
+        "incremental_graph_feature_seconds": 0,
+        "incremental_graph_plus_fusion_seconds": 366.4191878810525,
+        "interpretation": "sum of nonoverlapping stage durations; actual workflow elapsed recorded separately; shared features charged once",
+        "shared_cache_io_seconds": 0,
+        "shared_feature_component_seconds": 0
+      },
+      "dataset": "ppbr_az",
+      "endpoint": "Y",
+      "feature_cache_state": "cold",
+      "fit_count": 23,
+      "methods": {
+        "Chemprop": {
+          "mae": 7.050444460869566,
+          "rmse": 10.656415565091613
+        },
+        "G": {
+          "mae": 7.312183595706137,
+          "rmse": 11.263924495418527
+        },
+        "T": {
+          "mae": 6.17174067443835,
+          "rmse": 10.055081690548988
+        },
+        "T_plus_G": {
+          "mae": 6.1284846152943375,
+          "rmse": 9.956238846843853
+        }
+      },
+      "rows": {
+        "test": 115,
+        "train": 1146,
+        "validation": 164
+      },
+      "run": 4,
+      "test_identity_digest": "5bf590897b72626e152186fbc9732634fbac52b7e0f5249ae3da4a39da7ed516",
+      "transform": "identity",
+      "units": "percent_bound"
+    },
+    {
+      "actual_case_elapsed_seconds": 711.2169914580882,
+      "complete": true,
+      "component_costs": {
+        "Chemprop_component_seconds": 31.722191746346653,
+        "T_component_seconds": 33.42260303441435,
+        "T_input_feature_seconds": 0,
+        "T_plus_G_component_seconds": 513.2974281236529,
+        "incremental_graph_feature_seconds": 0,
+        "incremental_graph_plus_fusion_seconds": 479.8748250892386,
+        "interpretation": "sum of nonoverlapping stage durations; actual workflow elapsed recorded separately; shared features charged once",
+        "shared_cache_io_seconds": 0,
+        "shared_feature_component_seconds": 0
+      },
+      "dataset": "ppbr_az",
+      "endpoint": "Y",
+      "feature_cache_state": "cold",
+      "fit_count": 23,
+      "methods": {
+        "Chemprop": {
+          "mae": 7.258787095652174,
+          "rmse": 11.23134569580533
+        },
+        "G": {
+          "mae": 6.260603563206913,
+          "rmse": 10.804824589409176
+        },
+        "T": {
+          "mae": 5.9843308790176595,
+          "rmse": 9.998354863425238
+        },
+        "T_plus_G": {
+          "mae": 5.805068957914055,
+          "rmse": 9.82996079988312
+        }
+      },
+      "rows": {
+        "test": 115,
+        "train": 1146,
+        "validation": 164
+      },
+      "run": 5,
+      "test_identity_digest": "5bf590897b72626e152186fbc9732634fbac52b7e0f5249ae3da4a39da7ed516",
+      "transform": "identity",
+      "units": "percent_bound"
+    },
+    {
+      "actual_case_elapsed_seconds": 482.3777582431212,
+      "complete": true,
+      "component_costs": {
+        "Chemprop_component_seconds": 33.37500701285899,
+        "T_component_seconds": 32.872720618732274,
+        "T_input_feature_seconds": 0,
+        "T_plus_G_component_seconds": 278.8240454494953,
+        "incremental_graph_feature_seconds": 0,
+        "incremental_graph_plus_fusion_seconds": 245.95132483076304,
+        "interpretation": "sum of nonoverlapping stage durations; actual workflow elapsed recorded separately; shared features charged once",
+        "shared_cache_io_seconds": 0,
+        "shared_feature_component_seconds": 0
+      },
+      "dataset": "vdss_lombardo",
+      "endpoint": "Y",
+      "feature_cache_state": "cold",
+      "fit_count": 23,
+      "methods": {
+        "Chemprop": {
+          "mae": 3.64443496294855,
+          "rmse": 7.532202437890917,
+          "spearman": 0.5798799181500099
+        },
+        "G": {
+          "mae": 3.8694038534361384,
+          "rmse": 6.547867229354868,
+          "spearman": 0.470624102266082
+        },
+        "T": {
+          "mae": 4.153051808711634,
+          "rmse": 7.401771793591241,
+          "spearman": 0.4662672962655692
+        },
+        "T_plus_G": {
+          "mae": 4.323741131958267,
+          "rmse": 7.144067661224255,
+          "spearman": 0.3864884241241041
+        }
+      },
+      "rows": {
+        "test": 138,
+        "train": 782,
+        "validation": 112
+      },
+      "run": 1,
+      "test_identity_digest": "aa9246b7892261c94465586a5c648f63b347bced58353000cc7a3d5b81effd0d",
+      "transform": "identity",
+      "units": "L/kg"
+    },
+    {
+      "actual_case_elapsed_seconds": 563.864876720123,
+      "complete": true,
+      "component_costs": {
+        "Chemprop_component_seconds": 32.25914827734232,
+        "T_component_seconds": 33.259136537089944,
+        "T_input_feature_seconds": 0,
+        "T_plus_G_component_seconds": 356.5440672375262,
+        "incremental_graph_feature_seconds": 0,
+        "incremental_graph_plus_fusion_seconds": 323.28493070043623,
+        "interpretation": "sum of nonoverlapping stage durations; actual workflow elapsed recorded separately; shared features charged once",
+        "shared_cache_io_seconds": 0,
+        "shared_feature_component_seconds": 0
+      },
+      "dataset": "vdss_lombardo",
+      "endpoint": "Y",
+      "feature_cache_state": "cold",
+      "fit_count": 23,
+      "methods": {
+        "Chemprop": {
+          "mae": 5.492759544927536,
+          "rmse": 10.690803402842826,
+          "spearman": 0.2999231644388634
+        },
+        "G": {
+          "mae": 3.5127444752856225,
+          "rmse": 6.454207964349351,
+          "spearman": 0.5132879195163863
+        },
+        "T": {
+          "mae": 3.394320781132056,
+          "rmse": 6.327800606950656,
+          "spearman": 0.6008099411063518
+        },
+        "T_plus_G": {
+          "mae": 5.3080815315010526,
+          "rmse": 8.329848752484182,
+          "spearman": 0.39977576904914813
+        }
+      },
+      "rows": {
+        "test": 138,
+        "train": 782,
+        "validation": 112
+      },
+      "run": 2,
+      "test_identity_digest": "aa9246b7892261c94465586a5c648f63b347bced58353000cc7a3d5b81effd0d",
+      "transform": "identity",
+      "units": "L/kg"
+    },
+    {
+      "actual_case_elapsed_seconds": 498.77985124941915,
+      "complete": true,
+      "component_costs": {
+        "Chemprop_component_seconds": 30.712728309445083,
+        "T_component_seconds": 30.635693384334445,
+        "T_input_feature_seconds": 0,
+        "T_plus_G_component_seconds": 290.08072421420366,
+        "incremental_graph_feature_seconds": 0,
+        "incremental_graph_plus_fusion_seconds": 259.4450308298692,
+        "interpretation": "sum of nonoverlapping stage durations; actual workflow elapsed recorded separately; shared features charged once",
+        "shared_cache_io_seconds": 0,
+        "shared_feature_component_seconds": 0
+      },
+      "dataset": "vdss_lombardo",
+      "endpoint": "Y",
+      "feature_cache_state": "cold",
+      "fit_count": 23,
+      "methods": {
+        "Chemprop": {
+          "mae": 5.736262954891305,
+          "rmse": 23.330900284398382,
+          "spearman": 0.5001535651584463
+        },
+        "G": {
+          "mae": 3.5398796978327565,
+          "rmse": 6.33145010173596,
+          "spearman": 0.528075485375569
+        },
+        "T": {
+          "mae": 5.281452397599169,
+          "rmse": 12.454555921498844,
+          "spearman": 0.541093384227206
+        },
+        "T_plus_G": {
+          "mae": 5.586383548056784,
+          "rmse": 12.523276699128802,
+          "spearman": 0.4521122436465028
+        }
+      },
+      "rows": {
+        "test": 138,
+        "train": 782,
+        "validation": 112
+      },
+      "run": 3,
+      "test_identity_digest": "aa9246b7892261c94465586a5c648f63b347bced58353000cc7a3d5b81effd0d",
+      "transform": "identity",
+      "units": "L/kg"
+    },
+    {
+      "actual_case_elapsed_seconds": 505.3851035842672,
+      "complete": true,
+      "component_costs": {
+        "Chemprop_component_seconds": 35.08926146198064,
+        "T_component_seconds": 33.92140237707645,
+        "T_input_feature_seconds": 0,
+        "T_plus_G_component_seconds": 295.1272016055882,
+        "incremental_graph_feature_seconds": 0,
+        "incremental_graph_plus_fusion_seconds": 261.20579922851175,
+        "interpretation": "sum of nonoverlapping stage durations; actual workflow elapsed recorded separately; shared features charged once",
+        "shared_cache_io_seconds": 0,
+        "shared_feature_component_seconds": 0
+      },
+      "dataset": "vdss_lombardo",
+      "endpoint": "Y",
+      "feature_cache_state": "cold",
+      "fit_count": 23,
+      "methods": {
+        "Chemprop": {
+          "mae": 2.801494454152174,
+          "rmse": 5.854891750512224,
+          "spearman": 0.53970048503417
+        },
+        "G": {
+          "mae": 2.9128520004635754,
+          "rmse": 6.522139111534753,
+          "spearman": 0.5815673812707537
+        },
+        "T": {
+          "mae": 2.9375100853969873,
+          "rmse": 5.885844175986631,
+          "spearman": 0.6057490246383797
+        },
+        "T_plus_G": {
+          "mae": 2.896155112439381,
+          "rmse": 5.92460825031646,
+          "spearman": 0.6103844104774997
+        }
+      },
+      "rows": {
+        "test": 138,
+        "train": 782,
+        "validation": 112
+      },
+      "run": 4,
+      "test_identity_digest": "aa9246b7892261c94465586a5c648f63b347bced58353000cc7a3d5b81effd0d",
+      "transform": "identity",
+      "units": "L/kg"
+    },
+    {
+      "actual_case_elapsed_seconds": 454.69768015295267,
+      "complete": true,
+      "component_costs": {
+        "Chemprop_component_seconds": 32.673869309946895,
+        "T_component_seconds": 35.793310932815075,
+        "T_input_feature_seconds": 0,
+        "T_plus_G_component_seconds": 236.19763275422156,
+        "incremental_graph_feature_seconds": 0,
+        "incremental_graph_plus_fusion_seconds": 200.40432182140648,
+        "interpretation": "sum of nonoverlapping stage durations; actual workflow elapsed recorded separately; shared features charged once",
+        "shared_cache_io_seconds": 0,
+        "shared_feature_component_seconds": 0
+      },
+      "dataset": "vdss_lombardo",
+      "endpoint": "Y",
+      "feature_cache_state": "cold",
+      "fit_count": 23,
+      "methods": {
+        "Chemprop": {
+          "mae": 4.052700964492755,
+          "rmse": 6.328834910012196,
+          "spearman": 0.014324027275270773
+        },
+        "G": {
+          "mae": 3.681252151920599,
+          "rmse": 6.2186328839973175,
+          "spearman": 0.5188092805799293
+        },
+        "T": {
+          "mae": 4.408055424672398,
+          "rmse": 8.580797467990621,
+          "spearman": 0.37862653572800065
+        },
+        "T_plus_G": {
+          "mae": 10.633447055502872,
+          "rmse": 13.001328953847489,
+          "spearman": 0.5345718758742373
+        }
+      },
+      "rows": {
+        "test": 138,
+        "train": 782,
+        "validation": 112
+      },
+      "run": 5,
+      "test_identity_digest": "aa9246b7892261c94465586a5c648f63b347bced58353000cc7a3d5b81effd0d",
+      "transform": "identity",
+      "units": "L/kg"
+    },
+    {
+      "actual_case_elapsed_seconds": 365.2112675216049,
+      "complete": true,
+      "component_costs": {
+        "Chemprop_component_seconds": 26.66786037106067,
+        "T_component_seconds": 29.188178930431604,
+        "T_input_feature_seconds": 0,
+        "T_plus_G_component_seconds": 158.29155918583274,
+        "incremental_graph_feature_seconds": 0,
+        "incremental_graph_plus_fusion_seconds": 129.10338025540113,
+        "interpretation": "sum of nonoverlapping stage durations; actual workflow elapsed recorded separately; shared features charged once",
+        "shared_cache_io_seconds": 0,
+        "shared_feature_component_seconds": 0
+      },
+      "dataset": "half_life_obach",
+      "endpoint": "Y",
+      "feature_cache_state": "cold",
+      "fit_count": 23,
+      "methods": {
+        "Chemprop": {
+          "mae": 20.00807106349206,
+          "rmse": 21.874631401498025,
+          "spearman": 0.013347256946973397
+        },
+        "G": {
+          "mae": 10.192041110370178,
+          "rmse": 14.69713438242747,
+          "spearman": 0.4495096876476203
+        },
+        "T": {
+          "mae": 20.610539899168188,
+          "rmse": 29.23114185881552,
+          "spearman": 0.4260559645591437
+        },
+        "T_plus_G": {
+          "mae": 22.556851591475798,
+          "rmse": 30.288630078830256,
+          "spearman": 0.38733451589822987
+        }
+      },
+      "rows": {
+        "test": 63,
+        "train": 462,
+        "validation": 66
+      },
+      "run": 1,
+      "test_identity_digest": "2c5a2bd1aaecb5eecb1f4465266cb11bfccb1ed9377606b3ef26c908912629de",
+      "transform": "identity",
+      "units": "hour"
+    },
+    {
+      "actual_case_elapsed_seconds": 356.1489117592573,
+      "complete": true,
+      "component_costs": {
+        "Chemprop_component_seconds": 29.456366919912398,
+        "T_component_seconds": 28.773753197863698,
+        "T_input_feature_seconds": 0,
+        "T_plus_G_component_seconds": 146.97055171243846,
+        "incremental_graph_feature_seconds": 0,
+        "incremental_graph_plus_fusion_seconds": 118.19679851457477,
+        "interpretation": "sum of nonoverlapping stage durations; actual workflow elapsed recorded separately; shared features charged once",
+        "shared_cache_io_seconds": 0,
+        "shared_feature_component_seconds": 0
+      },
+      "dataset": "half_life_obach",
+      "endpoint": "Y",
+      "feature_cache_state": "cold",
+      "fit_count": 23,
+      "methods": {
+        "Chemprop": {
+          "mae": 15.864062406349209,
+          "rmse": 20.95290777245763,
+          "spearman": 0.021557260320831138
+        },
+        "G": {
+          "mae": 10.03584081629452,
+          "rmse": 16.64432893868361,
+          "spearman": 0.30576261103165503
+        },
+        "T": {
+          "mae": 15.784372755554488,
+          "rmse": 24.125767340506542,
+          "spearman": 0.3991453979448322
+        },
+        "T_plus_G": {
+          "mae": 15.763797523126517,
+          "rmse": 24.10453171260242,
+          "spearman": 0.39768104061791604
+        }
+      },
+      "rows": {
+        "test": 63,
+        "train": 462,
+        "validation": 66
+      },
+      "run": 2,
+      "test_identity_digest": "2c5a2bd1aaecb5eecb1f4465266cb11bfccb1ed9377606b3ef26c908912629de",
+      "transform": "identity",
+      "units": "hour"
+    },
+    {
+      "actual_case_elapsed_seconds": 328.75310206320137,
+      "complete": true,
+      "component_costs": {
+        "Chemprop_component_seconds": 29.020812048576772,
+        "T_component_seconds": 27.94769253861159,
+        "T_input_feature_seconds": 0,
+        "T_plus_G_component_seconds": 121.24349022749811,
+        "incremental_graph_feature_seconds": 0,
+        "incremental_graph_plus_fusion_seconds": 93.29579768888652,
+        "interpretation": "sum of nonoverlapping stage durations; actual workflow elapsed recorded separately; shared features charged once",
+        "shared_cache_io_seconds": 0,
+        "shared_feature_component_seconds": 0
+      },
+      "dataset": "half_life_obach",
+      "endpoint": "Y",
+      "feature_cache_state": "cold",
+      "fit_count": 23,
+      "methods": {
+        "Chemprop": {
+          "mae": 22.59608389365079,
+          "rmse": 28.364482003195384,
+          "spearman": 0.06875277679160399
+        },
+        "G": {
+          "mae": 7.986138222281931,
+          "rmse": 14.090704663428951,
+          "spearman": 0.3705544212832399
+        },
+        "T": {
+          "mae": 14.10017095878568,
+          "rmse": 23.898077295951815,
+          "spearman": 0.446340914415605
+        },
+        "T_plus_G": {
+          "mae": 14.27751748546014,
+          "rmse": 24.018556652723095,
+          "spearman": 0.44902957049125436
+        }
+      },
+      "rows": {
+        "test": 63,
+        "train": 462,
+        "validation": 66
+      },
+      "run": 3,
+      "test_identity_digest": "2c5a2bd1aaecb5eecb1f4465266cb11bfccb1ed9377606b3ef26c908912629de",
+      "transform": "identity",
+      "units": "hour"
+    },
+    {
+      "actual_case_elapsed_seconds": 337.7430281685665,
+      "complete": true,
+      "component_costs": {
+        "Chemprop_component_seconds": 29.680570392869413,
+        "T_component_seconds": 28.295748696662486,
+        "T_input_feature_seconds": 0,
+        "T_plus_G_component_seconds": 131.08135694172233,
+        "incremental_graph_feature_seconds": 0,
+        "incremental_graph_plus_fusion_seconds": 102.78560824505985,
+        "interpretation": "sum of nonoverlapping stage durations; actual workflow elapsed recorded separately; shared features charged once",
+        "shared_cache_io_seconds": 0,
+        "shared_feature_component_seconds": 0
+      },
+      "dataset": "half_life_obach",
+      "endpoint": "Y",
+      "feature_cache_state": "cold",
+      "fit_count": 23,
+      "methods": {
+        "Chemprop": {
+          "mae": 18.097766477619047,
+          "rmse": 30.470204214092465,
+          "spearman": 0.25753484267469534
+        },
+        "G": {
+          "mae": 25.71365988017185,
+          "rmse": 28.121698959061117,
+          "spearman": 0.0314236678841514
+        },
+        "T": {
+          "mae": 16.185747327124737,
+          "rmse": 24.32071821354892,
+          "spearman": 0.3667614957479489
+        },
+        "T_plus_G": {
+          "mae": 16.366620444318357,
+          "rmse": 21.507724232649856,
+          "spearman": 0.382749397054935
+        }
+      },
+      "rows": {
+        "test": 63,
+        "train": 462,
+        "validation": 66
+      },
+      "run": 4,
+      "test_identity_digest": "2c5a2bd1aaecb5eecb1f4465266cb11bfccb1ed9377606b3ef26c908912629de",
+      "transform": "identity",
+      "units": "hour"
+    },
+    {
+      "actual_case_elapsed_seconds": 334.95300945080817,
+      "complete": true,
+      "component_costs": {
+        "Chemprop_component_seconds": 26.166563068516552,
+        "T_component_seconds": 29.18507346790284,
+        "T_input_feature_seconds": 0,
+        "T_plus_G_component_seconds": 130.58946296665817,
+        "incremental_graph_feature_seconds": 0,
+        "incremental_graph_plus_fusion_seconds": 101.40438949875534,
+        "interpretation": "sum of nonoverlapping stage durations; actual workflow elapsed recorded separately; shared features charged once",
+        "shared_cache_io_seconds": 0,
+        "shared_feature_component_seconds": 0
+      },
+      "dataset": "half_life_obach",
+      "endpoint": "Y",
+      "feature_cache_state": "cold",
+      "fit_count": 23,
+      "methods": {
+        "Chemprop": {
+          "mae": 12.11370116503175,
+          "rmse": 21.78094017981953,
+          "spearman": 0.2518694602295772
+        },
+        "G": {
+          "mae": 12.018030042935324,
+          "rmse": 15.876337770309568,
+          "spearman": 0.3798206824011027
+        },
+        "T": {
+          "mae": 20.214089448444575,
+          "rmse": 27.933530603681866,
+          "spearman": 0.38373363722548526
+        },
+        "T_plus_G": {
+          "mae": 20.489608106249072,
+          "rmse": 28.30264447071767,
+          "spearman": 0.37005029826905567
+        }
+      },
+      "rows": {
+        "test": 63,
+        "train": 462,
+        "validation": 66
+      },
+      "run": 5,
+      "test_identity_digest": "2c5a2bd1aaecb5eecb1f4465266cb11bfccb1ed9377606b3ef26c908912629de",
+      "transform": "identity",
+      "units": "hour"
+    },
+    {
+      "actual_case_elapsed_seconds": 495.40919597633183,
+      "complete": true,
+      "component_costs": {
+        "Chemprop_component_seconds": 32.14132710918784,
+        "T_component_seconds": 30.975188506767154,
+        "T_input_feature_seconds": 0,
+        "T_plus_G_component_seconds": 287.9007359771058,
+        "incremental_graph_feature_seconds": 0,
+        "incremental_graph_plus_fusion_seconds": 256.92554747033864,
+        "interpretation": "sum of nonoverlapping stage durations; actual workflow elapsed recorded separately; shared features charged once",
+        "shared_cache_io_seconds": 0,
+        "shared_feature_component_seconds": 0
+      },
+      "dataset": "clearance_microsome_az",
+      "endpoint": "Y",
+      "feature_cache_state": "cold",
+      "fit_count": 23,
+      "methods": {
+        "Chemprop": {
+          "mae": 38.38429038378377,
+          "rmse": 51.092199201166785,
+          "spearman": 0.4221216688694709
+        },
+        "G": {
+          "mae": 31.636108449183162,
+          "rmse": 46.12642356619412,
+          "spearman": 0.5936421435330196
+        },
+        "T": {
+          "mae": 28.692368082913895,
+          "rmse": 38.77213666205979,
+          "spearman": 0.7040927412649014
+        },
+        "T_plus_G": {
+          "mae": 28.75844385538077,
+          "rmse": 38.774209804840744,
+          "spearman": 0.7076710543663662
+        }
+      },
+      "rows": {
+        "test": 37,
+        "train": 771,
+        "validation": 110
+      },
+      "run": 1,
+      "test_identity_digest": "dcc931070ed32f5b15d16cbb8bf80757fd4ac0d89a89949e74ceb0333e3520f6",
+      "transform": "identity",
+      "units": "uL/min/mg"
+    },
+    {
+      "actual_case_elapsed_seconds": 544.1427911864594,
+      "complete": true,
+      "component_costs": {
+        "Chemprop_component_seconds": 33.44124086480588,
+        "T_component_seconds": 30.22878509014845,
+        "T_input_feature_seconds": 0,
+        "T_plus_G_component_seconds": 333.52463417034596,
+        "incremental_graph_feature_seconds": 0,
+        "incremental_graph_plus_fusion_seconds": 303.2958490801975,
+        "interpretation": "sum of nonoverlapping stage durations; actual workflow elapsed recorded separately; shared features charged once",
+        "shared_cache_io_seconds": 0,
+        "shared_feature_component_seconds": 0
+      },
+      "dataset": "clearance_microsome_az",
+      "endpoint": "Y",
+      "feature_cache_state": "cold",
+      "fit_count": 23,
+      "methods": {
+        "Chemprop": {
+          "mae": 38.55362782702702,
+          "rmse": 50.73200234679943,
+          "spearman": 0.4305903432096043
+        },
+        "G": {
+          "mae": 34.00986065401359,
+          "rmse": 51.13653263191674,
+          "spearman": 0.5705023854768803
+        },
+        "T": {
+          "mae": 29.538687219876863,
+          "rmse": 40.14334998285769,
+          "spearman": 0.6972939463721183
+        },
+        "T_plus_G": {
+          "mae": 30.775334113657376,
+          "rmse": 42.92247361312113,
+          "spearman": 0.6482710568820497
+        }
+      },
+      "rows": {
+        "test": 37,
+        "train": 771,
+        "validation": 110
+      },
+      "run": 2,
+      "test_identity_digest": "dcc931070ed32f5b15d16cbb8bf80757fd4ac0d89a89949e74ceb0333e3520f6",
+      "transform": "identity",
+      "units": "uL/min/mg"
+    },
+    {
+      "actual_case_elapsed_seconds": 478.18669453728944,
+      "complete": true,
+      "component_costs": {
+        "Chemprop_component_seconds": 30.663338252343237,
+        "T_component_seconds": 29.650597423315048,
+        "T_input_feature_seconds": 0,
+        "T_plus_G_component_seconds": 275.11143966857344,
+        "incremental_graph_feature_seconds": 0,
+        "incremental_graph_plus_fusion_seconds": 245.4608422452584,
+        "interpretation": "sum of nonoverlapping stage durations; actual workflow elapsed recorded separately; shared features charged once",
+        "shared_cache_io_seconds": 0,
+        "shared_feature_component_seconds": 0
+      },
+      "dataset": "clearance_microsome_az",
+      "endpoint": "Y",
+      "feature_cache_state": "cold",
+      "fit_count": 23,
+      "methods": {
+        "Chemprop": {
+          "mae": 37.744177378378374,
+          "rmse": 50.857226390398445,
+          "spearman": 0.43047106610622216
+        },
+        "G": {
+          "mae": 37.645835136569914,
+          "rmse": 48.86309408803654,
+          "spearman": 0.554877084933817
+        },
+        "T": {
+          "mae": 30.08434336666779,
+          "rmse": 39.89435148306249,
+          "spearman": 0.6445734666772027
+        },
+        "T_plus_G": {
+          "mae": 31.325504194008083,
+          "rmse": 40.89711642614023,
+          "spearman": 0.6347927441998653
+        }
+      },
+      "rows": {
+        "test": 37,
+        "train": 771,
+        "validation": 110
+      },
+      "run": 3,
+      "test_identity_digest": "dcc931070ed32f5b15d16cbb8bf80757fd4ac0d89a89949e74ceb0333e3520f6",
+      "transform": "identity",
+      "units": "uL/min/mg"
+    },
+    {
+      "actual_case_elapsed_seconds": 482.5852909712121,
+      "complete": true,
+      "component_costs": {
+        "Chemprop_component_seconds": 29.25541821308434,
+        "T_component_seconds": 31.00860627554357,
+        "T_input_feature_seconds": 0,
+        "T_plus_G_component_seconds": 266.1608347920701,
+        "incremental_graph_feature_seconds": 0,
+        "incremental_graph_plus_fusion_seconds": 235.15222851652652,
+        "interpretation": "sum of nonoverlapping stage durations; actual workflow elapsed recorded separately; shared features charged once",
+        "shared_cache_io_seconds": 0,
+        "shared_feature_component_seconds": 0
+      },
+      "dataset": "clearance_microsome_az",
+      "endpoint": "Y",
+      "feature_cache_state": "cold",
+      "fit_count": 23,
+      "methods": {
+        "Chemprop": {
+          "mae": 37.622786167567575,
+          "rmse": 51.557014875321144,
+          "spearman": 0.41615781370036276
+        },
+        "G": {
+          "mae": 35.333656006994296,
+          "rmse": 47.688216708831,
+          "spearman": 0.556427687277785
+        },
+        "T": {
+          "mae": 29.414083789470194,
+          "rmse": 38.95140511455802,
+          "spearman": 0.7188831020842895
+        },
+        "T_plus_G": {
+          "mae": 29.599484427741707,
+          "rmse": 39.986045930447844,
+          "spearman": 0.7043312954716658
+        }
+      },
+      "rows": {
+        "test": 37,
+        "train": 771,
+        "validation": 110
+      },
+      "run": 4,
+      "test_identity_digest": "dcc931070ed32f5b15d16cbb8bf80757fd4ac0d89a89949e74ceb0333e3520f6",
+      "transform": "identity",
+      "units": "uL/min/mg"
+    },
+    {
+      "actual_case_elapsed_seconds": 476.51450144220144,
+      "complete": true,
+      "component_costs": {
+        "Chemprop_component_seconds": 31.15422154776752,
+        "T_component_seconds": 32.016040936112404,
+        "T_input_feature_seconds": 0,
+        "T_plus_G_component_seconds": 272.1211430840194,
+        "incremental_graph_feature_seconds": 0,
+        "incremental_graph_plus_fusion_seconds": 240.10510214790702,
+        "interpretation": "sum of nonoverlapping stage durations; actual workflow elapsed recorded separately; shared features charged once",
+        "shared_cache_io_seconds": 0,
+        "shared_feature_component_seconds": 0
+      },
+      "dataset": "clearance_microsome_az",
+      "endpoint": "Y",
+      "feature_cache_state": "cold",
+      "fit_count": 23,
+      "methods": {
+        "Chemprop": {
+          "mae": 36.81809514324324,
+          "rmse": 50.962781585327534,
+          "spearman": 0.4091204646008152
+        },
+        "G": {
+          "mae": 36.055439718365015,
+          "rmse": 52.734923676337836,
+          "spearman": 0.5843385294692109
+        },
+        "T": {
+          "mae": 31.0579752455542,
+          "rmse": 40.9716114695538,
+          "spearman": 0.6743927425227431
+        },
+        "T_plus_G": {
+          "mae": 31.891051216234295,
+          "rmse": 43.203888087579536,
+          "spearman": 0.6476746713651389
+        }
+      },
+      "rows": {
+        "test": 37,
+        "train": 771,
+        "validation": 110
+      },
+      "run": 5,
+      "test_identity_digest": "dcc931070ed32f5b15d16cbb8bf80757fd4ac0d89a89949e74ceb0333e3520f6",
+      "transform": "identity",
+      "units": "uL/min/mg"
+    },
+    {
+      "actual_case_elapsed_seconds": 449.42456170450896,
+      "complete": true,
+      "component_costs": {
+        "Chemprop_component_seconds": 32.08597265928984,
+        "T_component_seconds": 33.57957261800766,
+        "T_input_feature_seconds": 0,
+        "T_plus_G_component_seconds": 243.1445322567597,
+        "incremental_graph_feature_seconds": 0,
+        "incremental_graph_plus_fusion_seconds": 209.56495963875204,
+        "interpretation": "sum of nonoverlapping stage durations; actual workflow elapsed recorded separately; shared features charged once",
+        "shared_cache_io_seconds": 0,
+        "shared_feature_component_seconds": 0
+      },
+      "dataset": "clearance_hepatocyte_az",
+      "endpoint": "Y",
+      "feature_cache_state": "cold",
+      "fit_count": 23,
+      "methods": {
+        "Chemprop": {
+          "mae": 39.148389671,
+          "rmse": 52.29129548365952,
+          "spearman": 0.3405501119996143
+        },
+        "G": {
+          "mae": 39.73588286537389,
+          "rmse": 48.682181190477365,
+          "spearman": 0.461582872864065
+        },
+        "T": {
+          "mae": 38.46042910450762,
+          "rmse": 46.78754784343734,
+          "spearman": 0.47356007315794296
+        },
+        "T_plus_G": {
+          "mae": 38.303322197851955,
+          "rmse": 46.43845917708968,
+          "spearman": 0.4737055452262896
+        }
+      },
+      "rows": {
+        "test": 50,
+        "train": 849,
+        "validation": 121
+      },
+      "run": 1,
+      "test_identity_digest": "99f14bcbb0cf2639bdd02f7e7ad02a28bda57ae54dcd97e7a45e92032c8e039c",
+      "transform": "identity",
+      "units": "uL/min/10^6_cells"
+    },
+    {
+      "actual_case_elapsed_seconds": 620.466310297139,
+      "complete": true,
+      "component_costs": {
+        "Chemprop_component_seconds": 31.663077829405665,
+        "T_component_seconds": 32.742365188896656,
+        "T_input_feature_seconds": 0,
+        "T_plus_G_component_seconds": 415.11460450012237,
+        "incremental_graph_feature_seconds": 0,
+        "incremental_graph_plus_fusion_seconds": 382.3722393112257,
+        "interpretation": "sum of nonoverlapping stage durations; actual workflow elapsed recorded separately; shared features charged once",
+        "shared_cache_io_seconds": 0,
+        "shared_feature_component_seconds": 0
+      },
+      "dataset": "clearance_hepatocyte_az",
+      "endpoint": "Y",
+      "feature_cache_state": "cold",
+      "fit_count": 23,
+      "methods": {
+        "Chemprop": {
+          "mae": 41.093186112000005,
+          "rmse": 51.07445689180274,
+          "spearman": 0.4762270610776324
+        },
+        "G": {
+          "mae": 35.12964517121455,
+          "rmse": 51.256670782591755,
+          "spearman": 0.3481146595536425
+        },
+        "T": {
+          "mae": 37.517434821972735,
+          "rmse": 46.542044452544324,
+          "spearman": 0.47113553868549807
+        },
+        "T_plus_G": {
+          "mae": 36.92374780106582,
+          "rmse": 46.44838709302085,
+          "spearman": 0.4628921214791853
+        }
+      },
+      "rows": {
+        "test": 50,
+        "train": 849,
+        "validation": 121
+      },
+      "run": 2,
+      "test_identity_digest": "99f14bcbb0cf2639bdd02f7e7ad02a28bda57ae54dcd97e7a45e92032c8e039c",
+      "transform": "identity",
+      "units": "uL/min/10^6_cells"
+    },
+    {
+      "actual_case_elapsed_seconds": 507.5601248862222,
+      "complete": true,
+      "component_costs": {
+        "Chemprop_component_seconds": 33.46813043393195,
+        "T_component_seconds": 33.08178060594946,
+        "T_input_feature_seconds": 0,
+        "T_plus_G_component_seconds": 302.96632737573236,
+        "incremental_graph_feature_seconds": 0,
+        "incremental_graph_plus_fusion_seconds": 269.8845467697829,
+        "interpretation": "sum of nonoverlapping stage durations; actual workflow elapsed recorded separately; shared features charged once",
+        "shared_cache_io_seconds": 0,
+        "shared_feature_component_seconds": 0
+      },
+      "dataset": "clearance_hepatocyte_az",
+      "endpoint": "Y",
+      "feature_cache_state": "cold",
+      "fit_count": 23,
+      "methods": {
+        "Chemprop": {
+          "mae": 39.58724682,
+          "rmse": 50.52309324880263,
+          "spearman": 0.3995632810589238
+        },
+        "G": {
+          "mae": 41.52567832747231,
+          "rmse": 53.34309818020959,
+          "spearman": 0.33090046479928353
+        },
+        "T": {
+          "mae": 37.52306094795901,
+          "rmse": 46.47660417036483,
+          "spearman": 0.4684200600763598
+        },
+        "T_plus_G": {
+          "mae": 37.82509885560275,
+          "rmse": 47.43812338399105,
+          "spearman": 0.4455324546564796
+        }
+      },
+      "rows": {
+        "test": 50,
+        "train": 848,
+        "validation": 122
+      },
+      "run": 3,
+      "test_identity_digest": "99f14bcbb0cf2639bdd02f7e7ad02a28bda57ae54dcd97e7a45e92032c8e039c",
+      "transform": "identity",
+      "units": "uL/min/10^6_cells"
+    },
+    {
+      "actual_case_elapsed_seconds": 433.4707376174629,
+      "complete": true,
+      "component_costs": {
+        "Chemprop_component_seconds": 32.164886304177344,
+        "T_component_seconds": 33.27689606603235,
+        "T_input_feature_seconds": 0,
+        "T_plus_G_component_seconds": 230.76039712224156,
+        "incremental_graph_feature_seconds": 0,
+        "incremental_graph_plus_fusion_seconds": 197.4835010562092,
+        "interpretation": "sum of nonoverlapping stage durations; actual workflow elapsed recorded separately; shared features charged once",
+        "shared_cache_io_seconds": 0,
+        "shared_feature_component_seconds": 0
+      },
+      "dataset": "clearance_hepatocyte_az",
+      "endpoint": "Y",
+      "feature_cache_state": "cold",
+      "fit_count": 23,
+      "methods": {
+        "Chemprop": {
+          "mae": 39.797507918,
+          "rmse": 52.25871555850764,
+          "spearman": 0.3743966132349455
+        },
+        "G": {
+          "mae": 38.918527740270285,
+          "rmse": 49.46400858263541,
+          "spearman": 0.45629738771413514
+        },
+        "T": {
+          "mae": 40.35394990925395,
+          "rmse": 47.56428571361902,
+          "spearman": 0.463037593547532
+        },
+        "T_plus_G": {
+          "mae": 38.9339373260508,
+          "rmse": 47.0189047352886,
+          "spearman": 0.5016361823488552
+        }
+      },
+      "rows": {
+        "test": 50,
+        "train": 849,
+        "validation": 121
+      },
+      "run": 4,
+      "test_identity_digest": "99f14bcbb0cf2639bdd02f7e7ad02a28bda57ae54dcd97e7a45e92032c8e039c",
+      "transform": "identity",
+      "units": "uL/min/10^6_cells"
+    },
+    {
+      "actual_case_elapsed_seconds": 495.78099370282143,
+      "complete": true,
+      "component_costs": {
+        "Chemprop_component_seconds": 32.724572429433465,
+        "T_component_seconds": 33.36066248361021,
+        "T_input_feature_seconds": 0,
+        "T_plus_G_component_seconds": 289.9081488987431,
+        "incremental_graph_feature_seconds": 0,
+        "incremental_graph_plus_fusion_seconds": 256.5474864151329,
+        "interpretation": "sum of nonoverlapping stage durations; actual workflow elapsed recorded separately; shared features charged once",
+        "shared_cache_io_seconds": 0,
+        "shared_feature_component_seconds": 0
+      },
+      "dataset": "clearance_hepatocyte_az",
+      "endpoint": "Y",
+      "feature_cache_state": "cold",
+      "fit_count": 23,
+      "methods": {
+        "Chemprop": {
+          "mae": 38.524616908000006,
+          "rmse": 51.576281540831594,
+          "spearman": 0.3583461950273601
+        },
+        "G": {
+          "mae": 36.54357992863195,
+          "rmse": 49.12591675320119,
+          "spearman": 0.4018423434630221
+        },
+        "T": {
+          "mae": 39.66205116907101,
+          "rmse": 47.955258462452676,
+          "spearman": 0.43631922366118897
+        },
+        "T_plus_G": {
+          "mae": 39.6237976778422,
+          "rmse": 47.70083679574678,
+          "spearman": 0.4447566036252973
+        }
+      },
+      "rows": {
+        "test": 50,
+        "train": 849,
+        "validation": 121
+      },
+      "run": 5,
+      "test_identity_digest": "99f14bcbb0cf2639bdd02f7e7ad02a28bda57ae54dcd97e7a45e92032c8e039c",
+      "transform": "identity",
+      "units": "uL/min/10^6_cells"
+    },
+    {
+      "actual_case_elapsed_seconds": 575.2648721411824,
+      "complete": true,
+      "component_costs": {
+        "Chemprop_component_seconds": 31.82586235832423,
+        "T_component_seconds": 31.21113711129874,
+        "T_input_feature_seconds": 0,
+        "T_plus_G_component_seconds": 373.43627252895385,
+        "incremental_graph_feature_seconds": 0,
+        "incremental_graph_plus_fusion_seconds": 342.2251354176551,
+        "interpretation": "sum of nonoverlapping stage durations; actual workflow elapsed recorded separately; shared features charged once",
+        "shared_cache_io_seconds": 0,
+        "shared_feature_component_seconds": 0
+      },
+      "dataset": "bace",
+      "endpoint": "pIC50",
+      "feature_cache_state": "cold",
+      "fit_count": 23,
+      "methods": {
+        "Chemprop": {
+          "mae": 0.6050625897887325,
+          "rmse": 0.7770105976494989
+        },
+        "G": {
+          "mae": 0.583835047786043,
+          "rmse": 0.7473115124335078
+        },
+        "T": {
+          "mae": 0.5387773683277076,
+          "rmse": 0.6941752589882835
+        },
+        "T_plus_G": {
+          "mae": 0.521602524659891,
+          "rmse": 0.6788209537123561
+        }
+      },
+      "rows": {
+        "test": 284,
+        "train": 1059,
+        "validation": 151
+      },
+      "run": 1,
+      "test_identity_digest": "f019978367e5892022d3bd8897ceb60d2c3ce2673deb382c7d24fc48cebbf606",
+      "transform": "source_pIC50_identity",
+      "units": "-log10(IC50/mol_L)"
+    },
+    {
+      "actual_case_elapsed_seconds": 593.1090293191373,
+      "complete": true,
+      "component_costs": {
+        "Chemprop_component_seconds": 34.723934075795114,
+        "T_component_seconds": 30.621602181345224,
+        "T_input_feature_seconds": 0,
+        "T_plus_G_component_seconds": 385.6127143520862,
+        "incremental_graph_feature_seconds": 0,
+        "incremental_graph_plus_fusion_seconds": 354.99111217074096,
+        "interpretation": "sum of nonoverlapping stage durations; actual workflow elapsed recorded separately; shared features charged once",
+        "shared_cache_io_seconds": 0,
+        "shared_feature_component_seconds": 0
+      },
+      "dataset": "bace",
+      "endpoint": "pIC50",
+      "feature_cache_state": "cold",
+      "fit_count": 23,
+      "methods": {
+        "Chemprop": {
+          "mae": 0.6196192035211269,
+          "rmse": 0.7935092162825282
+        },
+        "G": {
+          "mae": 0.6261360250107006,
+          "rmse": 0.8184943254963761
+        },
+        "T": {
+          "mae": 0.5609612539556865,
+          "rmse": 0.7272405687057069
+        },
+        "T_plus_G": {
+          "mae": 0.5643319568112057,
+          "rmse": 0.7366923667208649
+        }
+      },
+      "rows": {
+        "test": 284,
+        "train": 1059,
+        "validation": 151
+      },
+      "run": 2,
+      "test_identity_digest": "f019978367e5892022d3bd8897ceb60d2c3ce2673deb382c7d24fc48cebbf606",
+      "transform": "source_pIC50_identity",
+      "units": "-log10(IC50/mol_L)"
+    },
+    {
+      "actual_case_elapsed_seconds": 615.3247037995607,
+      "complete": true,
+      "component_costs": {
+        "Chemprop_component_seconds": 36.43803164549172,
+        "T_component_seconds": 31.331948990002275,
+        "T_input_feature_seconds": 0,
+        "T_plus_G_component_seconds": 406.5602752622217,
+        "incremental_graph_feature_seconds": 0,
+        "incremental_graph_plus_fusion_seconds": 375.2283262722194,
+        "interpretation": "sum of nonoverlapping stage durations; actual workflow elapsed recorded separately; shared features charged once",
+        "shared_cache_io_seconds": 0,
+        "shared_feature_component_seconds": 0
+      },
+      "dataset": "bace",
+      "endpoint": "pIC50",
+      "feature_cache_state": "cold",
+      "fit_count": 23,
+      "methods": {
+        "Chemprop": {
+          "mae": 0.595966567253521,
+          "rmse": 0.7872860829187743
+        },
+        "G": {
+          "mae": 0.5904703513143643,
+          "rmse": 0.7881164320836626
+        },
+        "T": {
+          "mae": 0.555464949648344,
+          "rmse": 0.7245133033840668
+        },
+        "T_plus_G": {
+          "mae": 0.541882636809744,
+          "rmse": 0.7153584407555524
+        }
+      },
+      "rows": {
+        "test": 284,
+        "train": 1059,
+        "validation": 151
+      },
+      "run": 3,
+      "test_identity_digest": "f019978367e5892022d3bd8897ceb60d2c3ce2673deb382c7d24fc48cebbf606",
+      "transform": "source_pIC50_identity",
+      "units": "-log10(IC50/mol_L)"
+    },
+    {
+      "actual_case_elapsed_seconds": 712.7372524579987,
+      "complete": true,
+      "component_costs": {
+        "Chemprop_component_seconds": 35.23996059503406,
+        "T_component_seconds": 31.548959172330797,
+        "T_input_feature_seconds": 0,
+        "T_plus_G_component_seconds": 505.846692240797,
+        "incremental_graph_feature_seconds": 0,
+        "incremental_graph_plus_fusion_seconds": 474.2977330684662,
+        "interpretation": "sum of nonoverlapping stage durations; actual workflow elapsed recorded separately; shared features charged once",
+        "shared_cache_io_seconds": 0,
+        "shared_feature_component_seconds": 0
+      },
+      "dataset": "bace",
+      "endpoint": "pIC50",
+      "feature_cache_state": "cold",
+      "fit_count": 23,
+      "methods": {
+        "Chemprop": {
+          "mae": 0.5975008588028169,
+          "rmse": 0.7676277087352266
+        },
+        "G": {
+          "mae": 0.6044068606871679,
+          "rmse": 0.7710584228540629
+        },
+        "T": {
+          "mae": 0.5220131460299324,
+          "rmse": 0.6773111264840644
+        },
+        "T_plus_G": {
+          "mae": 0.5159178121357437,
+          "rmse": 0.6734795456849926
+        }
+      },
+      "rows": {
+        "test": 284,
+        "train": 1059,
+        "validation": 151
+      },
+      "run": 4,
+      "test_identity_digest": "f019978367e5892022d3bd8897ceb60d2c3ce2673deb382c7d24fc48cebbf606",
+      "transform": "source_pIC50_identity",
+      "units": "-log10(IC50/mol_L)"
+    },
+    {
+      "actual_case_elapsed_seconds": 660.5306716058403,
+      "complete": true,
+      "component_costs": {
+        "Chemprop_component_seconds": 32.097238544374704,
+        "T_component_seconds": 29.047503115609288,
+        "T_input_feature_seconds": 0,
+        "T_plus_G_component_seconds": 461.6754983160645,
+        "incremental_graph_feature_seconds": 0,
+        "incremental_graph_plus_fusion_seconds": 432.6279952004552,
+        "interpretation": "sum of nonoverlapping stage durations; actual workflow elapsed recorded separately; shared features charged once",
+        "shared_cache_io_seconds": 0,
+        "shared_feature_component_seconds": 0
+      },
+      "dataset": "bace",
+      "endpoint": "pIC50",
+      "feature_cache_state": "cold",
+      "fit_count": 23,
+      "methods": {
+        "Chemprop": {
+          "mae": 0.6213545908450705,
+          "rmse": 0.7956516297272807
+        },
+        "G": {
+          "mae": 0.6669207840137493,
+          "rmse": 0.8550152206467742
+        },
+        "T": {
+          "mae": 0.5255538372543246,
+          "rmse": 0.6834949174032895
+        },
+        "T_plus_G": {
+          "mae": 0.5402508497728447,
+          "rmse": 0.7094765938352564
+        }
+      },
+      "rows": {
+        "test": 284,
+        "train": 1059,
+        "validation": 151
+      },
+      "run": 5,
+      "test_identity_digest": "f019978367e5892022d3bd8897ceb60d2c3ce2673deb382c7d24fc48cebbf606",
+      "transform": "source_pIC50_identity",
+      "units": "-log10(IC50/mol_L)"
+    },
+    {
+      "actual_case_elapsed_seconds": 2654.6208862774074,
+      "complete": true,
+      "component_costs": {
+        "Chemprop_component_seconds": 71.5984922265634,
+        "T_component_seconds": 45.80517256259918,
+        "T_input_feature_seconds": 0,
+        "T_plus_G_component_seconds": 2417.6044027563184,
+        "incremental_graph_feature_seconds": 0,
+        "incremental_graph_plus_fusion_seconds": 2371.7992301937193,
+        "interpretation": "sum of nonoverlapping stage durations; actual workflow elapsed recorded separately; shared features charged once",
+        "shared_cache_io_seconds": 0,
+        "shared_feature_component_seconds": 0
+      },
+      "dataset": "qm9",
+      "endpoint": "homo",
+      "feature_cache_state": "cold",
+      "fit_count": 23,
+      "methods": {
+        "Chemprop": {
+          "mae": 0.005304935938480855,
+          "rmse": 0.007280565825510838
+        },
+        "G": {
+          "mae": 0.005566725538074051,
+          "rmse": 0.007681876792359595
+        },
+        "T": {
+          "mae": 0.00618784126260505,
+          "rmse": 0.008274035440512655
+        },
+        "T_plus_G": {
+          "mae": 0.005372011639207954,
+          "rmse": 0.007305805610131499
+        }
+      },
+      "rows": {
+        "test": 1593,
+        "train": 5600,
+        "validation": 800
+      },
+      "run": 1,
+      "test_identity_digest": "a456ba6f6eb661f43a351cc807808f3c6130c34ca3ccb6710453a91b280d53e4",
+      "transform": "identity",
+      "units": "Hartree"
+    },
+    {
+      "actual_case_elapsed_seconds": 3201.8285481780767,
+      "complete": true,
+      "component_costs": {
+        "Chemprop_component_seconds": 74.71765684708953,
+        "T_component_seconds": 43.527145070023835,
+        "T_input_feature_seconds": 0,
+        "T_plus_G_component_seconds": 2965.539285443723,
+        "incremental_graph_feature_seconds": 0,
+        "incremental_graph_plus_fusion_seconds": 2922.0121403736994,
+        "interpretation": "sum of nonoverlapping stage durations; actual workflow elapsed recorded separately; shared features charged once",
+        "shared_cache_io_seconds": 0,
+        "shared_feature_component_seconds": 0
+      },
+      "dataset": "qm9",
+      "endpoint": "homo",
+      "feature_cache_state": "cold",
+      "fit_count": 23,
+      "methods": {
+        "Chemprop": {
+          "mae": 0.005504891983678594,
+          "rmse": 0.00744190789820051
+        },
+        "G": {
+          "mae": 0.005399083389067921,
+          "rmse": 0.007414271763937191
+        },
+        "T": {
+          "mae": 0.006109232389010178,
+          "rmse": 0.008175634635742848
+        },
+        "T_plus_G": {
+          "mae": 0.005168041290248805,
+          "rmse": 0.007071913112019779
+        }
+      },
+      "rows": {
+        "test": 1593,
+        "train": 5600,
+        "validation": 800
+      },
+      "run": 2,
+      "test_identity_digest": "a456ba6f6eb661f43a351cc807808f3c6130c34ca3ccb6710453a91b280d53e4",
+      "transform": "identity",
+      "units": "Hartree"
+    },
+    {
+      "actual_case_elapsed_seconds": 3387.1912783822045,
+      "complete": true,
+      "component_costs": {
+        "Chemprop_component_seconds": 78.3954729391262,
+        "T_component_seconds": 44.20867422223091,
+        "T_input_feature_seconds": 0,
+        "T_plus_G_component_seconds": 3140.382372056134,
+        "incremental_graph_feature_seconds": 0,
+        "incremental_graph_plus_fusion_seconds": 3096.173697833903,
+        "interpretation": "sum of nonoverlapping stage durations; actual workflow elapsed recorded separately; shared features charged once",
+        "shared_cache_io_seconds": 0,
+        "shared_feature_component_seconds": 0
+      },
+      "dataset": "qm9",
+      "endpoint": "homo",
+      "feature_cache_state": "cold",
+      "fit_count": 23,
+      "methods": {
+        "Chemprop": {
+          "mae": 0.005543956264908976,
+          "rmse": 0.0074598472134407455
+        },
+        "G": {
+          "mae": 0.005355723401118215,
+          "rmse": 0.007378245595632657
+        },
+        "T": {
+          "mae": 0.006219824765441801,
+          "rmse": 0.008278358850179511
+        },
+        "T_plus_G": {
+          "mae": 0.005232210762492592,
+          "rmse": 0.007115591959251326
+        }
+      },
+      "rows": {
+        "test": 1593,
+        "train": 5600,
+        "validation": 800
+      },
+      "run": 3,
+      "test_identity_digest": "a456ba6f6eb661f43a351cc807808f3c6130c34ca3ccb6710453a91b280d53e4",
+      "transform": "identity",
+      "units": "Hartree"
+    },
+    {
+      "actual_case_elapsed_seconds": 2372.18271506764,
+      "complete": true,
+      "component_costs": {
+        "Chemprop_component_seconds": 74.49451421573758,
+        "T_component_seconds": 44.80437427293509,
+        "T_input_feature_seconds": 0,
+        "T_plus_G_component_seconds": 2127.7102210596204,
+        "incremental_graph_feature_seconds": 0,
+        "incremental_graph_plus_fusion_seconds": 2082.9058467866853,
+        "interpretation": "sum of nonoverlapping stage durations; actual workflow elapsed recorded separately; shared features charged once",
+        "shared_cache_io_seconds": 0,
+        "shared_feature_component_seconds": 0
+      },
+      "dataset": "qm9",
+      "endpoint": "homo",
+      "feature_cache_state": "cold",
+      "fit_count": 23,
+      "methods": {
+        "Chemprop": {
+          "mae": 0.005411264237288136,
+          "rmse": 0.007375062115598131
+        },
+        "G": {
+          "mae": 0.005621324175945351,
+          "rmse": 0.00780845455115424
+        },
+        "T": {
+          "mae": 0.006199936608214554,
+          "rmse": 0.008197844560635898
+        },
+        "T_plus_G": {
+          "mae": 0.005380202058196178,
+          "rmse": 0.007333751368022023
+        }
+      },
+      "rows": {
+        "test": 1593,
+        "train": 5600,
+        "validation": 800
+      },
+      "run": 4,
+      "test_identity_digest": "a456ba6f6eb661f43a351cc807808f3c6130c34ca3ccb6710453a91b280d53e4",
+      "transform": "identity",
+      "units": "Hartree"
+    },
+    {
+      "actual_case_elapsed_seconds": 2275.7193099269643,
+      "complete": true,
+      "component_costs": {
+        "Chemprop_component_seconds": 70.86764841154218,
+        "T_component_seconds": 42.23177247866988,
+        "T_input_feature_seconds": 0,
+        "T_plus_G_component_seconds": 2038.0326644536108,
+        "incremental_graph_feature_seconds": 0,
+        "incremental_graph_plus_fusion_seconds": 1995.800891974941,
+        "interpretation": "sum of nonoverlapping stage durations; actual workflow elapsed recorded separately; shared features charged once",
+        "shared_cache_io_seconds": 0,
+        "shared_feature_component_seconds": 0
+      },
+      "dataset": "qm9",
+      "endpoint": "homo",
+      "feature_cache_state": "cold",
+      "fit_count": 23,
+      "methods": {
+        "Chemprop": {
+          "mae": 0.005441056139359699,
+          "rmse": 0.007351555770717647
+        },
+        "G": {
+          "mae": 0.005328518318618898,
+          "rmse": 0.0073960626002948305
+        },
+        "T": {
+          "mae": 0.006177514624381255,
+          "rmse": 0.008269586049920098
+        },
+        "T_plus_G": {
+          "mae": 0.005216038080228733,
+          "rmse": 0.007193444422528465
+        }
+      },
+      "rows": {
+        "test": 1593,
+        "train": 5600,
+        "validation": 800
+      },
+      "run": 5,
+      "test_identity_digest": "a456ba6f6eb661f43a351cc807808f3c6130c34ca3ccb6710453a91b280d53e4",
+      "transform": "identity",
+      "units": "Hartree"
+    },
+    {
+      "actual_case_elapsed_seconds": 2897.4144890327007,
+      "complete": true,
+      "component_costs": {
+        "Chemprop_component_seconds": 71.6583599569276,
+        "T_component_seconds": 45.06508294958621,
+        "T_input_feature_seconds": 0,
+        "T_plus_G_component_seconds": 2659.72070602607,
+        "incremental_graph_feature_seconds": 0,
+        "incremental_graph_plus_fusion_seconds": 2614.6556230764836,
+        "interpretation": "sum of nonoverlapping stage durations; actual workflow elapsed recorded separately; shared features charged once",
+        "shared_cache_io_seconds": 0,
+        "shared_feature_component_seconds": 0
+      },
+      "dataset": "qm9",
+      "endpoint": "lumo",
+      "feature_cache_state": "cold",
+      "fit_count": 23,
+      "methods": {
+        "Chemprop": {
+          "mae": 0.005607050209874452,
+          "rmse": 0.007376620089712318
+        },
+        "G": {
+          "mae": 0.005534955055008156,
+          "rmse": 0.007657344926799566
+        },
+        "T": {
+          "mae": 0.007053243726559942,
+          "rmse": 0.009603631415862818
+        },
+        "T_plus_G": {
+          "mae": 0.005360526354034775,
+          "rmse": 0.00739325246869524
+        }
+      },
+      "rows": {
+        "test": 1593,
+        "train": 5600,
+        "validation": 800
+      },
+      "run": 1,
+      "test_identity_digest": "a456ba6f6eb661f43a351cc807808f3c6130c34ca3ccb6710453a91b280d53e4",
+      "transform": "identity",
+      "units": "Hartree"
+    },
+    {
+      "actual_case_elapsed_seconds": 2993.8786583514884,
+      "complete": true,
+      "component_costs": {
+        "Chemprop_component_seconds": 72.58759846072644,
+        "T_component_seconds": 45.72304945625365,
+        "T_input_feature_seconds": 0,
+        "T_plus_G_component_seconds": 2745.794479502365,
+        "incremental_graph_feature_seconds": 0,
+        "incremental_graph_plus_fusion_seconds": 2700.0714300461113,
+        "interpretation": "sum of nonoverlapping stage durations; actual workflow elapsed recorded separately; shared features charged once",
+        "shared_cache_io_seconds": 0,
+        "shared_feature_component_seconds": 0
+      },
+      "dataset": "qm9",
+      "endpoint": "lumo",
+      "feature_cache_state": "cold",
+      "fit_count": 23,
+      "methods": {
+        "Chemprop": {
+          "mae": 0.005429767711148776,
+          "rmse": 0.007352642348351686
+        },
+        "G": {
+          "mae": 0.005505020723464078,
+          "rmse": 0.007592041301759319
+        },
+        "T": {
+          "mae": 0.006999247305144376,
+          "rmse": 0.009524158714160338
+        },
+        "T_plus_G": {
+          "mae": 0.005353371541260876,
+          "rmse": 0.007369352913739587
+        }
+      },
+      "rows": {
+        "test": 1593,
+        "train": 5600,
+        "validation": 800
+      },
+      "run": 2,
+      "test_identity_digest": "a456ba6f6eb661f43a351cc807808f3c6130c34ca3ccb6710453a91b280d53e4",
+      "transform": "identity",
+      "units": "Hartree"
+    },
+    {
+      "actual_case_elapsed_seconds": 2628.8554933210835,
+      "complete": true,
+      "component_costs": {
+        "Chemprop_component_seconds": 74.82310211472213,
+        "T_component_seconds": 43.2777261370793,
+        "T_input_feature_seconds": 0,
+        "T_plus_G_component_seconds": 2388.5101042427123,
+        "incremental_graph_feature_seconds": 0,
+        "incremental_graph_plus_fusion_seconds": 2345.232378105633,
+        "interpretation": "sum of nonoverlapping stage durations; actual workflow elapsed recorded separately; shared features charged once",
+        "shared_cache_io_seconds": 0,
+        "shared_feature_component_seconds": 0
+      },
+      "dataset": "qm9",
+      "endpoint": "lumo",
+      "feature_cache_state": "cold",
+      "fit_count": 23,
+      "methods": {
+        "Chemprop": {
+          "mae": 0.0053517557892887625,
+          "rmse": 0.007207480078379321
+        },
+        "G": {
+          "mae": 0.005596501612681327,
+          "rmse": 0.007747916644749104
+        },
+        "T": {
+          "mae": 0.0069182751510220904,
+          "rmse": 0.009471112068258309
+        },
+        "T_plus_G": {
+          "mae": 0.005463854288326189,
+          "rmse": 0.0075646130956971485
+        }
+      },
+      "rows": {
+        "test": 1593,
+        "train": 5600,
+        "validation": 800
+      },
+      "run": 3,
+      "test_identity_digest": "a456ba6f6eb661f43a351cc807808f3c6130c34ca3ccb6710453a91b280d53e4",
+      "transform": "identity",
+      "units": "Hartree"
+    },
+    {
+      "actual_case_elapsed_seconds": 3397.9428173964843,
+      "complete": true,
+      "component_costs": {
+        "Chemprop_component_seconds": 65.25178683549166,
+        "T_component_seconds": 45.05166040081531,
+        "T_input_feature_seconds": 0,
+        "T_plus_G_component_seconds": 3167.2163387201726,
+        "incremental_graph_feature_seconds": 0,
+        "incremental_graph_plus_fusion_seconds": 3122.1646783193573,
+        "interpretation": "sum of nonoverlapping stage durations; actual workflow elapsed recorded separately; shared features charged once",
+        "shared_cache_io_seconds": 0,
+        "shared_feature_component_seconds": 0
+      },
+      "dataset": "qm9",
+      "endpoint": "lumo",
+      "feature_cache_state": "cold",
+      "fit_count": 23,
+      "methods": {
+        "Chemprop": {
+          "mae": 0.0052943934212178285,
+          "rmse": 0.007087724935709261
+        },
+        "G": {
+          "mae": 0.005327864230703568,
+          "rmse": 0.0073352687807431
+        },
+        "T": {
+          "mae": 0.006976877136625442,
+          "rmse": 0.009549679576250285
+        },
+        "T_plus_G": {
+          "mae": 0.0052013871218318675,
+          "rmse": 0.0071790162367104705
+        }
+      },
+      "rows": {
+        "test": 1593,
+        "train": 5600,
+        "validation": 800
+      },
+      "run": 4,
+      "test_identity_digest": "a456ba6f6eb661f43a351cc807808f3c6130c34ca3ccb6710453a91b280d53e4",
+      "transform": "identity",
+      "units": "Hartree"
+    },
+    {
+      "actual_case_elapsed_seconds": 3029.0123761128634,
+      "complete": true,
+      "component_costs": {
+        "Chemprop_component_seconds": 73.97713946085423,
+        "T_component_seconds": 44.3829111661762,
+        "T_input_feature_seconds": 0,
+        "T_plus_G_component_seconds": 2786.151139130816,
+        "incremental_graph_feature_seconds": 0,
+        "incremental_graph_plus_fusion_seconds": 2741.7682279646397,
+        "interpretation": "sum of nonoverlapping stage durations; actual workflow elapsed recorded separately; shared features charged once",
+        "shared_cache_io_seconds": 0,
+        "shared_feature_component_seconds": 0
+      },
+      "dataset": "qm9",
+      "endpoint": "lumo",
+      "feature_cache_state": "cold",
+      "fit_count": 23,
+      "methods": {
+        "Chemprop": {
+          "mae": 0.0053274348206629,
+          "rmse": 0.007167231180744779
+        },
+        "G": {
+          "mae": 0.005589243670493427,
+          "rmse": 0.007644520952989557
+        },
+        "T": {
+          "mae": 0.00693036830606945,
+          "rmse": 0.009421563947484828
+        },
+        "T_plus_G": {
+          "mae": 0.005365240132281323,
+          "rmse": 0.007342490470065834
+        }
+      },
+      "rows": {
+        "test": 1593,
+        "train": 5600,
+        "validation": 800
+      },
+      "run": 5,
+      "test_identity_digest": "a456ba6f6eb661f43a351cc807808f3c6130c34ca3ccb6710453a91b280d53e4",
+      "transform": "identity",
+      "units": "Hartree"
+    },
+    {
+      "actual_case_elapsed_seconds": 2739.0072005959228,
+      "complete": true,
+      "component_costs": {
+        "Chemprop_component_seconds": 70.26732163783163,
+        "T_component_seconds": 42.960279553197324,
+        "T_input_feature_seconds": 0,
+        "T_plus_G_component_seconds": 2507.0103015433997,
+        "incremental_graph_feature_seconds": 0,
+        "incremental_graph_plus_fusion_seconds": 2464.0500219902024,
+        "interpretation": "sum of nonoverlapping stage durations; actual workflow elapsed recorded separately; shared features charged once",
+        "shared_cache_io_seconds": 0,
+        "shared_feature_component_seconds": 0
+      },
+      "dataset": "qm9",
+      "endpoint": "gap",
+      "feature_cache_state": "cold",
+      "fit_count": 23,
+      "methods": {
+        "Chemprop": {
+          "mae": 0.008105203942247332,
+          "rmse": 0.010911274262332307
+        },
+        "G": {
+          "mae": 0.00807912352019992,
+          "rmse": 0.011408973735575452
+        },
+        "T": {
+          "mae": 0.008605790865764818,
+          "rmse": 0.011515799558750983
+        },
+        "T_plus_G": {
+          "mae": 0.007523781821978393,
+          "rmse": 0.010382919262385753
+        }
+      },
+      "rows": {
+        "test": 1593,
+        "train": 5600,
+        "validation": 800
+      },
+      "run": 1,
+      "test_identity_digest": "a456ba6f6eb661f43a351cc807808f3c6130c34ca3ccb6710453a91b280d53e4",
+      "transform": "identity",
+      "units": "Hartree"
+    },
+    {
+      "actual_case_elapsed_seconds": 3358.7607236988842,
+      "complete": true,
+      "component_costs": {
+        "Chemprop_component_seconds": 73.31147966813296,
+        "T_component_seconds": 44.8668319536373,
+        "T_input_feature_seconds": 0,
+        "T_plus_G_component_seconds": 3117.224315303378,
+        "incremental_graph_feature_seconds": 0,
+        "incremental_graph_plus_fusion_seconds": 3072.3574833497405,
+        "interpretation": "sum of nonoverlapping stage durations; actual workflow elapsed recorded separately; shared features charged once",
+        "shared_cache_io_seconds": 0,
+        "shared_feature_component_seconds": 0
+      },
+      "dataset": "qm9",
+      "endpoint": "gap",
+      "feature_cache_state": "cold",
+      "fit_count": 23,
+      "methods": {
+        "Chemprop": {
+          "mae": 0.00824623344005022,
+          "rmse": 0.011198152077765502
+        },
+        "G": {
+          "mae": 0.007967318172928207,
+          "rmse": 0.01111297567864924
+        },
+        "T": {
+          "mae": 0.008508487102410707,
+          "rmse": 0.011536097147231986
+        },
+        "T_plus_G": {
+          "mae": 0.007470761056149701,
+          "rmse": 0.010361928264322232
+        }
+      },
+      "rows": {
+        "test": 1593,
+        "train": 5600,
+        "validation": 800
+      },
+      "run": 2,
+      "test_identity_digest": "a456ba6f6eb661f43a351cc807808f3c6130c34ca3ccb6710453a91b280d53e4",
+      "transform": "identity",
+      "units": "Hartree"
+    },
+    {
+      "actual_case_elapsed_seconds": 2942.7136979494244,
+      "complete": true,
+      "component_costs": {
+        "Chemprop_component_seconds": 71.90813777595758,
+        "T_component_seconds": 45.32274654880166,
+        "T_input_feature_seconds": 0,
+        "T_plus_G_component_seconds": 2699.769916387275,
+        "incremental_graph_feature_seconds": 0,
+        "incremental_graph_plus_fusion_seconds": 2654.447169838473,
+        "interpretation": "sum of nonoverlapping stage durations; actual workflow elapsed recorded separately; shared features charged once",
+        "shared_cache_io_seconds": 0,
+        "shared_feature_component_seconds": 0
+      },
+      "dataset": "qm9",
+      "endpoint": "gap",
+      "feature_cache_state": "cold",
+      "fit_count": 23,
+      "methods": {
+        "Chemprop": {
+          "mae": 0.008260419058380415,
+          "rmse": 0.011197019630629274
+        },
+        "G": {
+          "mae": 0.008046613122033185,
+          "rmse": 0.01143021554565096
+        },
+        "T": {
+          "mae": 0.00847139547992557,
+          "rmse": 0.011475153112406008
+        },
+        "T_plus_G": {
+          "mae": 0.007506852290523324,
+          "rmse": 0.010488166236697063
+        }
+      },
+      "rows": {
+        "test": 1593,
+        "train": 5600,
+        "validation": 800
+      },
+      "run": 3,
+      "test_identity_digest": "a456ba6f6eb661f43a351cc807808f3c6130c34ca3ccb6710453a91b280d53e4",
+      "transform": "identity",
+      "units": "Hartree"
+    },
+    {
+      "actual_case_elapsed_seconds": 3117.983787440695,
+      "complete": true,
+      "component_costs": {
+        "Chemprop_component_seconds": 67.4941444946453,
+        "T_component_seconds": 46.6310667777434,
+        "T_input_feature_seconds": 0,
+        "T_plus_G_component_seconds": 2881.337974828668,
+        "incremental_graph_feature_seconds": 0,
+        "incremental_graph_plus_fusion_seconds": 2834.7069080509245,
+        "interpretation": "sum of nonoverlapping stage durations; actual workflow elapsed recorded separately; shared features charged once",
+        "shared_cache_io_seconds": 0,
+        "shared_feature_component_seconds": 0
+      },
+      "dataset": "qm9",
+      "endpoint": "gap",
+      "feature_cache_state": "cold",
+      "fit_count": 23,
+      "methods": {
+        "Chemprop": {
+          "mae": 0.008239749303201507,
+          "rmse": 0.011240219621109809
+        },
+        "G": {
+          "mae": 0.007708003629828967,
+          "rmse": 0.011136488721517297
+        },
+        "T": {
+          "mae": 0.008547200024428188,
+          "rmse": 0.01156806927446582
+        },
+        "T_plus_G": {
+          "mae": 0.007325336471056968,
+          "rmse": 0.010359518530758326
+        }
+      },
+      "rows": {
+        "test": 1593,
+        "train": 5600,
+        "validation": 800
+      },
+      "run": 4,
+      "test_identity_digest": "a456ba6f6eb661f43a351cc807808f3c6130c34ca3ccb6710453a91b280d53e4",
+      "transform": "identity",
+      "units": "Hartree"
+    },
+    {
+      "actual_case_elapsed_seconds": 2557.559682369232,
+      "complete": true,
+      "component_costs": {
+        "Chemprop_component_seconds": 66.78709543962032,
+        "T_component_seconds": 47.63254829309881,
+        "T_input_feature_seconds": 0,
+        "T_plus_G_component_seconds": 2319.3215054152533,
+        "incremental_graph_feature_seconds": 0,
+        "incremental_graph_plus_fusion_seconds": 2271.6889571221545,
+        "interpretation": "sum of nonoverlapping stage durations; actual workflow elapsed recorded separately; shared features charged once",
+        "shared_cache_io_seconds": 0,
+        "shared_feature_component_seconds": 0
+      },
+      "dataset": "qm9",
+      "endpoint": "gap",
+      "feature_cache_state": "cold",
+      "fit_count": 23,
+      "methods": {
+        "Chemprop": {
+          "mae": 0.00816422143126177,
+          "rmse": 0.011087305162063204
+        },
+        "G": {
+          "mae": 0.008083225069818727,
+          "rmse": 0.011288149302678619
+        },
+        "T": {
+          "mae": 0.00844932757790738,
+          "rmse": 0.011374609642077187
+        },
+        "T_plus_G": {
+          "mae": 0.007600707172181157,
+          "rmse": 0.01050456907322347
+        }
+      },
+      "rows": {
+        "test": 1593,
+        "train": 5600,
+        "validation": 800
+      },
+      "run": 5,
+      "test_identity_digest": "a456ba6f6eb661f43a351cc807808f3c6130c34ca3ccb6710453a91b280d53e4",
+      "transform": "identity",
+      "units": "Hartree"
+    },
+    {
+      "actual_case_elapsed_seconds": 1729.6691298782825,
+      "complete": true,
+      "component_costs": {
+        "Chemprop_component_seconds": 72.2862000176683,
+        "T_component_seconds": 46.441979033872485,
+        "T_input_feature_seconds": 0,
+        "T_plus_G_component_seconds": 1488.14351647906,
+        "incremental_graph_feature_seconds": 0,
+        "incremental_graph_plus_fusion_seconds": 1441.7015374451876,
+        "interpretation": "sum of nonoverlapping stage durations; actual workflow elapsed recorded separately; shared features charged once",
+        "shared_cache_io_seconds": 0,
+        "shared_feature_component_seconds": 0
+      },
+      "dataset": "qm9",
+      "endpoint": "mu",
+      "feature_cache_state": "cold",
+      "fit_count": 23,
+      "methods": {
+        "Chemprop": {
+          "mae": 0.5755716074469553,
+          "rmse": 0.8148012417725994
+        },
+        "G": {
+          "mae": 0.647572147407833,
+          "rmse": 0.9032281460417007
+        },
+        "T": {
+          "mae": 0.6301776439269123,
+          "rmse": 0.872997599718546
+        },
+        "T_plus_G": {
+          "mae": 0.6196601958770991,
+          "rmse": 0.8585141162030873
+        }
+      },
+      "rows": {
+        "test": 1593,
+        "train": 5600,
+        "validation": 800
+      },
+      "run": 1,
+      "test_identity_digest": "a456ba6f6eb661f43a351cc807808f3c6130c34ca3ccb6710453a91b280d53e4",
+      "transform": "identity",
+      "units": "Debye"
+    },
+    {
+      "actual_case_elapsed_seconds": 2315.4963569790125,
+      "complete": true,
+      "component_costs": {
+        "Chemprop_component_seconds": 68.32653761282563,
+        "T_component_seconds": 44.87378147710115,
+        "T_input_feature_seconds": 0,
+        "T_plus_G_component_seconds": 2077.558891860768,
+        "incremental_graph_feature_seconds": 0,
+        "incremental_graph_plus_fusion_seconds": 2032.685110383667,
+        "interpretation": "sum of nonoverlapping stage durations; actual workflow elapsed recorded separately; shared features charged once",
+        "shared_cache_io_seconds": 0,
+        "shared_feature_component_seconds": 0
+      },
+      "dataset": "qm9",
+      "endpoint": "mu",
+      "feature_cache_state": "cold",
+      "fit_count": 23,
+      "methods": {
+        "Chemprop": {
+          "mae": 0.5842946241730069,
+          "rmse": 0.8245595010876388
+        },
+        "G": {
+          "mae": 0.6301174490524672,
+          "rmse": 0.8985468863252012
+        },
+        "T": {
+          "mae": 0.6231487841449304,
+          "rmse": 0.8665929521970237
+        },
+        "T_plus_G": {
+          "mae": 0.5993748690078425,
+          "rmse": 0.8381029900847454
+        }
+      },
+      "rows": {
+        "test": 1593,
+        "train": 5600,
+        "validation": 800
+      },
+      "run": 2,
+      "test_identity_digest": "a456ba6f6eb661f43a351cc807808f3c6130c34ca3ccb6710453a91b280d53e4",
+      "transform": "identity",
+      "units": "Debye"
+    },
+    {
+      "actual_case_elapsed_seconds": 1817.8695454970002,
+      "complete": true,
+      "component_costs": {
+        "Chemprop_component_seconds": 74.33527857158333,
+        "T_component_seconds": 47.25320938695222,
+        "T_input_feature_seconds": 0,
+        "T_plus_G_component_seconds": 1573.296199573204,
+        "incremental_graph_feature_seconds": 0,
+        "incremental_graph_plus_fusion_seconds": 1526.0429901862517,
+        "interpretation": "sum of nonoverlapping stage durations; actual workflow elapsed recorded separately; shared features charged once",
+        "shared_cache_io_seconds": 0,
+        "shared_feature_component_seconds": 0
+      },
+      "dataset": "qm9",
+      "endpoint": "mu",
+      "feature_cache_state": "cold",
+      "fit_count": 23,
+      "methods": {
+        "Chemprop": {
+          "mae": 0.578636804608349,
+          "rmse": 0.8030304852188939
+        },
+        "G": {
+          "mae": 0.6255312180081236,
+          "rmse": 0.8687900114426957
+        },
+        "T": {
+          "mae": 0.6186585450763106,
+          "rmse": 0.8626720189978642
+        },
+        "T_plus_G": {
+          "mae": 0.6012378140365682,
+          "rmse": 0.8378178152307054
+        }
+      },
+      "rows": {
+        "test": 1593,
+        "train": 5600,
+        "validation": 800
+      },
+      "run": 3,
+      "test_identity_digest": "a456ba6f6eb661f43a351cc807808f3c6130c34ca3ccb6710453a91b280d53e4",
+      "transform": "identity",
+      "units": "Debye"
+    },
+    {
+      "actual_case_elapsed_seconds": 1805.1938784355298,
+      "complete": true,
+      "component_costs": {
+        "Chemprop_component_seconds": 72.33315041381866,
+        "T_component_seconds": 46.51821535732597,
+        "T_input_feature_seconds": 0,
+        "T_plus_G_component_seconds": 1562.3543199971318,
+        "incremental_graph_feature_seconds": 0,
+        "incremental_graph_plus_fusion_seconds": 1515.8361046398059,
+        "interpretation": "sum of nonoverlapping stage durations; actual workflow elapsed recorded separately; shared features charged once",
+        "shared_cache_io_seconds": 0,
+        "shared_feature_component_seconds": 0
+      },
+      "dataset": "qm9",
+      "endpoint": "mu",
+      "feature_cache_state": "cold",
+      "fit_count": 23,
+      "methods": {
+        "Chemprop": {
+          "mae": 0.571004739057941,
+          "rmse": 0.8083671980004207
+        },
+        "G": {
+          "mae": 0.6305393693477577,
+          "rmse": 0.9111891476615096
+        },
+        "T": {
+          "mae": 0.6212328676303933,
+          "rmse": 0.8650162300934781
+        },
+        "T_plus_G": {
+          "mae": 0.5997191554223994,
+          "rmse": 0.8416169233783088
+        }
+      },
+      "rows": {
+        "test": 1593,
+        "train": 5600,
+        "validation": 800
+      },
+      "run": 4,
+      "test_identity_digest": "a456ba6f6eb661f43a351cc807808f3c6130c34ca3ccb6710453a91b280d53e4",
+      "transform": "identity",
+      "units": "Debye"
+    },
+    {
+      "actual_case_elapsed_seconds": 1916.3112783245742,
+      "complete": true,
+      "component_costs": {
+        "Chemprop_component_seconds": 70.73763139080256,
+        "T_component_seconds": 45.210815952159464,
+        "T_input_feature_seconds": 0,
+        "T_plus_G_component_seconds": 1674.8846162892878,
+        "incremental_graph_feature_seconds": 0,
+        "incremental_graph_plus_fusion_seconds": 1629.6738003371283,
+        "interpretation": "sum of nonoverlapping stage durations; actual workflow elapsed recorded separately; shared features charged once",
+        "shared_cache_io_seconds": 0,
+        "shared_feature_component_seconds": 0
+      },
+      "dataset": "qm9",
+      "endpoint": "mu",
+      "feature_cache_state": "cold",
+      "fit_count": 23,
+      "methods": {
+        "Chemprop": {
+          "mae": 0.5907876036204645,
+          "rmse": 0.8229053846237694
+        },
+        "G": {
+          "mae": 0.6006476904345907,
+          "rmse": 0.8576330910686782
+        },
+        "T": {
+          "mae": 0.6226682288827384,
+          "rmse": 0.8654998421838473
+        },
+        "T_plus_G": {
+          "mae": 0.5945871641173777,
+          "rmse": 0.830693498851917
+        }
+      },
+      "rows": {
+        "test": 1593,
+        "train": 5600,
+        "validation": 800
+      },
+      "run": 5,
+      "test_identity_digest": "a456ba6f6eb661f43a351cc807808f3c6130c34ca3ccb6710453a91b280d53e4",
+      "transform": "identity",
+      "units": "Debye"
+    },
+    {
+      "actual_case_elapsed_seconds": 3088.3772585382685,
+      "complete": true,
+      "component_costs": {
+        "Chemprop_component_seconds": 71.99785944540054,
+        "T_component_seconds": 44.933694335632026,
+        "T_input_feature_seconds": 0,
+        "T_plus_G_component_seconds": 2844.6420323327184,
+        "incremental_graph_feature_seconds": 0,
+        "incremental_graph_plus_fusion_seconds": 2799.7083379970863,
+        "interpretation": "sum of nonoverlapping stage durations; actual workflow elapsed recorded separately; shared features charged once",
+        "shared_cache_io_seconds": 0,
+        "shared_feature_component_seconds": 0
+      },
+      "dataset": "qm9",
+      "endpoint": "alpha",
+      "feature_cache_state": "cold",
+      "fit_count": 23,
+      "methods": {
+        "Chemprop": {
+          "mae": 0.6376120778405525,
+          "rmse": 0.8810766501837357
+        },
+        "G": {
+          "mae": 0.5934841878524305,
+          "rmse": 0.845458592624024
+        },
+        "T": {
+          "mae": 0.7353557271906757,
+          "rmse": 1.0734692330440996
+        },
+        "T_plus_G": {
+          "mae": 0.5691083823451998,
+          "rmse": 0.8201567158620469
+        }
+      },
+      "rows": {
+        "test": 1593,
+        "train": 5600,
+        "validation": 800
+      },
+      "run": 1,
+      "test_identity_digest": "a456ba6f6eb661f43a351cc807808f3c6130c34ca3ccb6710453a91b280d53e4",
+      "transform": "identity",
+      "units": "Bohr^3"
+    },
+    {
+      "actual_case_elapsed_seconds": 3011.3585481410846,
+      "complete": true,
+      "component_costs": {
+        "Chemprop_component_seconds": 70.43706832546741,
+        "T_component_seconds": 45.86414666008204,
+        "T_input_feature_seconds": 0,
+        "T_plus_G_component_seconds": 2772.891124887392,
+        "incremental_graph_feature_seconds": 0,
+        "incremental_graph_plus_fusion_seconds": 2727.02697822731,
+        "interpretation": "sum of nonoverlapping stage durations; actual workflow elapsed recorded separately; shared features charged once",
+        "shared_cache_io_seconds": 0,
+        "shared_feature_component_seconds": 0
+      },
+      "dataset": "qm9",
+      "endpoint": "alpha",
+      "feature_cache_state": "cold",
+      "fit_count": 23,
+      "methods": {
+        "Chemprop": {
+          "mae": 0.6280136290018832,
+          "rmse": 0.8880330093520781
+        },
+        "G": {
+          "mae": 0.604845397411973,
+          "rmse": 0.8313342805684931
+        },
+        "T": {
+          "mae": 0.7409181427098136,
+          "rmse": 1.056243806718924
+        },
+        "T_plus_G": {
+          "mae": 0.5703625158781077,
+          "rmse": 0.7942129000763932
+        }
+      },
+      "rows": {
+        "test": 1593,
+        "train": 5600,
+        "validation": 800
+      },
+      "run": 2,
+      "test_identity_digest": "a456ba6f6eb661f43a351cc807808f3c6130c34ca3ccb6710453a91b280d53e4",
+      "transform": "identity",
+      "units": "Bohr^3"
+    },
+    {
+      "actual_case_elapsed_seconds": 2814.3137823101133,
+      "complete": true,
+      "component_costs": {
+        "Chemprop_component_seconds": 71.78050318919122,
+        "T_component_seconds": 46.446638625115156,
+        "T_input_feature_seconds": 0,
+        "T_plus_G_component_seconds": 2571.650016146712,
+        "incremental_graph_feature_seconds": 0,
+        "incremental_graph_plus_fusion_seconds": 2525.203377521597,
+        "interpretation": "sum of nonoverlapping stage durations; actual workflow elapsed recorded separately; shared features charged once",
+        "shared_cache_io_seconds": 0,
+        "shared_feature_component_seconds": 0
+      },
+      "dataset": "qm9",
+      "endpoint": "alpha",
+      "feature_cache_state": "cold",
+      "fit_count": 23,
+      "methods": {
+        "Chemprop": {
+          "mae": 0.6120753596986819,
+          "rmse": 0.8801339777342096
+        },
+        "G": {
+          "mae": 0.5981672067854809,
+          "rmse": 0.8246521517017422
+        },
+        "T": {
+          "mae": 0.7465577072619594,
+          "rmse": 1.0772139789039543
+        },
+        "T_plus_G": {
+          "mae": 0.5788387612708028,
+          "rmse": 0.8032899444833841
+        }
+      },
+      "rows": {
+        "test": 1593,
+        "train": 5600,
+        "validation": 800
+      },
+      "run": 3,
+      "test_identity_digest": "a456ba6f6eb661f43a351cc807808f3c6130c34ca3ccb6710453a91b280d53e4",
+      "transform": "identity",
+      "units": "Bohr^3"
+    },
+    {
+      "actual_case_elapsed_seconds": 3262.872363987379,
+      "complete": true,
+      "component_costs": {
+        "Chemprop_component_seconds": 77.68009221274406,
+        "T_component_seconds": 48.1813046541065,
+        "T_input_feature_seconds": 0,
+        "T_plus_G_component_seconds": 3013.1185014853254,
+        "incremental_graph_feature_seconds": 0,
+        "incremental_graph_plus_fusion_seconds": 2964.937196831219,
+        "interpretation": "sum of nonoverlapping stage durations; actual workflow elapsed recorded separately; shared features charged once",
+        "shared_cache_io_seconds": 0,
+        "shared_feature_component_seconds": 0
+      },
+      "dataset": "qm9",
+      "endpoint": "alpha",
+      "feature_cache_state": "cold",
+      "fit_count": 23,
+      "methods": {
+        "Chemprop": {
+          "mae": 0.5958072140615194,
+          "rmse": 0.8417283283253734
+        },
+        "G": {
+          "mae": 0.5569300232966761,
+          "rmse": 0.7736174521887038
+        },
+        "T": {
+          "mae": 0.7316575188924043,
+          "rmse": 1.0539683200804488
+        },
+        "T_plus_G": {
+          "mae": 0.526282291227459,
+          "rmse": 0.7480891220908487
+        }
+      },
+      "rows": {
+        "test": 1593,
+        "train": 5600,
+        "validation": 800
+      },
+      "run": 4,
+      "test_identity_digest": "a456ba6f6eb661f43a351cc807808f3c6130c34ca3ccb6710453a91b280d53e4",
+      "transform": "identity",
+      "units": "Bohr^3"
+    },
+    {
+      "actual_case_elapsed_seconds": 2930.959733568132,
+      "complete": true,
+      "component_costs": {
+        "Chemprop_component_seconds": 75.15831004548818,
+        "T_component_seconds": 47.87022825796157,
+        "T_input_feature_seconds": 0,
+        "T_plus_G_component_seconds": 2685.9170542769134,
+        "incremental_graph_feature_seconds": 0,
+        "incremental_graph_plus_fusion_seconds": 2638.046826018952,
+        "interpretation": "sum of nonoverlapping stage durations; actual workflow elapsed recorded separately; shared features charged once",
+        "shared_cache_io_seconds": 0,
+        "shared_feature_component_seconds": 0
+      },
+      "dataset": "qm9",
+      "endpoint": "alpha",
+      "feature_cache_state": "cold",
+      "fit_count": 23,
+      "methods": {
+        "Chemprop": {
+          "mae": 0.6315499774011301,
+          "rmse": 0.8832624857969334
+        },
+        "G": {
+          "mae": 0.6394669399372951,
+          "rmse": 0.86738937967949
+        },
+        "T": {
+          "mae": 0.7413630700529332,
+          "rmse": 1.0572511654802477
+        },
+        "T_plus_G": {
+          "mae": 0.6225159442686221,
+          "rmse": 0.8452907495776807
+        }
+      },
+      "rows": {
+        "test": 1593,
+        "train": 5600,
+        "validation": 800
+      },
+      "run": 5,
+      "test_identity_digest": "a456ba6f6eb661f43a351cc807808f3c6130c34ca3ccb6710453a91b280d53e4",
+      "transform": "identity",
+      "units": "Bohr^3"
+    }
+  ],
+  "cases_elapsed_seconds": 83770.89781754743,
+  "cost_totals_seconds": {
+    "Chemprop_component_seconds": 2764.643178009428,
+    "T_component_seconds": 2087.4745963951573,
+    "T_plus_G_component_seconds": 71588.45850916114,
+    "incremental_graph_plus_fusion_seconds": 69500.98391276598
+  },
+  "endpoints": [
+    {
+      "actual_case_elapsed_seconds": {
+        "max": 711.2169914580882,
+        "mean": 631.076391445659,
+        "median": 613.742005078122,
+        "min": 596.28724620305,
+        "sample_sd": 46.16061765523255
+      },
+      "costs": {
+        "Chemprop_component_seconds": {
+          "max": 35.37412652838975,
+          "mean": 33.44823925290257,
+          "median": 33.62315402831882,
+          "min": 31.722191746346653,
+          "sample_sd": 1.3952425875717904
+        },
+        "T_component_seconds": {
+          "max": 35.139670860022306,
+          "mean": 33.767036873102185,
+          "median": 33.42260303441435,
+          "min": 32.687452930025756,
+          "sample_sd": 0.9388162568202573
+        },
+        "T_plus_G_component_seconds": {
+          "max": 513.2974281236529,
+          "mean": 433.57643322441726,
+          "median": 417.5591544313356,
+          "min": 400.6337717734277,
+          "sample_sd": 45.67082515302033
+        },
+        "incremental_graph_plus_fusion_seconds": {
+          "max": 479.8748250892386,
+          "mean": 399.80939635131506,
+          "median": 382.4194835713133,
+          "min": 366.4191878810525,
+          "sample_sd": 45.872354499816076
+        }
+      },
+      "dataset": "ppbr_az",
+      "endpoint": "Y",
+      "methods": {
+        "Chemprop": {
+          "mae": {
+            "mean": 6.703759626086956,
+            "sample_sd": 0.43930013587492156
+          },
+          "rmse": {
+            "mean": 10.358676945077637,
+            "sample_sd": 0.5832257376833629
+          }
+        },
+        "G": {
+          "mae": {
+            "mean": 6.4847254484164,
+            "sample_sd": 1.1896729308316574
+          },
+          "rmse": {
+            "mean": 11.068937234340316,
+            "sample_sd": 0.8402860472471267
+          }
+        },
+        "T": {
+          "mae": {
+            "mean": 6.220056869789856,
+            "sample_sd": 0.20052747007231608
+          },
+          "rmse": {
+            "mean": 10.336603300955598,
+            "sample_sd": 0.3503737414185737
+          }
+        },
+        "T_plus_G": {
+          "mae": {
+            "mean": 6.168165756906342,
+            "sample_sd": 0.25410727660482646
+          },
+          "rmse": {
+            "mean": 10.285396052707329,
+            "sample_sd": 0.4317011789216545
+          }
+        }
+      },
+      "paired_differences": {
+        "T_plus_G_minus_Chemprop": {
+          "mae": {
+            "favorable_runs": 4,
+            "mean": -0.5355938691806145,
+            "run_deltas": [
+              -0.25194397687669134,
+              0.17653494570654615,
+              -0.22688233141957959,
+              -0.9219598455752287,
+              -1.453718137738119
+            ],
+            "sample_sd": 0.6471318189080603
+          },
+          "rmse": {
+            "favorable_runs": 2,
+            "mean": -0.07328089237030752,
+            "run_deltas": [
+              0.44938678938121335,
+              0.9963839932370977,
+              0.2893863697001233,
+              -0.7001767182477607,
+              -1.4013848959222113
+            ],
+            "sample_sd": 0.9625163163266174
+          }
+        },
+        "T_plus_G_minus_T": {
+          "mae": {
+            "favorable_runs": 4,
+            "mean": -0.05189111288351356,
+            "run_deltas": [
+              -0.16664675502234605,
+              0.20947293110541043,
+              -0.07976376025301501,
+              -0.04325605914401276,
+              -0.1792619211036044
+            ],
+            "sample_sd": 0.15696718789610759
+          },
+          "rmse": {
+            "favorable_runs": 4,
+            "mean": -0.05120724824826937,
+            "run_deltas": [
+              -0.1435370418351667,
+              0.1785819192717213,
+              -0.023844211430647633,
+              -0.09884284370513541,
+              -0.1683940635421184
+            ],
+            "sample_sd": 0.13971264054341753
+          }
+        }
+      },
+      "runs": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "runs_completed": 5,
+      "units": "percent_bound"
+    },
+    {
+      "actual_case_elapsed_seconds": {
+        "max": 563.864876720123,
+        "mean": 501.0210539899766,
+        "median": 498.77985124941915,
+        "min": 454.69768015295267,
+        "sample_sd": 40.208336865235935
+      },
+      "costs": {
+        "Chemprop_component_seconds": {
+          "max": 35.08926146198064,
+          "mean": 32.822002874314784,
+          "median": 32.673869309946895,
+          "min": 30.712728309445083,
+          "sample_sd": 1.5995361140673903
+        },
+        "T_component_seconds": {
+          "max": 35.793310932815075,
+          "mean": 33.29645277000964,
+          "median": 33.259136537089944,
+          "min": 30.635693384334445,
+          "sample_sd": 1.8631589198364957
+        },
+        "T_plus_G_component_seconds": {
+          "max": 356.5440672375262,
+          "mean": 291.354734252207,
+          "median": 290.08072421420366,
+          "min": 236.19763275422156,
+          "sample_sd": 43.19961734237224
+        },
+        "incremental_graph_plus_fusion_seconds": {
+          "max": 323.28493070043623,
+          "mean": 258.05828148219734,
+          "median": 259.4450308298692,
+          "min": 200.40432182140648,
+          "sample_sd": 43.97983394092009
+        }
+      },
+      "dataset": "vdss_lombardo",
+      "endpoint": "Y",
+      "methods": {
+        "Chemprop": {
+          "mae": {
+            "mean": 4.345530576282464,
+            "sample_sd": 1.2461543486291689
+          },
+          "rmse": {
+            "mean": 10.74752655713131,
+            "sample_sd": 7.2826082602893285
+          },
+          "spearman": {
+            "mean": 0.3867962320113521,
+            "sample_sd": 0.2344106325414818
+          }
+        },
+        "G": {
+          "mae": {
+            "mean": 3.503226435787738,
+            "sample_sd": 0.3590804524681819
+          },
+          "rmse": {
+            "mean": 6.414859458194449,
+            "sample_sd": 0.1380310520430657
+          },
+          "spearman": {
+            "mean": 0.522472833801744,
+            "sample_sd": 0.039716591242578696
+          }
+        },
+        "T": {
+          "mae": {
+            "mean": 4.034878099502448,
+            "sample_sd": 0.9112771338544905
+          },
+          "rmse": {
+            "mean": 8.1301539932036,
+            "sample_sd": 2.632464458075256
+          },
+          "spearman": {
+            "mean": 0.5185092363931015,
+            "sample_sd": 0.09642434940981215
+          }
+        },
+        "T_plus_G": {
+          "mae": {
+            "mean": 5.749561675891671,
+            "sample_sd": 2.926122069409018
+          },
+          "rmse": {
+            "mean": 9.384626063400237,
+            "sample_sd": 3.2029692477047984
+          },
+          "spearman": {
+            "mean": 0.4766665446342985,
+            "sample_sd": 0.09471099925233571
+          }
+        }
+      },
+      "paired_differences": {
+        "T_plus_G_minus_Chemprop": {
+          "mae": {
+            "favorable_runs": 2,
+            "mean": 1.4040310996092071,
+            "run_deltas": [
+              0.6793061690097164,
+              -0.18467801342648382,
+              -0.14987940683452106,
+              0.09466065828720716,
+              6.580746091010117
+            ],
+            "sample_sd": 2.914476358958586
+          },
+          "rmse": {
+            "favorable_runs": 3,
+            "mean": -1.3629004937310718,
+            "run_deltas": [
+              -0.3881347766666625,
+              -2.3609546503586447,
+              -10.80762358526958,
+              0.06971649980423589,
+              6.672494043835293
+            ],
+            "sample_sd": 6.280307146212753
+          },
+          "spearman": {
+            "favorable_runs": 3,
+            "mean": 0.0898703126229463,
+            "run_deltas": [
+              -0.19339149402590583,
+              0.09985260461028472,
+              -0.04804132151194351,
+              0.07068392544332969,
+              0.5202478485989664
+            ],
+            "sample_sd": 0.2669032863299198
+          }
+        },
+        "T_plus_G_minus_T": {
+          "mae": {
+            "favorable_runs": 1,
+            "mean": 1.7146835763892223,
+            "run_deltas": [
+              0.17068932324663244,
+              1.9137607503689966,
+              0.3049311504576142,
+              -0.04135497295760615,
+              6.225391630830474
+            ],
+            "sample_sd": 2.6382338039183746
+          },
+          "rmse": {
+            "favorable_runs": 1,
+            "mean": 1.254472070196639,
+            "run_deltas": [
+              -0.2577041323669862,
+              2.002048145533526,
+              0.06872077762995765,
+              0.03876407432982898,
+              4.420531485856868
+            ],
+            "sample_sd": 1.9845296129400973
+          },
+          "spearman": {
+            "favorable_runs": 2,
+            "mean": -0.04184269175880304,
+            "run_deltas": [
+              -0.07977887214146506,
+              -0.20103417205720364,
+              -0.08898114058070317,
+              0.004635385839120043,
+              0.15594534014623662
+            ],
+            "sample_sd": 0.13255511287859134
+          }
+        }
+      },
+      "runs": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "runs_completed": 5,
+      "units": "L/kg"
+    },
+    {
+      "actual_case_elapsed_seconds": {
+        "max": 365.2112675216049,
+        "mean": 344.56186379268763,
+        "median": 337.7430281685665,
+        "min": 328.75310206320137,
+        "sample_sd": 15.40617654863884
+      },
+      "costs": {
+        "Chemprop_component_seconds": {
+          "max": 29.680570392869413,
+          "mean": 28.19843456018716,
+          "median": 29.020812048576772,
+          "min": 26.166563068516552,
+          "sample_sd": 1.6527692132190281
+        },
+        "T_component_seconds": {
+          "max": 29.188178930431604,
+          "mean": 28.678089366294444,
+          "median": 28.773753197863698,
+          "min": 27.94769253861159,
+          "sample_sd": 0.5490991998126591
+        },
+        "T_plus_G_component_seconds": {
+          "max": 158.29155918583274,
+          "mean": 137.63528420682997,
+          "median": 131.08135694172233,
+          "min": 121.24349022749811,
+          "sample_sd": 14.791191507237365
+        },
+        "incremental_graph_plus_fusion_seconds": {
+          "max": 129.10338025540113,
+          "mean": 108.95719484053552,
+          "median": 102.78560824505985,
+          "min": 93.29579768888652,
+          "sample_sd": 14.419186637961078
+        }
+      },
+      "dataset": "half_life_obach",
+      "endpoint": "Y",
+      "methods": {
+        "Chemprop": {
+          "mae": {
+            "mean": 17.73593700122857,
+            "sample_sd": 4.000874650610004
+          },
+          "rmse": {
+            "mean": 24.68863311421261,
+            "sample_sd": 4.395092635727724
+          },
+          "spearman": {
+            "mean": 0.1226123193927362,
+            "sample_sd": 0.12243705006103299
+          }
+        },
+        "G": {
+          "mae": {
+            "mean": 13.18914201441076,
+            "sample_sd": 7.145491966188384
+          },
+          "rmse": {
+            "mean": 17.88604094278214,
+            "sample_sd": 5.807821301762657
+          },
+          "spearman": {
+            "mean": 0.3074142140495538,
+            "sample_sd": 0.16247616395253284
+          }
+        },
+        "T": {
+          "mae": {
+            "mean": 17.378984077815534,
+            "sample_sd": 2.8808848541243535
+          },
+          "rmse": {
+            "mean": 25.901847062500927,
+            "sample_sd": 2.4940660950282165
+          },
+          "spearman": {
+            "mean": 0.40440748197860293,
+            "sample_sd": 0.03201322858804489
+          }
+        },
+        "T_plus_G": {
+          "mae": {
+            "mean": 17.89087903012598,
+            "sample_sd": 3.479544308550124
+          },
+          "rmse": {
+            "mean": 25.64441742950466,
+            "sample_sd": 3.562365226443417
+          },
+          "spearman": {
+            "mean": 0.3973689644662782,
+            "sample_sd": 0.0305354181179295
+          }
+        }
+      },
+      "paired_differences": {
+        "T_plus_G_minus_Chemprop": {
+          "mae": {
+            "favorable_runs": 3,
+            "mean": 0.1549420288974055,
+            "run_deltas": [
+              2.5487805279837374,
+              -0.10026488322269245,
+              -8.31856640819065,
+              -1.7311460333006892,
+              8.375906941217321
+            ],
+            "sample_sd": 6.097899860383606
+          },
+          "rmse": {
+            "favorable_runs": 2,
+            "mean": 0.9557843152920527,
+            "run_deltas": [
+              8.41399867733223,
+              3.151623940144791,
+              -4.345925350472289,
+              -8.962479981442609,
+              6.521704290898139
+            ],
+            "sample_sd": 7.380823638710778
+          },
+          "spearman": {
+            "favorable_runs": 5,
+            "mean": 0.27475664507354197,
+            "run_deltas": [
+              0.37398725895125645,
+              0.3761237802970849,
+              0.3802767936996504,
+              0.12521455438023965,
+              0.11818083803947849
+            ],
+            "sample_sd": 0.13976349025885146
+          }
+        },
+        "T_plus_G_minus_T": {
+          "mae": {
+            "favorable_runs": 1,
+            "mean": 0.511894952310443,
+            "run_deltas": [
+              1.94631169230761,
+              -0.020575232427971102,
+              0.17734652667445872,
+              0.1808731171936202,
+              0.275518657804497
+            ],
+            "sample_sd": 0.8090809197236466
+          },
+          "rmse": {
+            "favorable_runs": 2,
+            "mean": -0.25742963299627275,
+            "run_deltas": [
+              1.0574882200147364,
+              -0.021235627904122367,
+              0.12047935677128052,
+              -2.812993980899062,
+              0.3691138670358036
+            ],
+            "sample_sd": 1.4875380387119466
+          },
+          "spearman": {
+            "favorable_runs": 2,
+            "mean": -0.007038517512324827,
+            "run_deltas": [
+              -0.038721448660913815,
+              -0.001464357326916188,
+              0.002688656075649387,
+              0.015987901306986074,
+              -0.013683338956429592
+            ],
+            "sample_sd": 0.020638961393537696
+          }
+        }
+      },
+      "runs": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "runs_completed": 5,
+      "units": "hour"
+    },
+    {
+      "actual_case_elapsed_seconds": {
+        "max": 544.1427911864594,
+        "mean": 495.3676948226988,
+        "median": 482.5852909712121,
+        "min": 476.51450144220144,
+        "sample_sd": 28.253456723523453
+      },
+      "costs": {
+        "Chemprop_component_seconds": {
+          "max": 33.44124086480588,
+          "mean": 31.331109197437762,
+          "median": 31.15422154776752,
+          "min": 29.25541821308434,
+          "sample_sd": 1.57280077063139
+        },
+        "T_component_seconds": {
+          "max": 32.016040936112404,
+          "mean": 30.775843646377325,
+          "median": 30.975188506767154,
+          "min": 29.650597423315048,
+          "sample_sd": 0.8940719013068245
+        },
+        "T_plus_G_component_seconds": {
+          "max": 333.52463417034596,
+          "mean": 286.96375753842295,
+          "median": 275.11143966857344,
+          "min": 266.1608347920701,
+          "sample_sd": 27.21367027271615
+        },
+        "incremental_graph_plus_fusion_seconds": {
+          "max": 303.2958490801975,
+          "mean": 256.18791389204563,
+          "median": 245.4608422452584,
+          "min": 235.15222851652652,
+          "sample_sd": 27.549630759401666
+        }
+      },
+      "dataset": "clearance_microsome_az",
+      "endpoint": "Y",
+      "methods": {
+        "Chemprop": {
+          "mae": {
+            "mean": 37.82459537999999,
+            "sample_sd": 0.6901057067358496
+          },
+          "rmse": {
+            "mean": 51.04024487980267,
+            "sample_sd": 0.31790732469682387
+          },
+          "spearman": {
+            "mean": 0.42169227129729503,
+            "sample_sd": 0.009288539293596713
+          }
+        },
+        "G": {
+          "mae": {
+            "mean": 34.9361799930252,
+            "sample_sd": 2.2639291190146458
+          },
+          "rmse": {
+            "mean": 49.309838134263245,
+            "sample_sd": 2.6472338563461193
+          },
+          "spearman": {
+            "mean": 0.5719575661381426,
+            "sample_sd": 0.01701871525810101
+          }
+        },
+        "T": {
+          "mae": {
+            "mean": 29.757491540896588,
+            "sample_sd": 0.8801110977415865
+          },
+          "rmse": {
+            "mean": 39.74657094241836,
+            "sample_sd": 0.9030237882780333
+          },
+          "spearman": {
+            "mean": 0.687847199784251,
+            "sample_sd": 0.029025955057044382
+          }
+        },
+        "T_plus_G": {
+          "mae": {
+            "mean": 30.469963561404448,
+            "sample_sd": 1.277861954318472
+          },
+          "rmse": {
+            "mean": 41.1567467724259,
+            "sample_sd": 1.8988818828583653
+          },
+          "spearman": {
+            "mean": 0.6685481644570173,
+            "sample_sd": 0.03463136288926192
+          }
+        }
+      },
+      "paired_differences": {
+        "T_plus_G_minus_Chemprop": {
+          "mae": {
+            "favorable_runs": 5,
+            "mean": -7.35463181859555,
+            "run_deltas": [
+              -9.625846528403002,
+              -7.778293713369646,
+              -6.4186731843702916,
+              -8.023301739825868,
+              -4.9270439270089454
+            ],
+            "sample_sd": 1.7715972072572106
+          },
+          "rmse": {
+            "favorable_runs": 5,
+            "mean": -9.883498107376772,
+            "run_deltas": [
+              -12.317989396326041,
+              -7.809528733678306,
+              -9.960109964258216,
+              -11.5709689448733,
+              -7.758893497747998
+            ],
+            "sample_sd": 2.0973476553900747
+          },
+          "spearman": {
+            "favorable_runs": 5,
+            "mean": 0.24685589315972215,
+            "run_deltas": [
+              0.28554938549689535,
+              0.21768071367244535,
+              0.20432167809364316,
+              0.2881734817713031,
+              0.2385542067643237
+            ],
+            "sample_sd": 0.038514925757206595
+          }
+        },
+        "T_plus_G_minus_T": {
+          "mae": {
+            "favorable_runs": 0,
+            "mean": 0.7124720205078574,
+            "run_deltas": [
+              0.06607577246687413,
+              1.236646893780513,
+              1.2411608273402912,
+              0.18540063827151343,
+              0.8330759706800954
+            ],
+            "sample_sd": 0.5622385651330415
+          },
+          "rmse": {
+            "favorable_runs": 0,
+            "mean": 1.410175830007536,
+            "run_deltas": [
+              0.002073142780950832,
+              2.7791236302634346,
+              1.002764943077736,
+              1.0346408158898228,
+              2.232276618025736
+            ],
+            "sample_sd": 1.0999580833920055
+          },
+          "spearman": {
+            "favorable_runs": 1,
+            "mean": -0.019299035327233805,
+            "run_deltas": [
+              0.003578313101464836,
+              -0.04902288949006861,
+              -0.009780722477337411,
+              -0.014551806612623674,
+              -0.026718071157604162
+            ],
+            "sample_sd": 0.019843494715215824
+          }
+        }
+      },
+      "runs": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "runs_completed": 5,
+      "units": "uL/min/mg"
+    },
+    {
+      "actual_case_elapsed_seconds": {
+        "max": 620.466310297139,
+        "mean": 501.3405456416309,
+        "median": 495.78099370282143,
+        "min": 433.4707376174629,
+        "sample_sd": 73.42022851009199
+      },
+      "costs": {
+        "Chemprop_component_seconds": {
+          "max": 33.46813043393195,
+          "mean": 32.42132793124765,
+          "median": 32.164886304177344,
+          "min": 31.663077829405665,
+          "sample_sd": 0.6965847738742605
+        },
+        "T_component_seconds": {
+          "max": 33.57957261800766,
+          "mean": 33.20825539249927,
+          "median": 33.27689606603235,
+          "min": 32.742365188896656,
+          "sample_sd": 0.31577899664517245
+        },
+        "T_plus_G_component_seconds": {
+          "max": 415.11460450012237,
+          "mean": 296.37880203071984,
+          "median": 289.9081488987431,
+          "min": 230.76039712224156,
+          "sample_sd": 73.01218763206299
+        },
+        "incremental_graph_plus_fusion_seconds": {
+          "max": 382.3722393112257,
+          "mean": 263.17054663822057,
+          "median": 256.5474864151329,
+          "min": 197.4835010562092,
+          "sample_sd": 73.29108604640413
+        }
+      },
+      "dataset": "clearance_hepatocyte_az",
+      "endpoint": "Y",
+      "methods": {
+        "Chemprop": {
+          "mae": {
+            "mean": 39.6301894858,
+            "sample_sd": 0.951921798901716
+          },
+          "rmse": {
+            "mean": 51.54476854472083,
+            "sample_sd": 0.7637128614767842
+          },
+          "spearman": {
+            "mean": 0.3898166524796952,
+            "sample_sd": 0.05295544069349296
+          }
+        },
+        "G": {
+          "mae": {
+            "mean": 38.3706628065926,
+            "sample_sd": 2.5475739384369613
+          },
+          "rmse": {
+            "mean": 50.37437509782306,
+            "sample_sd": 1.926311116197537
+          },
+          "spearman": {
+            "mean": 0.39974754567882964,
+            "sample_sd": 0.060066121847783455
+          }
+        },
+        "T": {
+          "mae": {
+            "mean": 38.703385190552865,
+            "sample_sd": 1.2749583917843628
+          },
+          "rmse": {
+            "mean": 47.065148128483635,
+            "sample_sd": 0.6592643817563666
+          },
+          "spearman": {
+            "mean": 0.46249449782570434,
+            "sample_sd": 0.015146507543911555
+          }
+        },
+        "T_plus_G": {
+          "mae": {
+            "mean": 38.3219807716827,
+            "sample_sd": 1.0333819843868903
+          },
+          "rmse": {
+            "mean": 47.0089422370274,
+            "sample_sd": 0.5706765239201256
+          },
+          "spearman": {
+            "mean": 0.46570458146722143,
+            "sample_sd": 0.023498605117696057
+          }
+        }
+      },
+      "paired_differences": {
+        "T_plus_G_minus_Chemprop": {
+          "mae": {
+            "favorable_runs": 4,
+            "mean": -1.3082087141172962,
+            "run_deltas": [
+              -0.8450674731480419,
+              -4.169438310934183,
+              -1.7621479643972506,
+              -0.8635705919491983,
+              1.0991807698421923
+            ],
+            "sample_sd": 1.91052497006033
+          },
+          "rmse": {
+            "favorable_runs": 5,
+            "mean": -4.535826307693432,
+            "run_deltas": [
+              -5.852836306569834,
+              -4.6260697987818915,
+              -3.0849698648115833,
+              -5.239810823219038,
+              -3.8754447450848133
+            ],
+            "sample_sd": 1.0930852721779358
+          },
+          "spearman": {
+            "favorable_runs": 4,
+            "mean": 0.07588792898752618,
+            "run_deltas": [
+              0.13315543322667528,
+              -0.013334939598447115,
+              0.04596917359755581,
+              0.1272395691139097,
+              0.0864104085979372
+            ],
+            "sample_sd": 0.06099822285402423
+          }
+        },
+        "T_plus_G_minus_T": {
+          "mae": {
+            "favorable_runs": 4,
+            "mean": -0.3814044188701601,
+            "run_deltas": [
+              -0.15710690665566318,
+              -0.5936870209069127,
+              0.3020379076437365,
+              -1.420012583203146,
+              -0.03825349122881505
+            ],
+            "sample_sd": 0.6631225695420275
+          },
+          "rmse": {
+            "favorable_runs": 4,
+            "mean": -0.05620589145624564,
+            "run_deltas": [
+              -0.34908866634765445,
+              -0.0936573595234762,
+              0.9615192136262181,
+              -0.5453809783304209,
+              -0.2544216667058947
+            ],
+            "sample_sd": 0.5919309674657532
+          },
+          "spearman": {
+            "favorable_runs": 3,
+            "mean": 0.0032100836415170477,
+            "run_deltas": [
+              0.0001454720683466415,
+              -0.008243417206312775,
+              -0.022887605419880164,
+              0.03859858880132322,
+              0.008437379964108316
+            ],
+            "sample_sd": 0.02292015938208559
+          }
+        }
+      },
+      "runs": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "runs_completed": 5,
+      "units": "uL/min/10^6_cells"
+    },
+    {
+      "actual_case_elapsed_seconds": {
+        "max": 712.7372524579987,
+        "mean": 631.3933058647439,
+        "median": 615.3247037995607,
+        "min": 575.2648721411824,
+        "sample_sd": 55.543025225735214
+      },
+      "costs": {
+        "Chemprop_component_seconds": {
+          "max": 36.43803164549172,
+          "mean": 34.06500544380397,
+          "median": 34.723934075795114,
+          "min": 31.82586235832423,
+          "sample_sd": 2.0206328359636267
+        },
+        "T_component_seconds": {
+          "max": 31.548959172330797,
+          "mean": 30.752230114117264,
+          "median": 31.21113711129874,
+          "min": 29.047503115609288,
+          "sample_sd": 1.0129911889527508
+        },
+        "T_plus_G_component_seconds": {
+          "max": 505.846692240797,
+          "mean": 426.6262905400246,
+          "median": 406.5602752622217,
+          "min": 373.43627252895385,
+          "sample_sd": 55.718613201134666
+        },
+        "incremental_graph_plus_fusion_seconds": {
+          "max": 474.2977330684662,
+          "mean": 395.8740604259074,
+          "median": 375.2283262722194,
+          "min": 342.2251354176551,
+          "sample_sd": 55.85023075932496
+        }
+      },
+      "dataset": "bace",
+      "endpoint": "pIC50",
+      "methods": {
+        "Chemprop": {
+          "mae": {
+            "mean": 0.6079007620422535,
+            "sample_sd": 0.012010054064563964
+          },
+          "rmse": {
+            "mean": 0.7842170470626618,
+            "sample_sd": 0.011764906819619607
+          }
+        },
+        "G": {
+          "mae": {
+            "mean": 0.614353813762405,
+            "sample_sd": 0.03355168995003483
+          },
+          "rmse": {
+            "mean": 0.7959991827028767,
+            "sample_sd": 0.041963057203078
+          }
+        },
+        "T": {
+          "mae": {
+            "mean": 0.5405541110431991,
+            "sample_sd": 0.017397679455898655
+          },
+          "rmse": {
+            "mean": 0.7013470349930822,
+            "sample_sd": 0.023211034286770963
+          }
+        },
+        "T_plus_G": {
+          "mae": {
+            "mean": 0.5367971560378859,
+            "sample_sd": 0.019123148232046652
+          },
+          "rmse": {
+            "mean": 0.7027655801418045,
+            "sample_sd": 0.02638968377919444
+          }
+        }
+      },
+      "paired_differences": {
+        "T_plus_G_minus_Chemprop": {
+          "mae": {
+            "favorable_runs": 5,
+            "mean": -0.07110360600436774,
+            "run_deltas": [
+              -0.08346006512884152,
+              -0.055287246709921134,
+              -0.05408393044377702,
+              -0.08158304666707317,
+              -0.08110374107222584
+            ],
+            "sample_sd": 0.015019404428872648
+          },
+          "rmse": {
+            "favorable_runs": 5,
+            "mean": -0.08145146692085725,
+            "run_deltas": [
+              -0.0981896439371428,
+              -0.05681684956166333,
+              -0.0719276421632219,
+              -0.09414816305023399,
+              -0.08617503589202424
+            ],
+            "sample_sd": 0.01703857664759338
+          }
+        },
+        "T_plus_G_minus_T": {
+          "mae": {
+            "favorable_runs": 3,
+            "mean": -0.003756955005313212,
+            "run_deltas": [
+              -0.01717484366781663,
+              0.0033707028555192142,
+              -0.013582312838600008,
+              -0.006095333894188704,
+              0.01469701251852007
+            ],
+            "sample_sd": 0.012974955033555861
+          },
+          "rmse": {
+            "favorable_runs": 3,
+            "mean": 0.001418545148722261,
+            "run_deltas": [
+              -0.015354305275927405,
+              0.009451798015158053,
+              -0.009154862628514393,
+              -0.0038315807990718653,
+              0.025981676431966916
+            ],
+            "sample_sd": 0.016496741010826287
+          }
+        }
+      },
+      "runs": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "runs_completed": 5,
+      "units": "-log10(IC50/mol_L)"
+    },
+    {
+      "actual_case_elapsed_seconds": {
+        "max": 3387.1912783822045,
+        "mean": 2778.3085475664584,
+        "median": 2654.6208862774074,
+        "min": 2275.7193099269643,
+        "sample_sd": 495.71668873782295
+      },
+      "costs": {
+        "Chemprop_component_seconds": {
+          "max": 78.3954729391262,
+          "mean": 74.01475692801178,
+          "median": 74.49451421573758,
+          "min": 70.86764841154218,
+          "sample_sd": 2.985696536961713
+        },
+        "T_component_seconds": {
+          "max": 45.80517256259918,
+          "mean": 44.11542772129178,
+          "median": 44.20867422223091,
+          "min": 42.23177247866988,
+          "sample_sd": 1.3446945229794187
+        },
+        "T_plus_G_component_seconds": {
+          "max": 3140.382372056134,
+          "mean": 2537.8537891538813,
+          "median": 2417.6044027563184,
+          "min": 2038.0326644536108,
+          "sample_sd": 494.58426860991307
+        },
+        "incremental_graph_plus_fusion_seconds": {
+          "max": 3096.173697833903,
+          "mean": 2493.7383614325895,
+          "median": 2371.7992301937193,
+          "min": 1995.800891974941,
+          "sample_sd": 494.4544960309585
+        }
+      },
+      "dataset": "qm9",
+      "endpoint": "homo",
+      "methods": {
+        "Chemprop": {
+          "mae": {
+            "mean": 0.005441220912743253,
+            "sample_sd": 9.230327949612892e-05
+          },
+          "rmse": {
+            "mean": 0.007381787764693575,
+            "sample_sd": 7.230628738054728e-05
+          }
+        },
+        "G": {
+          "mae": {
+            "mean": 0.005454274964564887,
+            "sample_sd": 0.00013145705113133004
+          },
+          "rmse": {
+            "mean": 0.007535782260675703,
+            "sample_sd": 0.00019672186922799046
+          }
+        },
+        "T": {
+          "mae": {
+            "mean": 0.006178869929930568,
+            "sample_sd": 4.199051158952542e-05
+          },
+          "rmse": {
+            "mean": 0.0082390919073982,
+            "sample_sd": 4.8530930783697904e-05
+          }
+        },
+        "T_plus_G": {
+          "mae": {
+            "mean": 0.005273700766074852,
+            "sample_sd": 9.645968531954697e-05
+          },
+          "rmse": {
+            "mean": 0.007204101294390618,
+            "sample_sd": 0.00011464520957735402
+          }
+        }
+      },
+      "paired_differences": {
+        "T_plus_G_minus_Chemprop": {
+          "mae": {
+            "favorable_runs": 4,
+            "mean": -0.00016752014666839964,
+            "run_deltas": [
+              6.707570072709938e-05,
+              -0.00033685069342978893,
+              -0.0003117455024163841,
+              -3.106217909195838e-05,
+              -0.0002250180591309662
+            ],
+            "sample_sd": 0.00017778905040454688
+          },
+          "rmse": {
+            "favorable_runs": 4,
+            "mean": -0.00017768647030295577,
+            "run_deltas": [
+              2.5239784620661662e-05,
+              -0.000369994786180731,
+              -0.0003442552541894194,
+              -4.131074757610792e-05,
+              -0.0001581113481891822
+            ],
+            "sample_sd": 0.00017669764869228296
+          }
+        },
+        "T_plus_G_minus_T": {
+          "mae": {
+            "favorable_runs": 5,
+            "mean": -0.0009051691638557154,
+            "run_deltas": [
+              -0.0008158296233970958,
+              -0.0009411910987613733,
+              -0.000987614002949209,
+              -0.0008197345500183762,
+              -0.0009614765441525227
+            ],
+            "sample_sd": 8.146453076996359e-05
+          },
+          "rmse": {
+            "favorable_runs": 5,
+            "mean": -0.0010349906130075839,
+            "run_deltas": [
+              -0.0009682298303811555,
+              -0.0011037215237230695,
+              -0.0011627668909281854,
+              -0.0008640931926138752,
+              -0.0010761416273916335
+            ],
+            "sample_sd": 0.00011875084385592417
+          }
+        }
+      },
+      "runs": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "runs_completed": 5,
+      "units": "Hartree"
+    },
+    {
+      "actual_case_elapsed_seconds": {
+        "max": 3397.9428173964843,
+        "mean": 2989.420766842924,
+        "median": 2993.8786583514884,
+        "min": 2628.8554933210835,
+        "sample_sd": 277.0153902476102
+      },
+      "costs": {
+        "Chemprop_component_seconds": {
+          "max": 74.82310211472213,
+          "mean": 71.65959736574442,
+          "median": 72.58759846072644,
+          "min": 65.25178683549166,
+          "sample_sd": 3.784837744689233
+        },
+        "T_component_seconds": {
+          "max": 45.72304945625365,
+          "mean": 44.70008602198213,
+          "median": 45.05166040081531,
+          "min": 43.2777261370793,
+          "sample_sd": 0.9256064255672118
+        },
+        "T_plus_G_component_seconds": {
+          "max": 3167.2163387201726,
+          "mean": 2749.4785535244273,
+          "median": 2745.794479502365,
+          "min": 2388.5101042427123,
+          "sample_sd": 280.27575737168615
+        },
+        "incremental_graph_plus_fusion_seconds": {
+          "max": 3122.1646783193573,
+          "mean": 2704.778467502445,
+          "median": 2700.0714300461113,
+          "min": 2345.232378105633,
+          "sample_sd": 279.7307477954168
+        }
+      },
+      "dataset": "qm9",
+      "endpoint": "lumo",
+      "methods": {
+        "Chemprop": {
+          "mae": {
+            "mean": 0.005402080390438544,
+            "sample_sd": 0.00012498022295113164
+          },
+          "rmse": {
+            "mean": 0.0072383397265794736,
+            "sample_sd": 0.0001233694720937809
+          }
+        },
+        "G": {
+          "mae": {
+            "mean": 0.005510717058470112,
+            "sample_sd": 0.00010906477876470675
+          },
+          "rmse": {
+            "mean": 0.007595418521408129,
+            "sample_sd": 0.00015587727486316805
+          }
+        },
+        "T": {
+          "mae": {
+            "mean": 0.00697560232508426,
+            "sample_sd": 5.4592624986813335e-05
+          },
+          "rmse": {
+            "mean": 0.009514029144403316,
+            "sample_sd": 7.034524964603368e-05
+          }
+        },
+        "T_plus_G": {
+          "mae": {
+            "mean": 0.005348875887547007,
+            "sample_sd": 9.407005559068165e-05
+          },
+          "rmse": {
+            "mean": 0.007369745036981656,
+            "sample_sd": 0.0001375196350386057
+          }
+        }
+      },
+      "paired_differences": {
+        "T_plus_G_minus_Chemprop": {
+          "mae": {
+            "favorable_runs": 3,
+            "mean": -5.320450289153771e-05,
+            "run_deltas": [
+              -0.00024652385583967713,
+              -7.639616988790003e-05,
+              0.00011209849903742655,
+              -9.300629938596098e-05,
+              3.7805311618423036e-05
+            ],
+            "sample_sd": 0.00013702397366009128
+          },
+          "rmse": {
+            "favorable_runs": 0,
+            "mean": 0.00013140531040218285,
+            "run_deltas": [
+              1.6632378982922233e-05,
+              1.67105653879002e-05,
+              0.00035713301731782766,
+              9.129130100120949e-05,
+              0.00017525928932105462
+            ],
+            "sample_sd": 0.00014213814865043716
+          }
+        },
+        "T_plus_G_minus_T": {
+          "mae": {
+            "favorable_runs": 5,
+            "mean": -0.0016267264375372543,
+            "run_deltas": [
+              -0.0016927173725251677,
+              -0.0016458757638834996,
+              -0.0014544208626959014,
+              -0.0017754900147935746,
+              -0.001565128173788127
+            ],
+            "sample_sd": 0.00012281659022349883
+          },
+          "rmse": {
+            "favorable_runs": 5,
+            "mean": -0.0021442841074216594,
+            "run_deltas": [
+              -0.0022103789471675777,
+              -0.0021548058004207515,
+              -0.0019064989725611605,
+              -0.002370663339539815,
+              -0.002079073477418994
+            ],
+            "sample_sd": 0.0001706758530262715
+          }
+        }
+      },
+      "runs": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "runs_completed": 5,
+      "units": "Hartree"
+    },
+    {
+      "actual_case_elapsed_seconds": {
+        "max": 3358.7607236988842,
+        "mean": 2943.2050184108316,
+        "median": 2942.7136979494244,
+        "min": 2557.559682369232,
+        "sample_sd": 313.70905219161665
+      },
+      "costs": {
+        "Chemprop_component_seconds": {
+          "max": 73.31147966813296,
+          "mean": 69.95363580323756,
+          "median": 70.26732163783163,
+          "min": 66.78709543962032,
+          "sample_sd": 2.7959643934010154
+        },
+        "T_component_seconds": {
+          "max": 47.63254829309881,
+          "mean": 45.4826946252957,
+          "median": 45.32274654880166,
+          "min": 42.960279553197324,
+          "sample_sd": 1.7824195218122227
+        },
+        "T_plus_G_component_seconds": {
+          "max": 3117.224315303378,
+          "mean": 2704.9328026955945,
+          "median": 2699.769916387275,
+          "min": 2319.3215054152533,
+          "sample_sd": 311.84897008460445
+        },
+        "incremental_graph_plus_fusion_seconds": {
+          "max": 3072.3574833497405,
+          "mean": 2659.450108070299,
+          "median": 2654.447169838473,
+          "min": 2271.6889571221545,
+          "sample_sd": 312.1587655806324
+        }
+      },
+      "dataset": "qm9",
+      "endpoint": "gap",
+      "methods": {
+        "Chemprop": {
+          "mae": {
+            "mean": 0.00820316543502825,
+            "sample_sd": 6.63029021824679e-05
+          },
+          "rmse": {
+            "mean": 0.01112679415078002,
+            "sample_sd": 0.0001331325576536863
+          }
+        },
+        "G": {
+          "mae": {
+            "mean": 0.0079768567029618,
+            "sample_sd": 0.00015733058179010962
+          },
+          "rmse": {
+            "mean": 0.011275360596814313,
+            "sample_sd": 0.00014802899751609091
+          }
+        },
+        "T": {
+          "mae": {
+            "mean": 0.008516440210087333,
+            "sample_sd": 6.230186771571171e-05
+          },
+          "rmse": {
+            "mean": 0.011493945746986398,
+            "sample_sd": 7.473770134054246e-05
+          }
+        },
+        "T_plus_G": {
+          "mae": {
+            "mean": 0.007485487762377908,
+            "sample_sd": 0.0001013209041203584
+          },
+          "rmse": {
+            "mean": 0.01041942027347737,
+            "sample_sd": 7.106722040678872e-05
+          }
+        }
+      },
+      "paired_differences": {
+        "T_plus_G_minus_Chemprop": {
+          "mae": {
+            "favorable_runs": 5,
+            "mean": -0.0007176776726503405,
+            "run_deltas": [
+              -0.0005814221202689396,
+              -0.00077547238390052,
+              -0.0007535667678570911,
+              -0.0009144128321445389,
+              -0.0005635142590806131
+            ],
+            "sample_sd": 0.00014634284439518218
+          },
+          "rmse": {
+            "favorable_runs": 5,
+            "mean": -0.00070737387730265,
+            "run_deltas": [
+              -0.0005283549999465544,
+              -0.0008362238134432699,
+              -0.0007088533939322104,
+              -0.0008807010903514826,
+              -0.0005827360888397328
+            ],
+            "sample_sd": 0.0001534838383665672
+          }
+        },
+        "T_plus_G_minus_T": {
+          "mae": {
+            "favorable_runs": 5,
+            "mean": -0.001030952447709424,
+            "run_deltas": [
+              -0.001082009043786425,
+              -0.0010377260462610064,
+              -0.0009645431894022456,
+              -0.0012218635533712205,
+              -0.0008486204057262222
+            ],
+            "sample_sd": 0.00013852334733537817
+          },
+          "rmse": {
+            "favorable_runs": 5,
+            "mean": -0.001074525473509028,
+            "run_deltas": [
+              -0.0011328802963652303,
+              -0.0011741688829097537,
+              -0.000986986875708945,
+              -0.001208550743707494,
+              -0.0008700405688537166
+            ],
+            "sample_sd": 0.00014210379109655
+          }
+        }
+      },
+      "runs": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "runs_completed": 5,
+      "units": "Hartree"
+    },
+    {
+      "actual_case_elapsed_seconds": {
+        "max": 2315.4963569790125,
+        "mean": 1916.9080378228798,
+        "median": 1817.8695454970002,
+        "min": 1729.6691298782825,
+        "sample_sd": 232.49735982785955
+      },
+      "costs": {
+        "Chemprop_component_seconds": {
+          "max": 74.33527857158333,
+          "mean": 71.6037596013397,
+          "median": 72.2862000176683,
+          "min": 68.32653761282563,
+          "sample_sd": 2.2332316160139247
+        },
+        "T_component_seconds": {
+          "max": 47.25320938695222,
+          "mean": 46.05960024148226,
+          "median": 46.441979033872485,
+          "min": 44.87378147710115,
+          "sample_sd": 0.9884135102854512
+        },
+        "T_plus_G_component_seconds": {
+          "max": 2077.558891860768,
+          "mean": 1675.2475088398903,
+          "median": 1573.296199573204,
+          "min": 1488.14351647906,
+          "sample_sd": 234.5215481063599
+        },
+        "incremental_graph_plus_fusion_seconds": {
+          "max": 2032.685110383667,
+          "mean": 1629.187908598408,
+          "median": 1526.0429901862517,
+          "min": 1441.7015374451876,
+          "sample_sd": 235.29177257313881
+        }
+      },
+      "dataset": "qm9",
+      "endpoint": "mu",
+      "methods": {
+        "Chemprop": {
+          "mae": {
+            "mean": 0.5800590757813434,
+            "sample_sd": 0.007700363962426357
+          },
+          "rmse": {
+            "mean": 0.8147327621406644,
+            "sample_sd": 0.00923072231762886
+          }
+        },
+        "G": {
+          "mae": {
+            "mean": 0.6268815748501545,
+            "sample_sd": 0.01689667341767626
+          },
+          "rmse": {
+            "mean": 0.887877456507957,
+            "sample_sd": 0.02330218630391317
+          }
+        },
+        "T": {
+          "mae": {
+            "mean": 0.6231772139322571,
+            "sample_sd": 0.004285578867398841
+          },
+          "rmse": {
+            "mean": 0.8665557286381518,
+            "sample_sd": 0.003875152937409471
+          }
+        },
+        "T_plus_G": {
+          "mae": {
+            "mean": 0.6029158396922574,
+            "sample_sd": 0.00968650265429477
+          },
+          "rmse": {
+            "mean": 0.8413490687497529,
+            "sample_sd": 0.010383382735651803
+          }
+        }
+      },
+      "paired_differences": {
+        "T_plus_G_minus_Chemprop": {
+          "mae": {
+            "favorable_runs": 0,
+            "mean": 0.022856763910914023,
+            "run_deltas": [
+              0.04408858843014374,
+              0.01508024483483561,
+              0.022601009428219188,
+              0.028714416364458373,
+              0.0037995604969132124
+            ],
+            "sample_sd": 0.015073313553599558
+          },
+          "rmse": {
+            "favorable_runs": 0,
+            "mean": 0.02661630660908838,
+            "run_deltas": [
+              0.04371287443048788,
+              0.013543488997106667,
+              0.03478733001181156,
+              0.03324972537788817,
+              0.0077881142281476246
+            ],
+            "sample_sd": 0.01523531988449605
+          }
+        },
+        "T_plus_G_minus_T": {
+          "mae": {
+            "favorable_runs": 5,
+            "mean": -0.02026137423999963,
+            "run_deltas": [
+              -0.01051744804981325,
+              -0.02377391513708782,
+              -0.0174207310397424,
+              -0.021513712207993918,
+              -0.028081064765360764
+            ],
+            "sample_sd": 0.006672091224705856
+          },
+          "rmse": {
+            "favorable_runs": 5,
+            "mean": -0.02520665988839905,
+            "run_deltas": [
+              -0.014483483515458695,
+              -0.028489962112278278,
+              -0.024854203767158745,
+              -0.02339930671516921,
+              -0.034806343331930334
+            ],
+            "sample_sd": 0.007438266902389106
+          }
+        }
+      },
+      "runs": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "runs_completed": 5,
+      "units": "Debye"
+    },
+    {
+      "actual_case_elapsed_seconds": {
+        "max": 3262.872363987379,
+        "mean": 3021.5763373089953,
+        "median": 3011.3585481410846,
+        "min": 2814.3137823101133,
+        "sample_sd": 168.78956896201245
+      },
+      "costs": {
+        "Chemprop_component_seconds": {
+          "max": 77.68009221274406,
+          "mean": 73.41076664365828,
+          "median": 71.99785944540054,
+          "min": 70.43706832546741,
+          "sample_sd": 2.9486435917892586
+        },
+        "T_component_seconds": {
+          "max": 48.1813046541065,
+          "mean": 46.65920250657946,
+          "median": 46.446638625115156,
+          "min": 44.933694335632026,
+          "sample_sd": 1.3636397956183555
+        },
+        "T_plus_G_component_seconds": {
+          "max": 3013.1185014853254,
+          "mean": 2777.6437458258124,
+          "median": 2772.891124887392,
+          "min": 2571.650016146712,
+          "sample_sd": 166.43836769444587
+        },
+        "incremental_graph_plus_fusion_seconds": {
+          "max": 2964.937196831219,
+          "mean": 2730.9845433192327,
+          "median": 2727.02697822731,
+          "min": 2525.203377521597,
+          "sample_sd": 166.17443685454532
+        }
+      },
+      "dataset": "qm9",
+      "endpoint": "alpha",
+      "methods": {
+        "Chemprop": {
+          "mae": {
+            "mean": 0.6210116516007533,
+            "sample_sd": 0.016961567838587373
+          },
+          "rmse": {
+            "mean": 0.8748468902784661,
+            "sample_sd": 0.018763650579223308
+          }
+        },
+        "G": {
+          "mae": {
+            "mean": 0.598578751056771,
+            "sample_sd": 0.029461225846166575
+          },
+          "rmse": {
+            "mean": 0.8284903713524907,
+            "sample_sd": 0.03476675994831638
+          }
+        },
+        "T": {
+          "mae": {
+            "mean": 0.7391704332215573,
+            "sample_sd": 0.005775591448000872
+          },
+          "rmse": {
+            "mean": 1.063629300845535,
+            "sample_sd": 0.010838916311130322
+          }
+        },
+        "T_plus_G": {
+          "mae": {
+            "mean": 0.5734215789980383,
+            "sample_sd": 0.03424060655549609
+          },
+          "rmse": {
+            "mean": 0.8022078864180706,
+            "sample_sd": 0.035959090940276654
+          }
+        }
+      },
+      "paired_differences": {
+        "T_plus_G_minus_Chemprop": {
+          "mae": {
+            "favorable_runs": 5,
+            "mean": -0.047590072602715125,
+            "run_deltas": [
+              -0.06850369549535273,
+              -0.057651113123775466,
+              -0.03323659842787907,
+              -0.06952492283406042,
+              -0.009034033132507946
+            ],
+            "sample_sd": 0.02604002790920779
+          },
+          "rmse": {
+            "favorable_runs": 5,
+            "mean": -0.07263900386039535,
+            "run_deltas": [
+              -0.06091993432168885,
+              -0.09382010927568485,
+              -0.07684403325082556,
+              -0.09363920623452471,
+              -0.03797173621925276
+            ],
+            "sample_sd": 0.023698554993385287
+          }
+        },
+        "T_plus_G_minus_T": {
+          "mae": {
+            "favorable_runs": 5,
+            "mean": -0.16574885422351895,
+            "run_deltas": [
+              -0.16624734484547588,
+              -0.1705556268317059,
+              -0.16771894599115655,
+              -0.20537522766494531,
+              -0.11884712578431111
+            ],
+            "sample_sd": 0.030810941319945447
+          },
+          "rmse": {
+            "favorable_runs": 5,
+            "mean": -0.26142141442746414,
+            "run_deltas": [
+              -0.2533125171820527,
+              -0.2620309066425307,
+              -0.27392403442057023,
+              -0.30587919798960017,
+              -0.21196041590256698
+            ],
+            "sample_sd": 0.034078314572197135
+          }
+        }
+      },
+      "runs": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "runs_completed": 5,
+      "units": "Bohr^3"
+    }
+  ],
+  "graph_epochs": {
+    "max": 150,
+    "mean": 68.49090909090908,
+    "median": 66.0,
+    "min": 21,
+    "sample_sd": 25.071858536893128
+  },
+  "memory": {
+    "gpu_allocator_peak_bytes": 47250488320,
+    "peak_cpu_rss_bytes": 26574131200,
+    "sampled_process_gpu_peak_bytes": 52613349376
+  },
+  "other_workflow_seconds": 18.606797171756625,
+  "release_candidate": "0.2.0rc1",
+  "row_level_values_included": false,
+  "scope": "Seven added datasets, eleven tasks, four methods; excludes AqSolDB.",
+  "shared_T_input_feature_seconds": 15910.871757480316,
+  "shared_cache_io_seconds": 17.765100732445717,
+  "shared_feature_component_seconds": 15937.42421497684,
+  "shared_features": [
+    {
+      "actual_elapsed_seconds": 1117.525751562789,
+      "cache_state": "cold",
+      "component_costs": {
+        "Chemprop_component_seconds": 0,
+        "T_component_seconds": 0,
+        "T_input_feature_seconds": 1098.9890406830236,
+        "T_plus_G_component_seconds": 0,
+        "incremental_graph_feature_seconds": 1.5978317596018314,
+        "incremental_graph_plus_fusion_seconds": 0,
+        "interpretation": "sum of nonoverlapping stage durations; actual workflow elapsed recorded separately; shared features charged once",
+        "shared_cache_io_seconds": 2.2490109838545322,
+        "shared_feature_component_seconds": 1102.83588342648
+      },
+      "dataset": "ppbr_az"
+    },
+    {
+      "actual_elapsed_seconds": 1335.426573167555,
+      "cache_state": "cold",
+      "component_costs": {
+        "Chemprop_component_seconds": 0,
+        "T_component_seconds": 0,
+        "T_input_feature_seconds": 1319.7671274533495,
+        "T_plus_G_component_seconds": 0,
+        "incremental_graph_feature_seconds": 1.0082109896466136,
+        "incremental_graph_plus_fusion_seconds": 0,
+        "interpretation": "sum of nonoverlapping stage durations; actual workflow elapsed recorded separately; shared features charged once",
+        "shared_cache_io_seconds": 1.774170346558094,
+        "shared_feature_component_seconds": 1322.5495087895542
+      },
+      "dataset": "vdss_lombardo"
+    },
+    {
+      "actual_elapsed_seconds": 5192.788339308463,
+      "cache_state": "cold",
+      "component_costs": {
+        "Chemprop_component_seconds": 0,
+        "T_component_seconds": 0,
+        "T_input_feature_seconds": 5178.1443839576095,
+        "T_plus_G_component_seconds": 0,
+        "incremental_graph_feature_seconds": 0.6615204159170389,
+        "incremental_graph_plus_fusion_seconds": 0,
+        "interpretation": "sum of nonoverlapping stage durations; actual workflow elapsed recorded separately; shared features charged once",
+        "shared_cache_io_seconds": 1.0145279224961996,
+        "shared_feature_component_seconds": 5179.820432296023
+      },
+      "dataset": "half_life_obach"
+    },
+    {
+      "actual_elapsed_seconds": 647.3843520954251,
+      "cache_state": "cold",
+      "component_costs": {
+        "Chemprop_component_seconds": 0,
+        "T_component_seconds": 0,
+        "T_input_feature_seconds": 631.5976519435644,
+        "T_plus_G_component_seconds": 0,
+        "incremental_graph_feature_seconds": 0.8881226358935237,
+        "incremental_graph_plus_fusion_seconds": 0,
+        "interpretation": "sum of nonoverlapping stage durations; actual workflow elapsed recorded separately; shared features charged once",
+        "shared_cache_io_seconds": 1.4276550831273198,
+        "shared_feature_component_seconds": 633.9134296625853
+      },
+      "dataset": "clearance_microsome_az"
+    },
+    {
+      "actual_elapsed_seconds": 770.2291203672066,
+      "cache_state": "cold",
+      "component_costs": {
+        "Chemprop_component_seconds": 0,
+        "T_component_seconds": 0,
+        "T_input_feature_seconds": 754.202872922644,
+        "T_plus_G_component_seconds": 0,
+        "incremental_graph_feature_seconds": 0.9455530634149909,
+        "incremental_graph_plus_fusion_seconds": 0,
+        "interpretation": "sum of nonoverlapping stage durations; actual workflow elapsed recorded separately; shared features charged once",
+        "shared_cache_io_seconds": 1.4479383984580636,
+        "shared_feature_component_seconds": 756.5963643845171
+      },
+      "dataset": "clearance_hepatocyte_az"
+    },
+    {
+      "actual_elapsed_seconds": 1668.1661336645484,
+      "cache_state": "cold",
+      "component_costs": {
+        "Chemprop_component_seconds": 0,
+        "T_component_seconds": 0,
+        "T_input_feature_seconds": 1651.0735010690987,
+        "T_plus_G_component_seconds": 0,
+        "incremental_graph_feature_seconds": 1.5186173291876912,
+        "incremental_graph_plus_fusion_seconds": 0,
+        "interpretation": "sum of nonoverlapping stage durations; actual workflow elapsed recorded separately; shared features charged once",
+        "shared_cache_io_seconds": 2.691909059882164,
+        "shared_feature_component_seconds": 1655.2840274581686
+      },
+      "dataset": "bace"
+    },
+    {
+      "actual_elapsed_seconds": 5298.309372344986,
+      "cache_state": "cold",
+      "component_costs": {
+        "Chemprop_component_seconds": 0,
+        "T_component_seconds": 0,
+        "T_input_feature_seconds": 5277.097179451026,
+        "T_plus_G_component_seconds": 0,
+        "incremental_graph_feature_seconds": 2.1675005704164505,
+        "incremental_graph_plus_fusion_seconds": 0,
+        "interpretation": "sum of nonoverlapping stage durations; actual workflow elapsed recorded separately; shared features charged once",
+        "shared_cache_io_seconds": 7.159888938069344,
+        "shared_feature_component_seconds": 5286.424568959512
+      },
+      "dataset": "qm9"
+    }
+  ],
+  "shared_features_elapsed_seconds": 16029.829642510973,
+  "shared_graph_feature_seconds": 8.78735676407814,
+  "shared_test_repetitions_are_not_independent_test_populations": true,
+  "source_result_sha256": "98ed080bff06d260c42afd50a456675b4a35c4e8d1c41f8598e2811014442140",
+  "successful_fit_count": 1265,
+  "unallocated_case_orchestration_seconds": 9417.796130376868,
+  "workflow_elapsed_seconds": 99819.33425723016
+}

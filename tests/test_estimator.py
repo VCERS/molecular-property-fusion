@@ -224,6 +224,40 @@ def test_full_capacity_and_inner_scale_validated_before_features(monkeypatch):
         MolecularPropertyFusionRegressor().fit(SMILES, np.ones(len(SMILES)))
 
 
+def test_default_and_explicit_graph_capacity():
+    _available("full")
+    model = MolecularPropertyFusionRegressor()
+    model._capacity(["C" * 115])
+    with pytest.raises(ValueError, match="116 atoms exceed trained graph capacity 115"):
+        model._capacity(["C" * 116])
+    historical = MolecularPropertyFusionRegressor(max_atoms=100)
+    historical._capacity(["C" * 100])
+    with pytest.raises(ValueError, match="101 atoms exceed trained graph capacity 100"):
+        historical._capacity(["C" * 101])
+
+
+def test_full_fit_uses_aqsoldb_graph_defaults(monkeypatch):
+    _available("full")
+    from molprop_fusion import compt_graph
+
+    original = compt_graph.fit_graph_regressor
+    calls = []
+
+    def capture(**kwargs):
+        calls.append((dict(kwargs["model_options"]), dict(kwargs["training_options"])))
+        return original(**kwargs)
+
+    monkeypatch.setattr(compt_graph, "fit_graph_regressor", capture)
+    model = MolecularPropertyFusionRegressor(device="cpu", validation_only=True).fit(
+        SMILES, TARGETS
+    )
+    assert len(calls) == 4
+    assert all(options["max_atoms"] == 115 for options, _ in calls)
+    assert all(training["warmup_factor"] == 0.15 for _, training in calls)
+    assert model.graph_.model.pos_embed.pe.num_embeddings == 116
+    assert np.isfinite(model.predict(QUERY)).all()
+
+
 def test_schema_mismatch_rejected_before_model_deserialization(fitted, tmp_path):
     _, path = fitted
     metadata = json.loads((path / "model.json").read_text())

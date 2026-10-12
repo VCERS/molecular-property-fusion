@@ -1,0 +1,163 @@
+schema_version: 1
+study_id: graph_fusion_expanded_benchmarks_runtime_v0
+runs:
+- 1
+- 2
+- 3
+- 4
+- 5
+methods:
+  T:
+    columns:
+    - xgboost_C_Zraw_mask
+    - catboost_C_Zraw_mask
+    - lightgbm_C_Zraw_mask
+    - extratrees_C_Zraw_mask
+    grouped_oof_folds: 3
+    group: exact_canonical_smiles
+    xgboost_profile: authenticated_e0_esol_solubility_profile
+    xgboost:
+      max_depth: 4
+      learning_rate: 0.1
+      n_estimators: 300
+      subsample: 0.8
+      colsample_bytree: 0.8
+      min_child_weight: 1.0
+      reg_alpha: 0.0
+      reg_lambda: 1.0
+      max_bin: 256
+    catboost:
+      iterations: 300
+      depth: 7
+      learning_rate: 0.05
+      l2_leaf_reg: 3.0
+      loss_function: RMSE
+      verbose: false
+    lightgbm:
+      n_estimators: 300
+      num_leaves: 31
+      max_depth: -1
+      learning_rate: 0.05
+      subsample: 0.8
+      colsample_bytree: 0.8
+      reg_lambda: 1.0
+      verbosity: -1
+    extratrees:
+      n_estimators: 500
+      max_features: sqrt
+      min_samples_leaf: 1
+      bootstrap: false
+    meta:
+      model: StandardScaler_then_Ridge
+      alpha: 10.0
+      fit_intercept: true
+    fit_membership: train_only
+    outer_validation_role: unused
+  G:
+    source:
+      repository: https://github.com/jcchan23/CoMPT.git
+      commit: 50bb4a83fc4ac843ee92bf56421cec0ba631a90f
+      license: MIT
+    architecture:
+      atom_width: 115
+      bond_width: 13
+      hidden_width: 256
+      layers: 3
+      heads: 4
+      dropout: 0.0
+      attenuation_lambda: 0.1
+      feed_forward_layers: 1
+      nonlinearity: mish
+      scale_norm: true
+      distance_kernel: softmax
+      readout: bidirectional_GRU_mean_then_two_layer_Mish_regression_head
+      initialization: xavier_uniform
+    training:
+      optimizer: Adam
+      learning_rate: transformer_scheduled_zero_base
+      weight_decay: 0.0
+      warmup_factor: 0.15
+      warmup_epochs: 30
+      loss: standardized_RMSE
+      max_epochs: 150
+      patience: 20
+      batch_size: 32
+      early_stopping: deterministic_GroupShuffleSplit_0.1_group_disjoint_fit_only
+      restore_best: true
+    fit_membership: train_only
+    outer_validation_role: unused
+  T_plus_G:
+    columns:
+    - xgboost_C_Zraw_mask
+    - catboost_C_Zraw_mask
+    - lightgbm_C_Zraw_mask
+    - extratrees_C_Zraw_mask
+    - graph_oof
+    meta:
+      model: StandardScaler_then_Ridge
+      alpha: 10.0
+      fit_intercept: true
+    fit_membership: train_only
+    outer_validation_role: unused
+  Chemprop:
+    source:
+      repository: https://github.com/chemprop/chemprop
+      commit: 9a0b47ad19ebf440c1557787e666d442728adaad
+      tag: v2.3.1
+      license: MIT
+    architecture: official_D_MPNN_v2_3_1_defaults
+    training:
+      task_type: regression
+      metrics:
+      - rmse
+      tracking_metric: rmse
+      epochs: 50
+      patience: 50
+      batch_size: 64
+      num_replicates: 1
+      accelerator: gpu
+      devices: 1
+      num_workers: 0
+      pytorch_seed: case_seed
+      data_seed: case_seed
+    fit_membership: train
+    validation_role: fixed_checkpoint_selection_only
+    test_labels_available_to_training_or_selection: false
+environment:
+  python: 3.11.15
+  numpy: 1.26.4
+  rdkit: 2026.3.4
+  scikit_learn: 1.9.0
+  xgboost: 3.2.0
+  catboost: 1.2.10
+  lightgbm: 4.7.0
+  torch: 2.13.0
+  chemprop: 2.3.1
+features:
+  morgan_bits: 2048
+  morgan_radius: 2
+  rdkit_descriptors: 217
+  descriptor_registry_sha256: 7488424ba33defb325a509d6ff50a39fe131f6135839c54bed162051df3fbdb1
+  z3d_values: 317
+  z3d_masks: 317
+  width: 2899
+  capacity: 115
+  geometry_policy: historical_z3d.source_seed(dataset,min_source_row); ETKDGv3_16_prune0.5_retry_no_optimization
+  geometry_inputs: SMILES_only
+split:
+  test_fraction: 0.2
+  validation_fraction_of_remaining: 0.125
+  test_seed: 20261009
+  qm9_size: 8000
+  qm9_selection: sha256(expanded-v0|parent_connectivity_key), first eligible unique
+    parents
+  qm9_cluster_distance: 0.6
+  qm9_cluster_algorithm: RDKit Butina Morgan2048 radius2, reordering=False
+  replicates: five train/validation assignments on one fixed structural test
+  overlap_rule: exclude historical exact/parent overlaps from test; retain training
+    overlap; exclude test parent collision with train/validation; retain minimum-source-index
+    test parent representative
+resources:
+  tree_workers: 8
+  blas_threads: 1
+release_candidate: 0.2.0rc1

@@ -12,6 +12,7 @@ import numpy as np
 import pytest
 
 from molprop_fusion import MolecularPropertyFusionRegressor, load_model
+from molprop_fusion.estimator import DEFAULT_MAX_ATOMS
 
 SMILES = [
     "C",
@@ -124,7 +125,7 @@ def test_native_compt_architecture_on_cuda(cuda_bundle, record_property):
         train_groups=SMILES,
         evaluation_smiles=QUERY,
         seed=42,
-        model_options={"max_atoms": 100},  # Native width 256, three layers, four heads.
+        model_options={"max_atoms": DEFAULT_MAX_ATOMS},  # Native width 256, three layers.
         training_options={
             "device": "cuda",
             "max_epochs": 1,
@@ -132,11 +133,11 @@ def test_native_compt_architecture_on_cuda(cuda_bundle, record_property):
             "warmup_epochs": 1,
             "batch_size": 8,
             "weight_decay": 0.0,
-            "warmup_factor": 0.10,
+            "warmup_factor": 0.15,
         },
     )
     assert next(result.predictor.model.parameters()).is_cuda
-    assert result.predictor.model.pos_embed.pe.num_embeddings == 101
+    assert result.predictor.model.pos_embed.pe.num_embeddings == 116
     record_property("native_graph_fit_seconds", result.wall_seconds)
     record_property("native_graph_peak_cuda_allocated_bytes", result.peak_accelerator_bytes)
     cpu_prediction = result.predictor.predict(QUERY, device="cpu")

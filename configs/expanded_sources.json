@@ -1,0 +1,206 @@
+{
+  "admet_archive": {
+    "file": "admet_group.zip",
+    "sha256": "bd0005246cb6f1672333c28ad202112a8bf071ab65d847848715030308faf1f1",
+    "url": "https://dataverse.harvard.edu/api/access/datafile/4426004"
+  },
+  "chemprop_parser": {
+    "file": "chemprop-utils.py",
+    "sha256": "305355d52b70f5ec11f638d0134aa36ca52cceea61c113f8380daf8cf6fdbefd",
+    "url": "https://raw.githubusercontent.com/chemprop/chemprop/9a0b47ad19ebf440c1557787e666d442728adaad/chemprop/utils/utils.py"
+  },
+  "datasets": {
+    "bace": {
+      "delimiter": ",",
+      "display_name": "BACE",
+      "endpoints": {
+        "pIC50": {
+          "primary_metric": "rmse",
+          "transform": "source_pIC50_identity",
+          "units": "-log10(IC50/mol_L)"
+        }
+      },
+      "file": "bace.csv",
+      "loader_adapter": "DeepChem 2.8.0 _BaceLoader CSV fields, regression task only; custom predeclared grouped splits; no global normalization",
+      "partition_file": "bace.csv",
+      "partition_file_sha256": "32d78c471ae8d7b48db2bfc1d71fb854e3a1df79c4e66f9422739db062bcd24f",
+      "rights": "Source Subramanian et al. 2016 / MoleculeNet; artifact-specific reuse terms not explicit. No redistribution authorized. DeepChem MIT is software only.",
+      "sha256": "f3fb9ce90bada3e2bd6148b0df13f8f8145a357bf87df0dd5b391ede974fc737",
+      "smiles_field": "mol",
+      "software_loader": {
+        "commit": "d5b293934d427062f52e2d92c1569d53d10418f9",
+        "repo": "deepchem/deepchem"
+      },
+      "url": "https://deepchemdata.s3-us-west-1.amazonaws.com/datasets/bace.csv"
+    },
+    "clearance_hepatocyte_az": {
+      "delimiter": "\t",
+      "display_name": "Hepatocyte clearance",
+      "endpoints": {
+        "Y": {
+          "primary_metric": "spearman",
+          "transform": "identity",
+          "units": "uL/min/10^6_cells"
+        }
+      },
+      "file": "clearance_hepatocyte_az.tab",
+      "partition_file": "clearance_hepatocyte_az.csv",
+      "partition_file_sha256": "c0fc1ae0cf786c4ab83e56dcb1f73398d26e8e446e20d2b18b88de3094208fdb",
+      "rights": "TDC documentation: Not Specified with CC BY 4.0 link; Where ChEMBL-derived, ChEMBL database terms are CC BY-SA 3.0. No redistribution authorized.",
+      "sha256": "2c217f46600c22e107b72faa2bfb1d9bf799213aee47b601f6e0d6d73b68f274",
+      "smiles_field": "X",
+      "software_loader": {
+        "commit": "c310c35f27e3f506411018ac43d97b8ba23ca652",
+        "repo": "mims-harvard/TDC"
+      },
+      "species": null,
+      "unit_evidence": "ChEMBL3301371: uL/min/(10^6 cells).",
+      "url": "https://dataverse.harvard.edu/api/access/datafile/4266187"
+    },
+    "clearance_microsome_az": {
+      "delimiter": "\t",
+      "display_name": "Microsomal clearance",
+      "endpoints": {
+        "Y": {
+          "primary_metric": "spearman",
+          "transform": "identity",
+          "units": "uL/min/mg"
+        }
+      },
+      "file": "clearance_microsome_az.tab",
+      "partition_file": "clearance_microsome_az.csv",
+      "partition_file_sha256": "1c9e94e0ffba217f0bfd416040b24a22b25e241cf64e7e862a4b58c4cfc481a6",
+      "rights": "TDC documentation: Not Specified with CC BY 4.0 link; Where ChEMBL-derived, ChEMBL database terms are CC BY-SA 3.0. No redistribution authorized.",
+      "sha256": "4c9047dc1860cc05d5bdc09aa9cfef86a40740605c2ff06990b1fceb6085db9d",
+      "smiles_field": "X",
+      "software_loader": {
+        "commit": "c310c35f27e3f506411018ac43d97b8ba23ca652",
+        "repo": "mims-harvard/TDC"
+      },
+      "species": null,
+      "unit_evidence": "ChEMBL3301370: mL/min/g; numerically identical to uL/min/mg. No scaling.",
+      "url": "https://dataverse.harvard.edu/api/access/datafile/4266186"
+    },
+    "half_life_obach": {
+      "delimiter": "\t",
+      "display_name": "Half-life",
+      "endpoints": {
+        "Y": {
+          "primary_metric": "spearman",
+          "transform": "identity",
+          "units": "hour"
+        }
+      },
+      "file": "half_life_obach.tab",
+      "partition_file": "half_life_obach.csv",
+      "partition_file_sha256": "76da8d3c0b5270c9b2a9f9a8ea339a71040479a53817fe836fbc8ec9474b4d15",
+      "rights": "TDC documentation: Not Specified with CC BY 4.0 link; Where ChEMBL-derived, ChEMBL database terms are CC BY-SA 3.0. No redistribution authorized.",
+      "sha256": "79fb8c943b64a9488bce588d747b59af1a782f1ce46bc51137c61fb895ede1df",
+      "smiles_field": "X",
+      "software_loader": {
+        "commit": "c310c35f27e3f506411018ac43d97b8ba23ca652",
+        "repo": "mims-harvard/TDC"
+      },
+      "species": null,
+      "unit_evidence": "ChEMBL1614674: hr.",
+      "url": "https://dataverse.harvard.edu/api/access/datafile/4266799"
+    },
+    "ppbr_az": {
+      "delimiter": "\t",
+      "display_name": "PPBR (human)",
+      "endpoints": {
+        "Y": {
+          "primary_metric": "mae",
+          "transform": "identity",
+          "units": "percent_bound"
+        }
+      },
+      "file": "ppbr_az.tab",
+      "partition_file": "ppbr_az.csv",
+      "partition_file_sha256": "d7a8f562ecfed859969779533110ac7f5d25f2602dbcc4c91d6c74d8b75601bf",
+      "rights": "TDC documentation: Not Specified with CC BY 4.0 link; Where ChEMBL-derived, ChEMBL database terms are CC BY-SA 3.0. No redistribution authorized.",
+      "sha256": "54c9520f4b6e04419b18bab7335583c3865d86fc53db40f74c2cff1577c8ec1b",
+      "smiles_field": "Drug",
+      "software_loader": {
+        "commit": "c310c35f27e3f506411018ac43d97b8ba23ca652",
+        "repo": "mims-harvard/TDC"
+      },
+      "species": "Homo sapiens",
+      "url": "https://dataverse.harvard.edu/api/access/datafile/6413140"
+    },
+    "qm9": {
+      "delimiter": ",",
+      "display_name": "QM9",
+      "endpoints": {
+        "alpha": {
+          "primary_metric": "mae",
+          "transform": "identity",
+          "units": "Bohr^3"
+        },
+        "gap": {
+          "primary_metric": "mae",
+          "transform": "identity",
+          "units": "Hartree"
+        },
+        "homo": {
+          "primary_metric": "mae",
+          "transform": "identity",
+          "units": "Hartree"
+        },
+        "lumo": {
+          "primary_metric": "mae",
+          "transform": "identity",
+          "units": "Hartree"
+        },
+        "mu": {
+          "primary_metric": "mae",
+          "transform": "identity",
+          "units": "Debye"
+        }
+      },
+      "file": "qm9.csv",
+      "loader_adapter": "Pinned SMILES-only CSV adapter. DeepChem 2.8.0 load_qm9 uses supplied SDF coordinates and is deliberately not called. No auxiliary target fields used. Exclude official 3054 uncharacterized IDs.",
+      "official_doi": "10.6084/m9.figshare.1057646",
+      "partition_file": "qm9.csv",
+      "partition_file_sha256": "adae5b8ead055da879459057026125676de1202c36642d9db005b378b04d4dde",
+      "rights": "Official Figshare 1057646 CC0; cite Ramakrishnan et al. DOI 10.1038/sdata.2014.22. CSV derivative provenance pinned; no redistribution.",
+      "sha256": "3e668f8c34e4bc392a90d417a50a5eed3b64b842a817a633024bdc054c68ccb4",
+      "smiles_field": "smiles",
+      "software_loader": {
+        "commit": "d5b293934d427062f52e2d92c1569d53d10418f9",
+        "repo": "deepchem/deepchem"
+      },
+      "url": "https://deepchemdata.s3-us-west-1.amazonaws.com/datasets/qm9.csv"
+    },
+    "vdss_lombardo": {
+      "delimiter": "\t",
+      "display_name": "VDss",
+      "endpoints": {
+        "Y": {
+          "primary_metric": "spearman",
+          "transform": "identity",
+          "units": "L/kg"
+        }
+      },
+      "file": "vdss_lombardo.tab",
+      "partition_file": "vdss_lombardo.csv",
+      "partition_file_sha256": "e799cfa8c2c2ded5ae764ca77b182db3731e0a89eb8314ad775157d58690f6c8",
+      "rights": "TDC documentation: Not Specified with CC BY 4.0 link; Where ChEMBL-derived, ChEMBL database terms are CC BY-SA 3.0. No redistribution authorized.",
+      "sha256": "00bb7e0dea19f78c4c1887e27ecf476135d9de2ef5ecc26d7c645c37bd9cb7af",
+      "smiles_field": "X",
+      "software_loader": {
+        "commit": "c310c35f27e3f506411018ac43d97b8ba23ca652",
+        "repo": "mims-harvard/TDC"
+      },
+      "species": null,
+      "url": "https://dataverse.harvard.edu/api/access/datafile/4267387"
+    }
+  },
+  "qm9_uncharacterized": {
+    "file": "uncharacterized.txt",
+    "sha256": "3aa5115d540b356de94791d4a74c3bf1ed91c469ecf52a4f5d7cc0506fe02e24",
+    "url": "https://ndownloader.figshare.com/files/3195404"
+  },
+  "release_candidate": "0.2.0rc1",
+  "schema_version": 1
+}

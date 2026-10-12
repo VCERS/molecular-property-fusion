@@ -1,4 +1,52 @@
 {
+  "expanded_integration": {
+    "note": "File-level local candidate; not published. No private Git history imported. Partition indices replay original retained rows including historical exclusions; unresolved historical coverage remains stated.",
+    "partition_derivatives": [
+      {
+        "destination_path": "partitions/bace.csv",
+        "destination_sha256": "32d78c471ae8d7b48db2bfc1d71fb854e3a1df79c4e66f9422739db062bcd24f",
+        "fields": "zero-based source index, historical minimum retained geometry index, five assignments; no molecular identity or outcome fields",
+        "prepared_input_sha256": "1f117e1e3b564b6fe52c7f041f8c04d2228468b2a071a08e6e29da2a656f36ce"
+      },
+      {
+        "destination_path": "partitions/clearance_hepatocyte_az.csv",
+        "destination_sha256": "c0fc1ae0cf786c4ab83e56dcb1f73398d26e8e446e20d2b18b88de3094208fdb",
+        "fields": "zero-based source index, historical minimum retained geometry index, five assignments; no molecular identity or outcome fields",
+        "prepared_input_sha256": "0d33b97365d9a6c4d356e4837a3f92d281f8392bcd95b464b99007751eb427a6"
+      },
+      {
+        "destination_path": "partitions/clearance_microsome_az.csv",
+        "destination_sha256": "1c9e94e0ffba217f0bfd416040b24a22b25e241cf64e7e862a4b58c4cfc481a6",
+        "fields": "zero-based source index, historical minimum retained geometry index, five assignments; no molecular identity or outcome fields",
+        "prepared_input_sha256": "64815ea8d1877f3cd4fc7bfb44f42199aa067a9b00ec4aa45a27e33c47e86f66"
+      },
+      {
+        "destination_path": "partitions/half_life_obach.csv",
+        "destination_sha256": "76da8d3c0b5270c9b2a9f9a8ea339a71040479a53817fe836fbc8ec9474b4d15",
+        "fields": "zero-based source index, historical minimum retained geometry index, five assignments; no molecular identity or outcome fields",
+        "prepared_input_sha256": "4e483c628284999400aa3676d69935ddce56372d216a6eea7e71db7631020fe4"
+      },
+      {
+        "destination_path": "partitions/ppbr_az.csv",
+        "destination_sha256": "d7a8f562ecfed859969779533110ac7f5d25f2602dbcc4c91d6c74d8b75601bf",
+        "fields": "zero-based source index, historical minimum retained geometry index, five assignments; no molecular identity or outcome fields",
+        "prepared_input_sha256": "618592aa2d3726f57b93577f23196764ec212147b440c0baa1bfd0d3c718783e"
+      },
+      {
+        "destination_path": "partitions/qm9.csv",
+        "destination_sha256": "adae5b8ead055da879459057026125676de1202c36642d9db005b378b04d4dde",
+        "fields": "zero-based source index, historical minimum retained geometry index, five assignments; no molecular identity or outcome fields",
+        "prepared_input_sha256": "b48b423def1962f10a7c62e12d0f4c8cf6abe5c9b5f9641ef388e7b62a79df46"
+      },
+      {
+        "destination_path": "partitions/vdss_lombardo.csv",
+        "destination_sha256": "e799cfa8c2c2ded5ae764ca77b182db3731e0a89eb8314ad775157d58690f6c8",
+        "fields": "zero-based source index, historical minimum retained geometry index, five assignments; no molecular identity or outcome fields",
+        "prepared_input_sha256": "afe3c011a2ca3c3f15e2a2ffc26c0736241a96f03865345d34222a46a37f4336"
+      }
+    ],
+    "source_snapshot": "569105fdc81c4a4cd5c2fd74aa9fd098b804bcdf"
+  },
   "export_commits": {
     "aqsoldb_final": "fb2ec13c6d95b4062e7892f1716f747fd94e5c06",
     "public_benchmark_frozen": "4a845d2ac20fd37c6efaa000c1035a4e185abf91"
@@ -6,12 +54,13 @@
   "files": [
     {
       "destination_path": "src/molprop_fusion/__init__.py",
-      "destination_sha256": "e4b1de57806f9bfede0b6dd01c9ed3a041d18f37d29de65e07cbc701bf0f6e6f",
+      "destination_sha256": "323b5df28eff148563410540f76b3423d3383cb9520fdb868a43e4a5c5e06c61",
+      "prior_destination_sha256": "e4b1de57806f9bfede0b6dd01c9ed3a041d18f37d29de65e07cbc701bf0f6e6f",
       "public_baseline_destination_sha256": "2bc42a431d5f327b9a6c29926d18ef55f3c66351bfc69a6f4dee0b67a25274ce",
       "source_commit": "4a845d2ac20fd37c6efaa000c1035a4e185abf91",
       "source_path": "src/frozen_llm/__init__.py",
       "source_sha256": "f8059530a44f65b56ee75d354ee5b77c029234bd55afdd855a6cdeae5043a608",
-      "transformation": "namespace and project description; toolkit v0 reusable inference changes from public baseline 4a2d86e8978f202187d7e6b4438c6aa2b999779f"
+      "transformation": "namespace and project description; toolkit v0 reusable inference changes from public baseline 4a2d86e8978f202187d7e6b4438c6aa2b999779f; local 0.2.0rc1 integration metadata or optional timing/cache hooks"
     },
     {
       "destination_path": "src/molprop_fusion/accuracy_benchmark.py",
@@ -23,12 +72,13 @@
     },
     {
       "destination_path": "src/molprop_fusion/compt_graph.py",
-      "destination_sha256": "2de318391e32858ba60345e495ab2fadfd00aefb6254ce67182457965191e35d",
+      "destination_sha256": "b6124e0a185f3263a5d7ecb6f6874b2c3ce84fc6d90f300c0f3829e274ddaee2",
+      "prior_destination_sha256": "2de318391e32858ba60345e495ab2fadfd00aefb6254ce67182457965191e35d",
       "public_baseline_destination_sha256": "64ba71c607732b36d797977a48335da3852b0a9b8896f0ab14d4024c5eed24f2",
       "source_commit": "4a845d2ac20fd37c6efaa000c1035a4e185abf91",
       "source_path": "src/frozen_llm/compt_graph.py",
       "source_sha256": "92742f9ce9a95c4e11912addcdaaa5bf05d112720e65e5f949a6c710c6d3b7bc",
-      "transformation": "Ruff formatting and removal of unrelated checkpoint comparator loading; toolkit v0 reusable inference changes from public baseline 4a2d86e8978f202187d7e6b4438c6aa2b999779f"
+      "transformation": "Ruff formatting and removal of unrelated checkpoint comparator loading; toolkit v0 reusable inference changes from public baseline 4a2d86e8978f202187d7e6b4438c6aa2b999779f; local 0.2.0rc1 integration metadata or optional timing/cache hooks"
     },
     {
       "destination_path": "src/molprop_fusion/fusion.py",
@@ -153,8 +203,74 @@
       "source_path": "data/provenance/graph_fusion_aqsol_prospective_execution_v0/outcome/aggregate_result.json",
       "source_sha256": "b028e0018891e41c59785bef0413f8ad1b16b7537462d5ef558dbf9903ec188f",
       "transformation": "sanitized aggregate metrics only"
+    },
+    {
+      "destination_path": "src/molprop_fusion/expanded_data.py",
+      "destination_sha256": "a0a6ef4ef44ae21687895926527d5de459c7dd21b5ada9549a23fd7d3d28713e",
+      "source_commit": "569105fdc81c4a4cd5c2fd74aa9fd098b804bcdf",
+      "source_path": "src/frozen_llm/expanded_data.py",
+      "source_sha256": "46dfc458eb46e66605b4179002730ce0608aa9dffa88153294425f0e89384309",
+      "transformation": "selected public adapters/structural recipes; recorded source-index replay replaces private identity collections"
+    },
+    {
+      "destination_path": "src/molprop_fusion/expanded_benchmark.py",
+      "destination_sha256": "b61f5d2cfc3f13c1bb6eec937088043b1ab95db59830bcf9f638f1e110ea1195",
+      "source_commit": "569105fdc81c4a4cd5c2fd74aa9fd098b804bcdf",
+      "source_path": "src/frozen_llm/expanded_benchmark.py",
+      "source_sha256": "a653e4b37d87374a65f6eab72fe2f3afe0b94a81098b9b520e2111247b788f0d",
+      "transformation": "historical seed/float32 cache/fold-local geometry policy; reuse public tree and graph fitters; remove private operational runner"
+    },
+    {
+      "destination_path": "src/molprop_fusion/expanded_summary.py",
+      "destination_sha256": "e76cba73d2ff2d2448d7011bfe6f860c791bec2df6bd80f760aa389f5c1eb242",
+      "source_commit": "569105fdc81c4a4cd5c2fd74aa9fd098b804bcdf",
+      "source_path": "src/frozen_llm/expanded_benchmark.py",
+      "source_sha256": "a653e4b37d87374a65f6eab72fe2f3afe0b94a81098b9b520e2111247b788f0d",
+      "transformation": "pure aggregate summarizer, package namespace"
+    },
+    {
+      "destination_path": "src/molprop_fusion/expanded_runtime.py",
+      "destination_sha256": "3c58e81d425856cf318fcf2dea6fb7c408184758fb8be5d591ec402e9e27e4ca",
+      "source_commit": "569105fdc81c4a4cd5c2fd74aa9fd098b804bcdf",
+      "source_path": "src/frozen_llm/expanded_runtime.py",
+      "source_sha256": "a48cbd5715482651b3d8e8da1bfdb5955c6ff3dd8b929612388e5f8723cb5f50",
+      "transformation": "nonoverlapping component attribution; simple stage clocks; no remote authorization controls"
+    },
+    {
+      "destination_path": "configs/expanded_sources.json",
+      "destination_sha256": "6084f20047ed573a0092e6c46b41e0258004f6af6c7b41090e6fbf43a18efac9",
+      "prior_destination_sha256": "61468bb73aa0d4f25fa1670cc03d623d4387c17d74d6b2b9c210616fc13bb844",
+      "source_commit": "569105fdc81c4a4cd5c2fd74aa9fd098b804bcdf",
+      "source_path": "configs/graph_fusion_expanded_dataset_manifest_v0.json",
+      "source_sha256": "77a76300c9d10ecc06f2d0aacf957f6d51a962a9b30588eafe19c368a522551d",
+      "transformation": "upstream source hashes/fields/units/versions retained; add index-only partition hashes and display names; remove unused local metadata registry; local 0.2.0rc1 integration metadata or optional timing/cache hooks"
+    },
+    {
+      "destination_path": "configs/expanded_benchmarks.yaml",
+      "destination_sha256": "4e10510c161fb669d0ffb9bbc4e35795b355b743aba68be1372e1ac908e5a64b",
+      "source_commit": "569105fdc81c4a4cd5c2fd74aa9fd098b804bcdf",
+      "source_path": "configs/graph_fusion_expanded_benchmarks_runtime_v0.yaml",
+      "source_sha256": "a59b25726013a5614aa50897f43af5fe4b5d3e0e4ad8e3047766d0e934b0103c",
+      "transformation": "scientific method/environment/split settings retained; remove private operational budgets and private commit gate"
+    },
+    {
+      "destination_path": "results/expanded_benchmarks.json",
+      "destination_sha256": "1b391dda17eeaf4f8e0bbeae15ce1759424305682aa05927228ab6b682bbbadf",
+      "source_commit": "569105fdc81c4a4cd5c2fd74aa9fd098b804bcdf",
+      "source_path": "data/provenance/graph_fusion_expanded_benchmarks_runtime_v0/execution_summary.json",
+      "source_sha256": "98ed080bff06d260c42afd50a456675b4a35c4e8d1c41f8598e2811014442140",
+      "transformation": "complete case metrics/paired summaries/costs selected; remove contracts, host identifiers, operational audit and private artifact inventories"
+    },
+    {
+      "destination_path": "results/expanded_preparation.json",
+      "destination_sha256": "5fc326cdaec6eaabead7637cb945a06dabde7c82386ed06105e13fbe09bf39fb",
+      "source_commit": "569105fdc81c4a4cd5c2fd74aa9fd098b804bcdf",
+      "source_path": "data/provenance/graph_fusion_expanded_benchmarks_runtime_v0/preparation_summary.json",
+      "source_sha256": "88e563781309a1d1835913f36dd4d545a0b8479185a9314bb2cddc815414cb3f",
+      "transformation": "dataset/count/overlap summaries only; no private provenance inventories"
     }
   ],
+  "release_candidate": "0.2.0rc1",
   "schema_version": 1,
   "source_repository": "https://github.com/meshandmore/frozen-llm.git",
   "third_party": [
@@ -174,7 +290,7 @@
     }
   ],
   "toolkit_v0": {
-    "note": "New user API, CLI, documentation and tests developed from this public baseline; exported at file level without private Git history. Review fixes add user-only heavy-atom validation, mode-specific bundle-file checks, and matching quick-start installation guidance; historical source mappings are unchanged.",
+    "note": "New user API, CLI, documentation and tests developed from this public baseline; exported at file level without private Git history. Review fixes add user-only heavy-atom validation, mode-specific bundle-file checks, and matching quick-start installation guidance. User model defaults now follow the fixed AqSolDB/expanded-benchmark profile, including capacity 115 and warmup factor 0.15; molecule-based geometry seeds and user-only 2D imputation remain distinct from paper reproduction. Historical source mappings and benchmark/transfer configurations are unchanged.",
     "public_baseline": "4a2d86e8978f202187d7e6b4438c6aa2b999779f"
   }
 }

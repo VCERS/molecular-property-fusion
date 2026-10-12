@@ -102,7 +102,7 @@ full mode never silently falls back. Use `device='cpu'`, `'cuda'`, or `'auto'`.
 Auto chooses CUDA, then MPS, then CPU when available. Full CPU fits can be slow.
 Geometry is generated on CPU in both modes.
 
-`max_atoms=100` sets graph padding and positional capacity **before training**.
+`max_atoms=115` sets graph padding and positional capacity **before training**.
 CoMPT's GRU readout depends on padded length, so loading/inference always keeps
 that capacity. An oversized molecule is rejected, never truncated. Retrain with
 a larger `max_atoms`, or train a separate tabular model. Changing fitted feature
@@ -144,10 +144,17 @@ Final trees fit the complete training set. The final CoMPT uses the existing
 normalization comes from that inner fit partition. This retains the baseline
 training procedure rather than refitting the graph on its early-stopping groups.
 
-Defaults follow the frozen ESOL configuration: 300 rounds for boosted trees,
-500 ExtraTrees, and CoMPT width 256, three layers, four heads, up to 150 epochs.
-These are one documented starting configuration, not optimized settings for
-arbitrary properties. Each fit trains 16 tree models and, in full mode, four
+Model hyperparameters follow the fixed AqSolDB configuration, also used for the
+expanded benchmarks: XGBoost depth 4, learning rate 0.10 and 300 estimators;
+300 rounds for CatBoost and LightGBM; 500 ExtraTrees; and CoMPT width 256,
+three layers, four heads, capacity 115, warmup factor 0.15 for 30 epochs, and
+up to 150 epochs. The user API retains the molecule-based geometry seed and
+2D-descriptor imputation described above, so it is not a byte-identical paper
+reproduction workflow. These defaults are not optimized for arbitrary properties.
+Historical benchmark/transfer commands keep their original configurations.
+Existing bundles retain their saved capacity and fitted weights; new defaults
+do not resize or retrain a loaded model.
+Each fit trains 16 tree models and, in full mode, four
 CoMPT models. Graph memory grows quadratically with atom capacity. Geometry and
 OOF fits dominate cost; start with a modest dataset and explicit CPU settings.
 `--validation-only` / `validation_only=True` reduce trees to five and CoMPT to
@@ -168,6 +175,6 @@ Choose a new output directory for each run. No benchmark accuracy is claimed.
 
 Run the optional hardware checks with `pytest tests/test_cuda.py`. They skip
 without CUDA. These checks include reduced full-method fits, a one-epoch native
-CoMPT architecture diagnostic (width 256, three layers, capacity 100), GPU/CPU
+CoMPT architecture diagnostic (width 256, three layers, capacity 115), GPU/CPU
 prediction parity, batch/order/capacity checks, and loading in a new process with
 no visible GPU. They are software validation rather than accuracy studies.

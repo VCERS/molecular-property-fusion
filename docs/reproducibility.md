@@ -1,4 +1,4 @@
-# Reproducibility
+# Reproduce the paper
 
 ## Environment
 
@@ -102,3 +102,7 @@ The AqSolDB aggregate authenticates source result SHA-256
 `b028e0018891e41c59785bef0413f8ad1b16b7537462d5ef558dbf9903ec188f`.
 The original source result files are not copied because they contain more
 operational detail than is needed for public verification.
+
+## Expanded transferability workflows
+
+Follow [expanded reproduction](expanded-reproduction.md) for the seven added datasets, eleven tasks, retained source-index partitions, all 55 run aggregates, and computational costs. `verify-results` recomputes their summaries and checks partition hashes/counts alongside the historical aggregates. The current package is local candidate 0.2.0rc1, pending publication.

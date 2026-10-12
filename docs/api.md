@@ -25,7 +25,7 @@ it returns `(vector, list_of_diagnostic_dicts)`.
 | `random_state` | `42` | Group splits and model training seed |
 | `feature_seed` | `42` | Deterministic molecule geometry seed |
 | `n_jobs` | `1` | Tree fitting parallelism |
-| `max_atoms` | `100` | Frozen full-mode native graph padding capacity |
+| `max_atoms` | `115` | Full-mode native graph padding capacity, fixed after training |
 | `validation_only` | `False` | Deliberately tiny fits for software validation |
 | `verbose` | `False` | Print feature/fitting progress to stderr |
 

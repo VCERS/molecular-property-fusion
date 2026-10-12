@@ -25,6 +25,9 @@ def verify_results(results_root: Path) -> dict[str, Any]:
             and aqsol["row_level_values_included"] is False
         ),
     }
+    from molprop_fusion.expanded_verification import verify_expanded
+
+    checks.update(verify_expanded(results_root.parent))
     if not all(checks.values()):
         failed = [name for name, passed in checks.items() if not passed]
         raise ValueError(f"aggregate verification failed: {failed}")

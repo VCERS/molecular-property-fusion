@@ -2,8 +2,7 @@ cff-version: 1.2.0
 message: "If you use this software, please cite the associated article and this repository."
 title: "Molecular Property Fusion"
 type: software
-version: 0.1.0
-date-released: 2026-09-15
+version: 0.2.0rc1
 repository-code: "https://github.com/VCERS/molecular-property-fusion"
 license: MIT
 authors:

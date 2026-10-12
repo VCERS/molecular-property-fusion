@@ -12,7 +12,7 @@ from an unlabeled CSV. Models are fitted per continuous property. The complete
 method (`full`) combines four trees and CoMPT; explicit `tabular` mode uses the
 four trees for CPU work. Chemprop is optional and is not needed for either mode.
 
-## Quick start
+## Use the method
 
 Use Python 3.11. From this checkout, install one dependency group:
 
@@ -58,14 +58,22 @@ CSV input, geometry statuses, fixed graph atom capacity, saving/loading,
 installation compatibility, defaults, and compute cost, and the
 [API reference](docs/api.md) for method arguments.
 
-## Paper reproduction
+## Reproduce the paper
 
-The existing workflows cover ESOL, FreeSolv, Lipophilicity, and a user-supplied
-AqSolDB transfer evaluation. These workflows retain their historical feature seed
-policy and aggregate-only outputs. Datasets, historical partitions, targets,
-predictions, residuals, checkpoints, and models are not distributed; only compact
-aggregate results are tracked. The custom-user commands above write the user's
-own model and row predictions normally. See [reproducibility](docs/reproducibility.md).
+This local release candidate is **0.2.0rc1** and has not been published.
+The paper routes cover ESOL, FreeSolv, Lipophilicity, AqSolDB, PPBR (human),
+VDss, Half-life, Microsomal clearance, Hepatocyte clearance, BACE, and the
+7,993-molecule SMILES-derived QM9 subset. Together these comprise eleven
+datasets, fifteen property tasks, and ninety evaluations. The seven added
+datasets contribute eleven tasks and 55 cases.
+
+Start with [paper reproduction](docs/reproducibility.md), then follow
+[expanded datasets and results](docs/expanded-reproduction.md) for source
+snapshots, index-only partitions, retained aggregates, and computational costs.
+The historical public version 0.1.0 at commit `4a2d86e` and its original
+configurations/results remain available in public repository history. The
+historical benchmark/AqSolDB configurations and aggregates in this candidate
+are unchanged.
 
 ### Reproduction installation
 

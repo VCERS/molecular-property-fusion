@@ -20,6 +20,7 @@ from molprop_fusion.fusion import fit_meta_model, grouped_folds
 from molprop_fusion.z3d import RAW_COLUMNS, LabelFreeIdentity, generate_z3d
 
 FEATURE_POLICY = "canonical-etkdgv3-v1"
+DEFAULT_MAX_ATOMS = 115
 FAMILIES = ("xgboost", "catboost", "lightgbm", "extratrees")
 BUNDLE_SCHEMA = 1
 
@@ -116,7 +117,8 @@ def _meta_predict(state: dict[str, Any], columns: np.ndarray) -> np.ndarray:
 class MolecularPropertyFusionRegressor:
     """Four-tree Ridge fusion, optionally with CoMPT. See docs/api.md.
 
-    Defaults follow the frozen ESOL configuration and are not tuned for new properties.
+    Model defaults follow the AqSolDB/expanded-benchmark configuration.
+    User geometry seeds remain molecule-based rather than dataset/row-based.
     ``validation_only=True`` uses deliberately tiny fits for software checks.
     """
 
@@ -128,7 +130,7 @@ class MolecularPropertyFusionRegressor:
         random_state: int = 42,
         feature_seed: int = 42,
         n_jobs: int = 1,
-        max_atoms: int = 100,
+        max_atoms: int = DEFAULT_MAX_ATOMS,
         validation_only: bool = False,
         verbose: bool = False,
     ):
@@ -314,7 +316,11 @@ class MolecularPropertyFusionRegressor:
                 "atom_width": 115,
                 "bond_width": 13,
             }
-            training = {**config["graph_training"], "device": self.device, "warmup_factor": 0.10}
+            training = {
+                **config["graph_training"],
+                "device": self.device,
+                "warmup_factor": float(config["datasets"]["user"]["warmup_factor"]),
+            }
             groups = np.asarray(canonical, dtype=object)
             for fold, (fit, held) in enumerate(folds):
                 self._progress(f"Fitting CoMPT OOF fold {fold + 1}/3")

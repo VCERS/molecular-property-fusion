@@ -1,0 +1,766 @@
+{
+  "datasets": {
+    "bace": {
+      "atom_count": {
+        "max": 97,
+        "median": 33.0,
+        "min": 10
+      },
+      "counts": {
+        "selected_species_source_rows": 1513,
+        "valid_structure": 1513
+      },
+      "duplicates_beyond_unique_canonical": 0,
+      "empty_scaffold_rows": 5,
+      "endpoints": {
+        "pIC50": {
+          "eligible_retained": 1494,
+          "primary_metric": "rmse",
+          "transform": "source_pIC50_identity",
+          "units": "-log10(IC50/mol_L)"
+        }
+      },
+      "largest_scaffold_rows": 55,
+      "missing_by_endpoint": {
+        "pIC50": 0
+      },
+      "official_archive": null,
+      "overlap": {
+        "aqsol": {
+          "exact_rows": 0,
+          "parent_rows": 1,
+          "scaffold_rows": 27
+        },
+        "caco2_wang": {
+          "exact_rows": 0,
+          "parent_rows": 1,
+          "scaffold_rows": 20
+        },
+        "early_consumed_union": {
+          "exact_rows": 10,
+          "parent_rows": 13,
+          "scaffold_rows": 0
+        },
+        "esol": {
+          "exact_rows": 0,
+          "parent_rows": 0,
+          "scaffold_rows": 19
+        },
+        "freesolv": {
+          "exact_rows": 0,
+          "parent_rows": 0,
+          "scaffold_rows": 10
+        },
+        "ld50_zhu": {
+          "exact_rows": 0,
+          "parent_rows": 0,
+          "scaffold_rows": 27
+        },
+        "lipophilicity": {
+          "exact_rows": 10,
+          "parent_rows": 12,
+          "scaffold_rows": 49
+        }
+      },
+      "retained": 1494,
+      "runs": {
+        "1": {
+          "test": 284,
+          "train": 1059,
+          "validation": 151
+        },
+        "2": {
+          "test": 284,
+          "train": 1059,
+          "validation": 151
+        },
+        "3": {
+          "test": 284,
+          "train": 1059,
+          "validation": 151
+        },
+        "4": {
+          "test": 284,
+          "train": 1059,
+          "validation": 151
+        },
+        "5": {
+          "test": 284,
+          "train": 1059,
+          "validation": 151
+        }
+      },
+      "scaffold_groups": 671,
+      "split_method": "scaffold",
+      "supported_before_split": 1513,
+      "test_exclusions": {
+        "historical_test_overlap": 2,
+        "internal_test_parent_overlap": 10,
+        "test_parent_duplicate": 7
+      }
+    },
+    "clearance_hepatocyte_az": {
+      "atom_count": {
+        "max": 82,
+        "median": 29.0,
+        "min": 11
+      },
+      "counts": {
+        "selected_species_source_rows": 1213,
+        "valid_structure": 1213
+      },
+      "duplicates_beyond_unique_canonical": 193,
+      "empty_scaffold_rows": 4,
+      "endpoints": {
+        "Y": {
+          "eligible_retained": 1020,
+          "primary_metric": "spearman",
+          "transform": "identity",
+          "units": "uL/min/10^6_cells"
+        }
+      },
+      "largest_scaffold_rows": 31,
+      "missing_by_endpoint": {
+        "Y": 0
+      },
+      "official_archive": {
+        "assignment": "official_structural_test_replayed",
+        "cross_partition_snapshot_rows": 0,
+        "test": 243,
+        "train_val": 970,
+        "unmatched_snapshot_rows": 0
+      },
+      "overlap": {
+        "aqsol": {
+          "exact_rows": 99,
+          "parent_rows": 113,
+          "scaffold_rows": 228
+        },
+        "caco2_wang": {
+          "exact_rows": 68,
+          "parent_rows": 71,
+          "scaffold_rows": 173
+        },
+        "early_consumed_union": {
+          "exact_rows": 893,
+          "parent_rows": 907,
+          "scaffold_rows": 0
+        },
+        "esol": {
+          "exact_rows": 26,
+          "parent_rows": 33,
+          "scaffold_rows": 116
+        },
+        "freesolv": {
+          "exact_rows": 5,
+          "parent_rows": 8,
+          "scaffold_rows": 65
+        },
+        "ld50_zhu": {
+          "exact_rows": 84,
+          "parent_rows": 93,
+          "scaffold_rows": 199
+        },
+        "lipophilicity": {
+          "exact_rows": 869,
+          "parent_rows": 879,
+          "scaffold_rows": 958
+        }
+      },
+      "retained": 1020,
+      "runs": {
+        "1": {
+          "test": 50,
+          "train": 849,
+          "validation": 121
+        },
+        "2": {
+          "test": 50,
+          "train": 849,
+          "validation": 121
+        },
+        "3": {
+          "test": 50,
+          "train": 848,
+          "validation": 122
+        },
+        "4": {
+          "test": 50,
+          "train": 849,
+          "validation": 121
+        },
+        "5": {
+          "test": 50,
+          "train": 849,
+          "validation": 121
+        }
+      },
+      "scaffold_groups": 745,
+      "split_method": "scaffold",
+      "supported_before_split": 1213,
+      "test_exclusions": {
+        "historical_test_overlap": 184,
+        "test_parent_duplicate": 9
+      }
+    },
+    "clearance_microsome_az": {
+      "atom_count": {
+        "max": 64,
+        "median": 29.0,
+        "min": 10
+      },
+      "counts": {
+        "selected_species_source_rows": 1102,
+        "valid_structure": 1102
+      },
+      "duplicates_beyond_unique_canonical": 0,
+      "empty_scaffold_rows": 1,
+      "endpoints": {
+        "Y": {
+          "eligible_retained": 918,
+          "primary_metric": "spearman",
+          "transform": "identity",
+          "units": "uL/min/mg"
+        }
+      },
+      "largest_scaffold_rows": 32,
+      "missing_by_endpoint": {
+        "Y": 0
+      },
+      "official_archive": {
+        "assignment": "official_structural_test_replayed",
+        "cross_partition_snapshot_rows": 0,
+        "test": 221,
+        "train_val": 881,
+        "unmatched_snapshot_rows": 0
+      },
+      "overlap": {
+        "aqsol": {
+          "exact_rows": 50,
+          "parent_rows": 56,
+          "scaffold_rows": 156
+        },
+        "caco2_wang": {
+          "exact_rows": 29,
+          "parent_rows": 30,
+          "scaffold_rows": 84
+        },
+        "early_consumed_union": {
+          "exact_rows": 898,
+          "parent_rows": 905,
+          "scaffold_rows": 0
+        },
+        "esol": {
+          "exact_rows": 10,
+          "parent_rows": 10,
+          "scaffold_rows": 85
+        },
+        "freesolv": {
+          "exact_rows": 3,
+          "parent_rows": 5,
+          "scaffold_rows": 64
+        },
+        "ld50_zhu": {
+          "exact_rows": 47,
+          "parent_rows": 51,
+          "scaffold_rows": 147
+        },
+        "lipophilicity": {
+          "exact_rows": 886,
+          "parent_rows": 892,
+          "scaffold_rows": 956
+        }
+      },
+      "retained": 918,
+      "runs": {
+        "1": {
+          "test": 37,
+          "train": 771,
+          "validation": 110
+        },
+        "2": {
+          "test": 37,
+          "train": 771,
+          "validation": 110
+        },
+        "3": {
+          "test": 37,
+          "train": 771,
+          "validation": 110
+        },
+        "4": {
+          "test": 37,
+          "train": 771,
+          "validation": 110
+        },
+        "5": {
+          "test": 37,
+          "train": 771,
+          "validation": 110
+        }
+      },
+      "scaffold_groups": 711,
+      "split_method": "scaffold",
+      "supported_before_split": 1102,
+      "test_exclusions": {
+        "historical_test_overlap": 184
+      }
+    },
+    "half_life_obach": {
+      "atom_count": {
+        "max": 115,
+        "median": 25.0,
+        "min": 5
+      },
+      "counts": {
+        "capacity_excluded": 3,
+        "nonfinite_chemistry_excluded": 2,
+        "selected_species_source_rows": 667,
+        "valid_structure": 667
+      },
+      "duplicates_beyond_unique_canonical": 2,
+      "empty_scaffold_rows": 14,
+      "endpoints": {
+        "Y": {
+          "eligible_retained": 591,
+          "primary_metric": "spearman",
+          "transform": "identity",
+          "units": "hour"
+        }
+      },
+      "largest_scaffold_rows": 58,
+      "missing_by_endpoint": {
+        "Y": 0
+      },
+      "official_archive": {
+        "assignment": "official_structural_test_replayed",
+        "cross_partition_snapshot_rows": 0,
+        "test": 135,
+        "train_val": 532,
+        "unmatched_snapshot_rows": 0
+      },
+      "overlap": {
+        "aqsol": {
+          "exact_rows": 171,
+          "parent_rows": 221,
+          "scaffold_rows": 347
+        },
+        "caco2_wang": {
+          "exact_rows": 91,
+          "parent_rows": 113,
+          "scaffold_rows": 248
+        },
+        "early_consumed_union": {
+          "exact_rows": 272,
+          "parent_rows": 339,
+          "scaffold_rows": 0
+        },
+        "esol": {
+          "exact_rows": 34,
+          "parent_rows": 49,
+          "scaffold_rows": 177
+        },
+        "freesolv": {
+          "exact_rows": 6,
+          "parent_rows": 8,
+          "scaffold_rows": 99
+        },
+        "ld50_zhu": {
+          "exact_rows": 133,
+          "parent_rows": 186,
+          "scaffold_rows": 326
+        },
+        "lipophilicity": {
+          "exact_rows": 170,
+          "parent_rows": 187,
+          "scaffold_rows": 314
+        }
+      },
+      "retained": 591,
+      "runs": {
+        "1": {
+          "test": 63,
+          "train": 462,
+          "validation": 66
+        },
+        "2": {
+          "test": 63,
+          "train": 462,
+          "validation": 66
+        },
+        "3": {
+          "test": 63,
+          "train": 462,
+          "validation": 66
+        },
+        "4": {
+          "test": 63,
+          "train": 462,
+          "validation": 66
+        },
+        "5": {
+          "test": 63,
+          "train": 462,
+          "validation": 66
+        }
+      },
+      "scaffold_groups": 442,
+      "split_method": "scaffold",
+      "supported_before_split": 662,
+      "test_exclusions": {
+        "historical_test_overlap": 70,
+        "test_parent_duplicate": 1
+      }
+    },
+    "ppbr_az": {
+      "atom_count": {
+        "max": 82,
+        "median": 29.0,
+        "min": 7
+      },
+      "counts": {
+        "selected_species_source_rows": 1614,
+        "valid_structure": 1614
+      },
+      "duplicates_beyond_unique_canonical": 0,
+      "empty_scaffold_rows": 2,
+      "endpoints": {
+        "Y": {
+          "eligible_retained": 1425,
+          "primary_metric": "mae",
+          "transform": "identity",
+          "units": "percent_bound"
+        }
+      },
+      "largest_scaffold_rows": 33,
+      "missing_by_endpoint": {
+        "Y": 0
+      },
+      "official_archive": {
+        "assignment": "official_structural_test_replayed",
+        "cross_partition_snapshot_rows": 0,
+        "test": 559,
+        "train_val": 2231,
+        "unmatched_snapshot_rows": 0
+      },
+      "overlap": {
+        "aqsol": {
+          "exact_rows": 85,
+          "parent_rows": 97,
+          "scaffold_rows": 218
+        },
+        "caco2_wang": {
+          "exact_rows": 50,
+          "parent_rows": 54,
+          "scaffold_rows": 127
+        },
+        "early_consumed_union": {
+          "exact_rows": 1030,
+          "parent_rows": 1046,
+          "scaffold_rows": 0
+        },
+        "esol": {
+          "exact_rows": 18,
+          "parent_rows": 22,
+          "scaffold_rows": 113
+        },
+        "freesolv": {
+          "exact_rows": 2,
+          "parent_rows": 4,
+          "scaffold_rows": 64
+        },
+        "ld50_zhu": {
+          "exact_rows": 77,
+          "parent_rows": 86,
+          "scaffold_rows": 214
+        },
+        "lipophilicity": {
+          "exact_rows": 1008,
+          "parent_rows": 1019,
+          "scaffold_rows": 1182
+        }
+      },
+      "retained": 1425,
+      "runs": {
+        "1": {
+          "test": 115,
+          "train": 1146,
+          "validation": 164
+        },
+        "2": {
+          "test": 115,
+          "train": 1146,
+          "validation": 164
+        },
+        "3": {
+          "test": 115,
+          "train": 1146,
+          "validation": 164
+        },
+        "4": {
+          "test": 115,
+          "train": 1146,
+          "validation": 164
+        },
+        "5": {
+          "test": 115,
+          "train": 1146,
+          "validation": 164
+        }
+      },
+      "scaffold_groups": 1032,
+      "split_method": "scaffold",
+      "supported_before_split": 1614,
+      "test_exclusions": {
+        "historical_test_overlap": 187,
+        "test_parent_duplicate": 2
+      }
+    },
+    "qm9": {
+      "atom_count": {
+        "max": 9,
+        "median": 9.0,
+        "min": 2
+      },
+      "counts": {
+        "invalid_structure": 2,
+        "selected_species_source_rows": 133885,
+        "uncharacterized_excluded": 3053,
+        "valid_structure": 133883
+      },
+      "duplicates_beyond_unique_canonical": 98,
+      "empty_scaffold_rows": 13390,
+      "endpoints": {
+        "alpha": {
+          "eligible_retained": 7993,
+          "primary_metric": "mae",
+          "transform": "identity",
+          "units": "Bohr^3"
+        },
+        "gap": {
+          "eligible_retained": 7993,
+          "primary_metric": "mae",
+          "transform": "identity",
+          "units": "Hartree"
+        },
+        "homo": {
+          "eligible_retained": 7993,
+          "primary_metric": "mae",
+          "transform": "identity",
+          "units": "Hartree"
+        },
+        "lumo": {
+          "eligible_retained": 7993,
+          "primary_metric": "mae",
+          "transform": "identity",
+          "units": "Hartree"
+        },
+        "mu": {
+          "eligible_retained": 7993,
+          "primary_metric": "mae",
+          "transform": "identity",
+          "units": "Debye"
+        }
+      },
+      "largest_scaffold_rows": 13390,
+      "missing_by_endpoint": {
+        "alpha": 0,
+        "gap": 0,
+        "homo": 0,
+        "lumo": 0,
+        "mu": 0
+      },
+      "official_archive": null,
+      "overlap": {
+        "aqsol": {
+          "exact_rows": 665,
+          "parent_rows": 679,
+          "scaffold_rows": 34240
+        },
+        "caco2_wang": {
+          "exact_rows": 13,
+          "parent_rows": 13,
+          "scaffold_rows": 5316
+        },
+        "early_consumed_union": {
+          "exact_rows": 639,
+          "parent_rows": 642,
+          "scaffold_rows": 0
+        },
+        "esol": {
+          "exact_rows": 268,
+          "parent_rows": 268,
+          "scaffold_rows": 11293
+        },
+        "freesolv": {
+          "exact_rows": 232,
+          "parent_rows": 246,
+          "scaffold_rows": 17658
+        },
+        "ld50_zhu": {
+          "exact_rows": 453,
+          "parent_rows": 453,
+          "scaffold_rows": 31298
+        },
+        "lipophilicity": {
+          "exact_rows": 5,
+          "parent_rows": 5,
+          "scaffold_rows": 4481
+        }
+      },
+      "retained": 7993,
+      "runs": {
+        "1": {
+          "test": 1593,
+          "train": 5600,
+          "validation": 800
+        },
+        "2": {
+          "test": 1593,
+          "train": 5600,
+          "validation": 800
+        },
+        "3": {
+          "test": 1593,
+          "train": 5600,
+          "validation": 800
+        },
+        "4": {
+          "test": 1593,
+          "train": 5600,
+          "validation": 800
+        },
+        "5": {
+          "test": 1593,
+          "train": 5600,
+          "validation": 800
+        }
+      },
+      "scaffold_groups": 15660,
+      "split_method": "Butina_structure_cluster",
+      "supported_before_split": 130830,
+      "test_exclusions": {
+        "historical_test_overlap": 7
+      }
+    },
+    "vdss_lombardo": {
+      "atom_count": {
+        "max": 114,
+        "median": 26.0,
+        "min": 7
+      },
+      "counts": {
+        "capacity_excluded": 10,
+        "selected_species_source_rows": 1130,
+        "valid_structure": 1130
+      },
+      "duplicates_beyond_unique_canonical": 19,
+      "empty_scaffold_rows": 38,
+      "endpoints": {
+        "Y": {
+          "eligible_retained": 1032,
+          "primary_metric": "spearman",
+          "transform": "identity",
+          "units": "L/kg"
+        }
+      },
+      "largest_scaffold_rows": 85,
+      "missing_by_endpoint": {
+        "Y": 0
+      },
+      "official_archive": {
+        "assignment": "official_structural_test_replayed",
+        "cross_partition_snapshot_rows": 0,
+        "test": 226,
+        "train_val": 904,
+        "unmatched_snapshot_rows": 0
+      },
+      "overlap": {
+        "aqsol": {
+          "exact_rows": 122,
+          "parent_rows": 261,
+          "scaffold_rows": 398
+        },
+        "caco2_wang": {
+          "exact_rows": 34,
+          "parent_rows": 126,
+          "scaffold_rows": 281
+        },
+        "early_consumed_union": {
+          "exact_rows": 151,
+          "parent_rows": 431,
+          "scaffold_rows": 0
+        },
+        "esol": {
+          "exact_rows": 46,
+          "parent_rows": 51,
+          "scaffold_rows": 233
+        },
+        "freesolv": {
+          "exact_rows": 2,
+          "parent_rows": 9,
+          "scaffold_rows": 142
+        },
+        "ld50_zhu": {
+          "exact_rows": 101,
+          "parent_rows": 238,
+          "scaffold_rows": 382
+        },
+        "lipophilicity": {
+          "exact_rows": 67,
+          "parent_rows": 231,
+          "scaffold_rows": 316
+        }
+      },
+      "retained": 1032,
+      "runs": {
+        "1": {
+          "test": 138,
+          "train": 782,
+          "validation": 112
+        },
+        "2": {
+          "test": 138,
+          "train": 782,
+          "validation": 112
+        },
+        "3": {
+          "test": 138,
+          "train": 782,
+          "validation": 112
+        },
+        "4": {
+          "test": 138,
+          "train": 782,
+          "validation": 112
+        },
+        "5": {
+          "test": 138,
+          "train": 782,
+          "validation": 112
+        }
+      },
+      "scaffold_groups": 761,
+      "split_method": "scaffold",
+      "supported_before_split": 1120,
+      "test_exclusions": {
+        "historical_test_overlap": 87,
+        "test_parent_duplicate": 1
+      }
+    }
+  },
+  "source_hashes": {
+    "bace": "f3fb9ce90bada3e2bd6148b0df13f8f8145a357bf87df0dd5b391ede974fc737",
+    "clearance_hepatocyte_az": "2c217f46600c22e107b72faa2bfb1d9bf799213aee47b601f6e0d6d73b68f274",
+    "clearance_microsome_az": "4c9047dc1860cc05d5bdc09aa9cfef86a40740605c2ff06990b1fceb6085db9d",
+    "half_life_obach": "79fb8c943b64a9488bce588d747b59af1a782f1ce46bc51137c61fb895ede1df",
+    "ppbr_az": "54c9520f4b6e04419b18bab7335583c3865d86fc53db40f74c2cff1577c8ec1b",
+    "qm9": "3e668f8c34e4bc392a90d417a50a5eed3b64b842a817a633024bdc054c68ccb4",
+    "vdss_lombardo": "00bb7e0dea19f78c4c1887e27ecf476135d9de2ef5ecc26d7c645c37bd9cb7af"
+  },
+  "unresolved_history": [
+    "qm7",
+    "qm8",
+    "early_development_beyond_available_derivatives"
+  ]
+}

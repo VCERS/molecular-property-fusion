@@ -6,10 +6,12 @@ import argparse
 import json
 from pathlib import Path
 
+from molprop_fusion.estimator import DEFAULT_MAX_ATOMS
+
 
 def _parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="molprop-fusion")
-    parser.add_argument("--version", action="version", version="%(prog)s 0.2.0")
+    parser.add_argument("--version", action="version", version="%(prog)s 0.2.0rc1")
     subparsers = parser.add_subparsers(dest="command", required=True)
 
     train = subparsers.add_parser("train", help="fit a reusable model from a labeled CSV")
@@ -22,7 +24,7 @@ def _parser() -> argparse.ArgumentParser:
     train.add_argument("--random-state", type=int, default=42)
     train.add_argument("--feature-seed", type=int, default=42)
     train.add_argument("--n-jobs", type=int, default=1)
-    train.add_argument("--max-atoms", type=int, default=100)
+    train.add_argument("--max-atoms", type=int, default=DEFAULT_MAX_ATOMS)
     train.add_argument(
         "--validation-only", action="store_true", help="tiny software check; not an accuracy preset"
     )
@@ -78,6 +80,34 @@ def _parser() -> argparse.ArgumentParser:
     summarize = subparsers.add_parser("summarize", help="summarize case-level output")
     summarize.add_argument("--input", type=Path, required=True)
     summarize.add_argument("--output", type=Path, required=True)
+
+    expanded_prepare = subparsers.add_parser(
+        "expanded-prepare", help="replay retained source-index partitions"
+    )
+    expanded_run = subparsers.add_parser(
+        "expanded-run", help="run one expanded historical paper case"
+    )
+    for command in (expanded_prepare, expanded_run):
+        command.add_argument(
+            "--config", type=Path, default=Path("configs/expanded_benchmarks.yaml")
+        )
+        command.add_argument("--manifest", type=Path, default=Path("configs/expanded_sources.json"))
+        command.add_argument("--partitions", type=Path, default=Path("partitions"))
+        command.add_argument("--dataset", required=True)
+        command.add_argument("--source", type=Path, required=True)
+        command.add_argument("--output", type=Path, required=True)
+    expanded_run.add_argument("--prepared", type=Path, required=True)
+    expanded_run.add_argument("--feature-cache", type=Path, required=True)
+    expanded_run.add_argument("--endpoint", required=True)
+    expanded_run.add_argument("--run", type=int, required=True)
+    expanded_run.add_argument("--device", choices=["cpu", "cuda"], default="cuda")
+    expanded_run.add_argument("--n-jobs", type=int, default=8)
+    expanded_run.add_argument("--validation-only", action="store_true")
+    expanded_summary = subparsers.add_parser(
+        "expanded-summarize", help="summarize expanded case files"
+    )
+    expanded_summary.add_argument("--input", type=Path, nargs="+", required=True)
+    expanded_summary.add_argument("--output", type=Path, required=True)
 
     check = subparsers.add_parser("check-config", help="parse and validate a public config")
     check.add_argument("paths", nargs="+", type=Path)
@@ -159,6 +189,15 @@ def main(argv: list[str] | None = None) -> None:
         from molprop_fusion.summarize import summarize_file
 
         result = summarize_file(args.input, args.output)
+    elif args.command in ("expanded-prepare", "expanded-run", "expanded-summarize"):
+        from molprop_fusion import expanded_workflow
+
+        if args.command == "expanded-prepare":
+            result = expanded_workflow.prepare(args)
+        elif args.command == "expanded-run":
+            result = expanded_workflow.run(args)
+        else:
+            result = expanded_workflow.summarize_files(args.input, args.output)
     elif args.command == "check-config":
         from molprop_fusion.config import load_config
 

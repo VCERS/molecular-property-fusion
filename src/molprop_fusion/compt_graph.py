@@ -11,6 +11,7 @@ import math
 import random
 import time
 from collections.abc import Sequence
+from contextlib import nullcontext
 from dataclasses import dataclass
 from typing import Any
 
@@ -350,12 +351,15 @@ def fit_graph_regressor(
     seed: int,
     model_options: dict[str, Any],
     training_options: dict[str, Any],
+    feature_provider: Any = None,
+    measure: Any = None,
 ) -> GraphFitResult:
     """One fit with a deterministic group-disjoint inner early-stopping split."""
     from sklearn.model_selection import GroupShuffleSplit
     from torch.utils.data import DataLoader, TensorDataset
 
     start = time.perf_counter()
+    observe = measure or (lambda stage, **metadata: nullcontext({}))
     random.seed(seed)
     np.random.seed(seed)
     torch.manual_seed(seed)
@@ -368,79 +372,88 @@ def fit_graph_regressor(
     if set(np.asarray(train_groups)[fit_index]) & set(np.asarray(train_groups)[early_index]):
         raise RuntimeError("inner early-stopping group overlap")
     all_smiles = [*train_smiles, *evaluation_smiles]
-    graph_rows = [
-        featurize_smiles(smiles, int(model_options["max_atoms"])) for smiles in all_smiles
-    ]
-    nodes = torch.from_numpy(np.stack([row[0] for row in graph_rows]))
-    edges = torch.from_numpy(np.stack([row[1] for row in graph_rows]))
-    distances = torch.from_numpy(np.stack([row[2] for row in graph_rows]))
+    with observe(
+        "graph_tensors", cache_state="shared_label_free_provider" if feature_provider else "cold"
+    ):
+        graph_rows = [
+            (feature_provider or featurize_smiles)(smiles, int(model_options["max_atoms"]))
+            for smiles in all_smiles
+        ]
+        nodes = torch.from_numpy(np.stack([row[0] for row in graph_rows]))
+        edges = torch.from_numpy(np.stack([row[1] for row in graph_rows]))
+        distances = torch.from_numpy(np.stack([row[2] for row in graph_rows]))
     mean, scale = float(np.mean(train_target[fit_index])), float(np.std(train_target[fit_index]))
     if not scale > 0:
         raise ValueError("graph fit target scale is non-positive")
     standardized = torch.from_numpy(((train_target - mean) / scale).astype(np.float32))
 
-    model = CoMPTRegressor(**model_options)
-    model.to(device)
-    optimizer = torch.optim.Adam(
-        model.parameters(), lr=0.0, weight_decay=float(training_options["weight_decay"])
-    )
-    batch_size = int(training_options["batch_size"])
-    warmup_steps = max(1, (len(fit_index) // batch_size) * int(training_options["warmup_epochs"]))
-    train_dataset = TensorDataset(
-        nodes[fit_index], edges[fit_index], distances[fit_index], standardized[fit_index]
-    )
-    generator = torch.Generator().manual_seed(seed)
-    loader = DataLoader(
-        train_dataset, batch_size=batch_size, shuffle=True, generator=generator, drop_last=False
-    )
-    best_loss, best_epoch, best_state, stale, step = math.inf, 0, None, 0, 0
-    for epoch in range(1, int(training_options["max_epochs"]) + 1):
-        model.train()
-        for node, edge, distance, target in loader:
-            step += 1
-            rate = (
-                float(training_options["warmup_factor"])
-                * model.hidden_width**-0.5
-                * min(step**-0.5, step * warmup_steps**-1.5)
-            )
-            optimizer.param_groups[0]["lr"] = rate
-            node, edge, distance, target = (
-                value.to(device) for value in (node, edge, distance, target)
-            )
-            mask = node.abs().sum(dim=-1) != 0
-            loss = torch.sqrt(F.mse_loss(model(node, mask, distance, edge), target))
-            optimizer.zero_grad(set_to_none=True)
-            loss.backward()
-            optimizer.step()
-        model.eval()
-        with torch.no_grad():
-            node, edge, distance = (
-                value[early_index].to(device) for value in (nodes, edges, distances)
-            )
-            mask = node.abs().sum(dim=-1) != 0
-            early_loss = float(
-                torch.sqrt(
-                    F.mse_loss(
-                        model(node, mask, distance, edge), standardized[early_index].to(device)
-                    )
-                ).cpu()
-            )
-        if early_loss < best_loss:
-            best_loss, best_epoch, stale = early_loss, epoch, 0
-            best_state = {
-                key: value.detach().cpu().clone() for key, value in model.state_dict().items()
-            }
-        else:
-            stale += 1
-        if stale >= int(training_options["patience"]):
-            break
-    if best_state is None:
-        raise RuntimeError("graph fit produced no finite checkpoint")
-    model.load_state_dict(best_state)
-    model.to(device).eval()
+    with observe("base_fit") as fit_timing:
+        model = CoMPTRegressor(**model_options)
+        model.to(device)
+        optimizer = torch.optim.Adam(
+            model.parameters(), lr=0.0, weight_decay=float(training_options["weight_decay"])
+        )
+        batch_size = int(training_options["batch_size"])
+        warmup_steps = max(
+            1, (len(fit_index) // batch_size) * int(training_options["warmup_epochs"])
+        )
+        train_dataset = TensorDataset(
+            nodes[fit_index], edges[fit_index], distances[fit_index], standardized[fit_index]
+        )
+        generator = torch.Generator().manual_seed(seed)
+        loader = DataLoader(
+            train_dataset, batch_size=batch_size, shuffle=True, generator=generator, drop_last=False
+        )
+        best_loss, best_epoch, best_state, stale, step = math.inf, 0, None, 0, 0
+        for epoch in range(1, int(training_options["max_epochs"]) + 1):
+            model.train()
+            for node, edge, distance, target in loader:
+                step += 1
+                rate = (
+                    float(training_options["warmup_factor"])
+                    * model.hidden_width**-0.5
+                    * min(step**-0.5, step * warmup_steps**-1.5)
+                )
+                optimizer.param_groups[0]["lr"] = rate
+                node, edge, distance, target = (
+                    value.to(device) for value in (node, edge, distance, target)
+                )
+                mask = node.abs().sum(dim=-1) != 0
+                loss = torch.sqrt(F.mse_loss(model(node, mask, distance, edge), target))
+                optimizer.zero_grad(set_to_none=True)
+                loss.backward()
+                optimizer.step()
+            model.eval()
+            with torch.no_grad():
+                node, edge, distance = (
+                    value[early_index].to(device) for value in (nodes, edges, distances)
+                )
+                mask = node.abs().sum(dim=-1) != 0
+                early_loss = float(
+                    torch.sqrt(
+                        F.mse_loss(
+                            model(node, mask, distance, edge), standardized[early_index].to(device)
+                        )
+                    ).cpu()
+                )
+            if early_loss < best_loss:
+                best_loss, best_epoch, stale = early_loss, epoch, 0
+                best_state = {
+                    key: value.detach().cpu().clone() for key, value in model.state_dict().items()
+                }
+            else:
+                stale += 1
+            if stale >= int(training_options["patience"]):
+                break
+        if best_state is None:
+            raise RuntimeError("graph fit produced no finite checkpoint")
+        model.load_state_dict(best_state)
+        model.to(device).eval()
+        fit_timing["epochs_completed"] = epoch
+        fit_timing["best_epoch"] = best_epoch
     evaluation = np.arange(len(train_smiles), len(all_smiles))
     predictions: list[np.ndarray] = []
-    with torch.no_grad():
+    with observe("prediction"), torch.no_grad():
         for begin in range(0, len(evaluation), batch_size):
             idx = evaluation[begin : begin + batch_size]
             node, edge, distance = (value[idx].to(device) for value in (nodes, edges, distances))

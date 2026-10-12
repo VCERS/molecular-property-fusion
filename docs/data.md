@@ -33,3 +33,7 @@ inputs.
 Dataset terms are independent of this repository's MIT software license.
 Review and follow each upstream dataset's terms before downloading, copying,
 or redistributing its content.
+
+## Seven expanded datasets
+
+[Expanded sources](../configs/expanded_sources.json) records exact upstream files, hashes, fields, units, and loader revisions. [Expanded reproduction](expanded-reproduction.md) describes filtering and the target-free integer assignments in `partitions/`. Those files replay the retained order and historical exclusions; they contain no structures or targets. AqSolDB curated memberships remain a separate exact-reproduction gap.

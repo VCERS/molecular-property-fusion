@@ -63,15 +63,8 @@
   },
   "datasets": {
     "user": {
-      "url": "https://deepchemdata.s3-us-west-1.amazonaws.com/datasets/delaney-processed.csv",
-      "filename": "delaney-processed.csv",
-      "sha256": "8c06a76f0c6487d29ab0f903e6a7a7139f189ab3c1178f159c8be8964602f189",
-      "rows": 1128,
-      "smiles_column": "smiles",
-      "target_column": "measured log solubility in mols per litre",
-      "units": "log_mol_per_litre",
-      "max_atoms": 100,
-      "warmup_factor": 0.1
+      "max_atoms": 115,
+      "warmup_factor": 0.15
     }
   }
 }
