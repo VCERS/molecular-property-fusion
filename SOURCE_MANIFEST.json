@@ -1,6 +1,6 @@
 {
   "expanded_integration": {
-    "note": "File-level local candidate; not published. No private Git history imported. Partition indices replay original retained rows including historical exclusions; unresolved historical coverage remains stated.",
+    "note": "File-level export for GitHub prerelease 0.2.0rc1. No private Git history imported. Partition indices replay original retained rows including historical exclusions; unresolved historical coverage remains stated.",
     "partition_derivatives": [
       {
         "destination_path": "partitions/bace.csv",
@@ -270,6 +270,34 @@
       "transformation": "dataset/count/overlap summaries only; no private provenance inventories"
     }
   ],
+  "publication_metadata": {
+    "date_released": "2026-10-12",
+    "files": [
+      {
+        "destination_path": "README.md",
+        "destination_sha256": "6ef3bfdc9cd9bf9ca5f4c0fe9b75db265201f1dd31822fadbb440c4bc61628af"
+      },
+      {
+        "destination_path": "CHANGELOG.md",
+        "destination_sha256": "1481d7c286b1956dd61dbc752831be2c0378dd9f92a59097eeb2ed886d86fa62"
+      },
+      {
+        "destination_path": "CITATION.cff",
+        "destination_sha256": "68c7d678dd8f618c0cd047f8e44ce975ab327720728355c13663478365ceea7f"
+      },
+      {
+        "destination_path": "docs/reproducibility.md",
+        "destination_sha256": "2310306dc1feec559d4ad32c55c8833cc53e21f886ade85e300eb80afbb76ba1"
+      },
+      {
+        "destination_path": "docs/expanded-reproduction.md",
+        "destination_sha256": "52461b49891ec454ec68c9a6e669ef0850dc7f7a25f67c690875797e86045cce"
+      }
+    ],
+    "release_url": "https://github.com/VCERS/molecular-property-fusion/releases/tag/v0.2.0rc1",
+    "tag": "v0.2.0rc1",
+    "version": "0.2.0rc1"
+  },
   "release_candidate": "0.2.0rc1",
   "schema_version": 1,
   "source_repository": "https://github.com/meshandmore/frozen-llm.git",

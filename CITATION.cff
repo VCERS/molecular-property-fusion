@@ -3,6 +3,8 @@ message: "If you use this software, please cite the associated article and this 
 title: "Molecular Property Fusion"
 type: software
 version: 0.2.0rc1
+date-released: 2026-10-12
+url: "https://github.com/VCERS/molecular-property-fusion/releases/tag/v0.2.0rc1"
 repository-code: "https://github.com/VCERS/molecular-property-fusion"
 license: MIT
 authors:

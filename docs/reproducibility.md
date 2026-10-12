@@ -15,7 +15,10 @@ The authoritative validation environment uses Python 3.11.15 with:
 | PyTorch | 2.13.0 |
 | Chemprop | 2.3.1 |
 
-Install these versions with `python -m pip install ".[reproduce]"`. The graph
+From the `v0.2.0rc1` checkout, install these versions with
+`python -m pip install ".[reproduce]"`. See the
+[README installation instructions](https://github.com/VCERS/molecular-property-fusion/tree/v0.2.0rc1#use-the-method) and
+[GitHub prerelease assets](https://github.com/VCERS/molecular-property-fusion/releases/tag/v0.2.0rc1). The graph
 workflow was validated on an NVIDIA H100. Full runs are intentionally absent
 from ordinary CPU continuous integration.
 
@@ -105,4 +108,4 @@ operational detail than is needed for public verification.
 
 ## Expanded transferability workflows
 
-Follow [expanded reproduction](expanded-reproduction.md) for the seven added datasets, eleven tasks, retained source-index partitions, all 55 run aggregates, and computational costs. `verify-results` recomputes their summaries and checks partition hashes/counts alongside the historical aggregates. The current package is local candidate 0.2.0rc1, pending publication.
+Follow [expanded reproduction](expanded-reproduction.md) for the seven added datasets, eleven tasks, retained source-index partitions, all 55 run aggregates, and computational costs. `verify-results` recomputes their summaries and checks partition hashes/counts alongside the historical aggregates. The package is GitHub prerelease [0.2.0rc1](https://github.com/VCERS/molecular-property-fusion/releases/tag/v0.2.0rc1).

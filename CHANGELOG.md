@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.2.0rc1 (local candidate, unpublished)
+## 0.2.0rc1 (2026-10-12, GitHub prerelease)
 
 - Reusable full/tabular training, prediction, and trusted model bundles.
 - New user fits use capacity 115 and warmup factor 0.15; saved bundles retain their stored settings.

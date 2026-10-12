@@ -1,12 +1,12 @@
 # Reproduce the expanded paper evaluations
 
-This local 0.2.0rc1 candidate includes seven additional datasets and eleven
+The 0.2.0rc1 GitHub prerelease includes seven additional datasets and eleven
 property tasks, evaluated over five runs with one fixed test population per
 dataset. It supplements the three-dataset benchmark (30 evaluations) and
 AqSolDB (five evaluations). Transferability therefore covers eight datasets,
 twelve tasks, and sixty evaluations; the combined paper covers eleven datasets,
 fifteen tasks, and ninety evaluations. No new accuracy experiment was run to
-prepare this candidate.
+prepare the reviewed candidate for this release.
 
 ## Sources and targets
 
@@ -154,6 +154,6 @@ identity derivatives, row-level targets/predictions/errors, or private quantum
 data. Upstream datasets remain subject to their own terms; the source registry
 retains the acquisition attribution and rights notes. [TDC documentation](https://tdcommons.ai/single_pred_tasks/adme/)
 leaves several ADME licenses unspecified; BACE artifact-specific reuse terms
-are not explicit. This candidate does not infer permission to redistribute
+are not explicit. This release does not infer permission to redistribute
 those source records from the software license. QM9's original deposit is
 [Figshare 1057646](https://doi.org/10.6084/m9.figshare.1057646).

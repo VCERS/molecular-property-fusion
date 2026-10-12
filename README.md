@@ -14,7 +14,27 @@ four trees for CPU work. Chemprop is optional and is not needed for either mode.
 
 ## Use the method
 
-Use Python 3.11. From this checkout, install one dependency group:
+Use Python 3.11. Install prerelease **0.2.0rc1** from the versioned GitHub
+source with the dependency group for your mode:
+
+```bash
+python -m pip install 'molecular-property-fusion[full] @ git+https://github.com/VCERS/molecular-property-fusion.git@v0.2.0rc1'
+# For four-tree CPU fitting, replace [full] with [tabular].
+```
+
+Alternatively, download the wheel and `SHA256SUMS` from the
+[GitHub prerelease](https://github.com/VCERS/molecular-property-fusion/releases/tag/v0.2.0rc1),
+verify its checksum, and install `./molecular_property_fusion-0.2.0rc1-py3-none-any.whl[full]`
+with pip. This version is distributed through GitHub; it has no PyPI release.
+
+For the tutorials and paper workflows, use the versioned checkout:
+
+```bash
+git clone --branch v0.2.0rc1 --depth 1 https://github.com/VCERS/molecular-property-fusion.git
+cd molecular-property-fusion
+```
+
+From this checkout, install one dependency group:
 
 ```bash
 python -m pip install '.[full]'
@@ -60,7 +80,7 @@ installation compatibility, defaults, and compute cost, and the
 
 ## Reproduce the paper
 
-This local release candidate is **0.2.0rc1** and has not been published.
+The GitHub prerelease is [**0.2.0rc1**](https://github.com/VCERS/molecular-property-fusion/releases/tag/v0.2.0rc1).
 The paper routes cover ESOL, FreeSolv, Lipophilicity, AqSolDB, PPBR (human),
 VDss, Half-life, Microsomal clearance, Hepatocyte clearance, BACE, and the
 7,993-molecule SMILES-derived QM9 subset. Together these comprise eleven
@@ -72,7 +92,7 @@ Start with [paper reproduction](docs/reproducibility.md), then follow
 snapshots, index-only partitions, retained aggregates, and computational costs.
 The historical public version 0.1.0 at commit `4a2d86e` and its original
 configurations/results remain available in public repository history. The
-historical benchmark/AqSolDB configurations and aggregates in this candidate
+historical benchmark/AqSolDB configurations and aggregates in this release
 are unchanged.
 
 ### Reproduction installation
